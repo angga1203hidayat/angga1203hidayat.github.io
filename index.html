@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Angga Hidayat, Ph.D.</title>
+<meta name="description" content="Researcher webpage of Angga Hidayat, Ph.D., SSHRC Postdoctoral Fellow at Ontario Tech University. Keywords: STEM education, mathematics education, digital mathematics storytelling, generative AI in teacher education, mathematics identity, equity.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:opsz,wght@8..60,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F3F4F6; --card:#FFFFFF; --text:#1F2328; --muted:#5B6270;
+    --line:#E3E5E9; --accent:#1D4E89; --accent-soft:#E8EEF6;
+    --sans:"Source Sans 3",-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+    --serif:"Source Serif 4",Georgia,serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-padding-top:70px}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:17px;line-height:1.6}
+  a{color:var(--accent);text-underline-offset:2px}
+  a:hover{color:#123560}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.25;color:var(--text)}
+
+  /* top bar */
+  .topbar{background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+  .topbar .in{max-width:1180px;margin:0 auto;padding:0 20px;display:flex;align-items:center;gap:24px;height:58px}
+  .brand{font-family:var(--serif);font-weight:600;font-size:19px;color:var(--text);text-decoration:none;white-space:nowrap}
+  .topbar nav{margin-left:auto;overflow-x:auto;scrollbar-width:none}
+  .topbar nav::-webkit-scrollbar{display:none}
+  .topbar ul{list-style:none;margin:0;padding:0;display:flex;gap:4px;white-space:nowrap}
+  .topbar nav a{display:block;padding:6px 10px;border-radius:4px;color:var(--muted);text-decoration:none;font-size:15px}
+  .topbar nav a:hover{color:var(--text);background:var(--bg)}
+  .topbar nav a[aria-current="page"]{color:var(--accent);background:var(--accent-soft);font-weight:600}
+
+  /* banner: save a wide photo as banner.jpg to replace the plain colour */
+  .banner{height:230px;background:var(--accent) url("banner.jpg") center/cover no-repeat}
+
+  .layout{max-width:1180px;margin:0 auto;padding:0 20px 60px;display:grid;grid-template-columns:300px 1fr;gap:28px;align-items:start}
+
+  /* profile card */
+  .profile{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:0 24px 24px;margin-top:-90px;text-align:center}
+  .avatar{width:168px;height:168px;border-radius:50%;margin:0 auto 16px;border:5px solid var(--card);background:var(--accent-soft);overflow:hidden;display:grid;place-items:center}
+  .profile .avatar-wrap{padding-top:18px}
+  .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+  .avatar span{font-family:var(--serif);font-size:52px;color:var(--accent)}
+  .profile h1{font-size:24px;margin:0 0 4px}
+  .profile .role{margin:0 0 14px;color:var(--muted);font-size:15.5px;line-height:1.45}
+  .kw{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:0 0 18px;padding:0;list-style:none}
+  .kw li{font-size:13px;background:var(--bg);border:1px solid var(--line);border-radius:3px;padding:2px 8px;color:var(--muted)}
+  .btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;padding:8px 18px;border-radius:4px;font-weight:600;font-size:15px}
+  .btn:hover{background:#123560;color:#fff}
+  .profile hr{border:0;border-top:1px solid var(--line);margin:20px 0}
+  .contact{text-align:left;font-size:15px}
+  .contact dt{color:var(--muted);font-size:13px;margin-top:10px}
+  .contact dd{margin:0;overflow-wrap:anywhere}
+  .links{list-style:none;padding:0;margin:0;text-align:left;font-size:15px}
+  .links li{padding:5px 0;border-bottom:1px solid var(--line)}
+  .links li:last-child{border-bottom:0}
+
+  /* content */
+  main{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:36px 44px 44px;margin-top:28px;min-height:60vh}
+  .page h2{font-size:30px;margin:0 0 20px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+  .page h3{font-size:21px;margin:32px 0 10px}
+  .page p{margin:0 0 14px;max-width:46em}
+  .note{background:var(--accent-soft);border-left:3px solid var(--accent);padding:14px 18px;border-radius:0 4px 4px 0;margin:18px 0 22px;max-width:46em}
+  .note p:last-child{margin-bottom:0}
+  .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:24px 0 8px;max-width:46em}
+  .facts div{border:1px solid var(--line);border-radius:6px;padding:12px 14px}
+  .facts b{display:block;font-family:var(--serif);font-size:22px;color:var(--accent)}
+  .facts span{font-size:14px;color:var(--muted);line-height:1.35;display:block}
+
+  .refs{list-style:none;padding:0;margin:0 0 8px}
+  .refs li{padding:12px 0;border-bottom:1px solid var(--line)}
+  .refs .rt{display:block;font-weight:600;line-height:1.4}
+  .refs .ra{display:block;font-size:15px;color:var(--muted)}
+  .refs .ra b{color:var(--text)}
+  .refs .rv{display:block;font-size:15px}
+  .doi{font-size:13px;font-weight:600;border:1px solid var(--accent);border-radius:3px;padding:0 6px;margin-left:6px;text-decoration:none;white-space:nowrap}
+  .year{font-size:19px!important;color:var(--accent)!important;margin-top:28px!important}
+  .plain{padding-left:20px;margin:0}
+  .plain li{padding:6px 0;font-size:15.5px}
+
+  .entries{margin:0}
+  .entry{display:grid;grid-template-columns:130px 1fr;gap:18px;padding:14px 0;border-bottom:1px solid var(--line)}
+  .entry .when{color:var(--muted);font-size:15px}
+  .entry .what b{display:block}
+  .entry .what span{color:var(--muted);font-size:15px;display:block}
+  .entry ul{margin:6px 0 0;padding-left:18px;font-size:15.5px}
+  .amt{font-size:14px;color:var(--accent);font-weight:600}
+
+  footer{text-align:center;color:var(--muted);font-size:14px;padding:0 20px 40px}
+
+  @media (max-width:900px){
+    .layout{grid-template-columns:1fr}
+    .profile{position:static;margin-top:-80px}
+    main{margin-top:0;padding:28px 22px}
+    .facts{grid-template-columns:repeat(2,1fr)}
+    .banner{height:160px}
+  }
+  @media (max-width:560px){
+    .topbar .in{gap:12px}
+    .brand{display:none}
+    .topbar nav{margin-left:0}
+    .entry{grid-template-columns:1fr;gap:2px}
+    .page h2{font-size:26px}
+  }
+  @media print{.topbar,.banner,.profile{display:none}.page{display:block!important}main{border:0}}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="in">
+    <a class="brand" href="#home">Angga Hidayat</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#presentations">Presentations</a></li>
+        <li><a href="#talks">Talks</a></li>
+        <li><a href="#funding">Funding &amp; Awards</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#service">Service</a></li>
+        <li><a href="#cv">CV</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="banner" role="presentation"></div>
+
+<div class="layout">
+
+  <aside class="profile">
+    <div class="avatar-wrap">
+      <div class="avatar">
+        <!-- Save your headshot as photo.jpg next to this file -->
+        <img src="photo.jpg" alt="Angga Hidayat" onerror="this.remove()">
+        <span aria-hidden="true">AH</span>
+      </div>
+    </div>
+    <h1>Angga Hidayat, Ph.D.</h1>
+    <p class="role">SSHRC Postdoctoral Fellow<br>Faculty of Education, Ontario Tech University<br>Fulbright Scholar</p>
+    <ul class="kw">
+      <li>STEM education</li>
+      <li>Mathematics identity</li>
+      <li>Digital storytelling</li>
+      <li>GenAI in teacher education</li>
+    </ul>
+    <!-- Save your CV as cv.pdf next to this file -->
+    <a class="btn" href="cv.pdf">Curriculum vitae</a>
+    <hr>
+    <dl class="contact">
+      <dt>Email</dt>
+      <dd><a href="mailto:angga.hidayat@ontariotechu.edu">angga.hidayat@ontariotechu.edu</a></dd>
+      <dt>Office</dt>
+      <dd>Ontario Tech University<br>2000 Simcoe Street North<br>Oshawa, Ontario, Canada</dd>
+    </dl>
+    <hr>
+    <!-- Replace each # with your real profile link -->
+    <ul class="links">
+      <li><a href="#">Google Scholar</a></li>
+      <li><a href="#">Scopus</a></li>
+      <li><a href="#">ORCID</a></li>
+      <li><a href="#">LinkedIn</a></li>
+    </ul>
+  </aside>
+
+  <main>
+
+  <!-- ============ HOME ============ -->
+  <section class="page" id="home">
+    <h2>Home</h2>
+    <p>I am a mathematics education researcher and SSHRC Postdoctoral Fellow in the Faculty of Education at Ontario Tech University. I earned my Ph.D. in STEM Education at The Ohio State University as a Fulbright Scholar.</p>
+
+    <div class="facts">
+      <div><b>50+</b><span>peer-reviewed publications</span></div>
+      <div><b>870+</b><span>Google Scholar citations</span></div>
+      <div><b>18+</b><span>years of teaching</span></div>
+      <div><b>20</b><span>competitive awards and fellowships</span></div>
+    </div>
+
+    <h3>My research</h3>
+    <p>My research sits at the intersection of mathematics education, generative AI, and equity. I study how teachers and students from rural, low-income, immigrant, and first-generation backgrounds come to see themselves in mathematics, and how digital storytelling and new technologies can support that process.</p>
+    <p>I work across qualitative, quantitative, and mixed-methods traditions. Much of my work uses narrative inquiry and digital mathematics storytelling, in which teachers and learners tell their own mathematics stories through short personal videos.</p>
+
+    <div class="note">
+      <p><b>Current project.</b> I am leading an explanatory sequential mixed-methods study of how pre-service STEAM teachers develop epistemic agency, professional judgment, and critical AI literacy as they work with generative AI. The project is funded by the SSHRC Canada Impact+ Research Training Award (2026 to 2028).</p>
+    </div>
+
+    <h3>My path</h3>
+    <!-- EDIT: This is a draft. Add your own voice, a memory, or a turning point. -->
+    <p>I am a first-generation scholar from Indonesia. I began teaching mathematics in 2009, in secondary schools and learning centres, helping students prepare for national examinations and university entry. I then earned a Master of Education in Mathematics Education at Universitas Negeri Surabaya.</p>
+    <p>From 2015 to 2021 I taught statistics, quantitative research methods, and data analysis at Universitas Pamulang, where I received the Best Lecturer award in 2018. In 2021 I received a Fulbright scholarship to pursue a Ph.D. at The Ohio State University under the guidance of Dr. Theodore Chao. My dissertation, <i>Voices from the Margins</i>, explored digital storytelling in mathematics education with first-generation pre-service teachers from rural and low-income backgrounds.</p>
+    <p>Before joining Ontario Tech, I served as Fellowship Advisor and Honors College instructor at Florida Gulf Coast University, where I helped students prepare applications for awards such as Fulbright, Rhodes, and Gates Cambridge.</p>
+
+    <h3>Beyond the university</h3>
+    <p>In 2021 I founded Rumah Cahaya Empat Ribu (RuMAER), a foundation that offers free professional development to teachers in rural and remote Indonesia. I also serve as Editor-in-Chief of <i>Contemporary Voices in Education</i> and mentor early career researchers through the Youth Center for Research.</p>
+
+    <h3>Get in touch</h3>
+    <p>I welcome conversations about research collaboration, invited talks, and mentoring. Please reach me by email or through the profiles on this page.</p>
+  </section>
+
+  <!-- ============ RESEARCH ============ -->
+  <section class="page" id="research">
+    <h2>Research</h2>
+    <p>My work is organized around four connected strands.</p>
+
+    <h3>Digital mathematics storytelling and identity</h3>
+    <p>How pre-service teachers, immigrant youth, and rural students express their mathematical identities through digital stories. This strand includes my dissertation on first-generation pre-service teachers in Indonesia and community projects with Muslim immigrant girls and recently migrated youth in the United States.</p>
+
+    <h3>Generative AI in teacher education</h3>
+    <p>How generative AI shapes the epistemic agency, professional judgment, and critical AI literacy of pre-service STEAM teachers, with attention to rural and Global South contexts. This is the focus of my current SSHRC-funded project.</p>
+
+    <h3>Equity and participation in STEM</h3>
+    <p>Who gets access to STEM opportunity, and on what terms. Recent work examines STEM participation in the Fulbright Foreign Student Program, the experiences of mothers in doctoral study, and structural inequality in mathematics teacher education.</p>
+
+    <h3>Technology integration in mathematics education</h3>
+    <p>Systematic reviews and design studies on digital learning, augmented reality, and e-learning in mathematics classrooms, particularly in Indonesia.</p>
+
+    <h3>Methods</h3>
+    <p>Narrative inquiry, digital storytelling, systematic literature review, bibliometrics, collaborative autoethnography, and quantitative analysis. Software includes R, SPSS, Mplus, NVivo, and Transana.</p>
+  </section>
+
+  <!-- ============ PUBLICATIONS ============ -->
+  <section class="page" id="publications">
+    <h2>Publications</h2>
+    <p>Peer-reviewed articles and proceedings, newest first. For citation counts, see my Google Scholar profile.</p>
+    <!-- To add a new paper, copy one <li> ... </li> block and edit it. -->
+<h3 class="year">2026</h3><ol class="refs">
+<li><span class="rt">STEM Participation in Global Higher Education: Core-Periphery Structure and Scientific Capital in Fulbright Foreign Student Program</span><span class="ra"><b>Hidayat, A.</b>, Sukamto, I., Syahbrudin, J., Nurmalia, N., Maulina, H., &amp; Anggraini, A.</span><span class="rv"><i>International Journal of Science and Mathematics Education, 24, 86</i> <a class="doi" href="https://doi.org/10.1007/s10763-026-10709-4">DOI</a></span></li>
+<li><span class="rt">Mathematics, Migration, and Voices: Digital Storytelling as Belonging and Epistemic Resistance for Muslim Immigrant Girls</span><span class="ra"><b>Hidayat, A.</b>, Abdulrahman, T., Qazi, M. Z. U. H., Abdi, K., Yin, C-H., Nurmalia, N., &amp; Azram, L.</span><span class="rv"><i>Pedagogy, Culture &amp; Society, 1-22</i> <a class="doi" href="https://doi.org/10.1080/14681366.2026.2686993">DOI</a></span></li>
+<li><span class="rt">Governing Inequality: How Law and Technology Shape Justice for the Marginalized</span><span class="ra">Alnakshabandi, A.W., <b>Hidayat, A.</b>, &amp; Qazi, M.Z.U.H.</span><span class="rv"><i>Cogent Social Science, 12(1)</i> <a class="doi" href="https://doi.org/10.1080/23311886.2026.2644754">DOI</a></span></li>
+<li><span class="rt">Artificial Intelligence and Meaning in Life: A Systematic Literature Review of Psychological Mechanisms</span><span class="ra">Kronbach, G., <b>Hidayat, A.</b>, &amp; Wulandari, M.</span><span class="rv"><i>Cogent Psychology, 13(1)</i> <a class="doi" href="https://doi.org/10.1080/23311908.2026.2715699">DOI</a></span></li>
+<li><span class="rt">Scaffold or crutch? EFL learners’ multimodal GenAI experiences in Indonesia</span><span class="ra">Friska, Y., <b>Hidayat, A.</b>, Kusumaningsih, A., Syafi’I,M. T., &amp; Nurmalia.</span><span class="rv"><i>Indonesian EFL Journal, 12(3), 769-780</i> <a class="doi" href="https://doi.org/10.25134/ieflj.v12i3.150">DOI</a></span></li>
+<li><span class="rt">Mathematical Thinking as Discourse: A Commognitive Analysis of Students with Different Problem-Solving Behavior</span><span class="ra">Dzulfikar, A., Turmudi, Herman, T., Kusnandi, &amp; <b>Hidayat, A.</b></span><span class="rv"><i>Mathematics Education Journal, 20(3), 789-822</i> <a class="doi" href="https://doi.org/10.22342/mej.v20i3.pp789-822">DOI</a></span></li>
+</ol>
+<h3 class="year">2025</h3><ol class="refs">
+<li><span class="rt">“Mom, why do you always work?”: the complex realities of PhD mamas navigating doctoral studies in mathematics education</span><span class="ra"><b>Hidayat, A.</b>, Kusumaningsih, A., Friska, Y., Syafi’i, M. T., &amp; Nurmalia, N.</span><span class="rv"><i>International Journal of Qualitative Studies in Education, 1-26</i> <a class="doi" href="https://doi.org/10.1080/09518398.2025.2539382">DOI</a></span></li>
+<li><span class="rt">Math beyond borders: Digital storytelling of immigrant students</span><span class="ra"><b>Hidayat, A.</b>, &amp; Chao, T.</span><span class="rv"><i>In AIP Conference Proceedings (Vol. 3316, No. 1, p. 090001). AIP Publishing LLC</i> <a class="doi" href="https://doi.org/10.1063/5.0290007">DOI</a></span></li>
+<li><span class="rt">Thinking Beyond the Equations: A Deep Dive into Reflective Thinking for Mathematics Learning</span><span class="ra">Kuncoro, K.S., <b>Hidayat, A.</b>, Nadzeri, M.B., Hendriyanto, A., Meirani, A., &amp; Juandi, D.</span><span class="rv"><i>Participatory Educational Research, 12(5), 310-334</i> <a class="doi" href="https://doi.org/10.17275/per.25.75.12.5">DOI</a></span></li>
+<li><span class="rt">Unleashing Mathematics Teachers: Insights from a Systematic Literature Review on Digital Learning in Indonesia</span><span class="ra"><b>Hidayat, A.</b>, &amp; Chao, T.</span><span class="rv"><i>Cogent Education, 12(1), 2442868</i> <a class="doi" href="https://doi.org/10.1080/2331186X.2024.2442868">DOI</a></span></li>
+<li><span class="rt">Exploring digital storytelling in mathematics education: A systematic review of trends, benefits, and implementation challenges</span><span class="ra"><b>Hidayat, A.</b>, Abdulrahman, T., &amp; Qazi, M.Z.U.H.</span><span class="rv"><i>International Journal of Learning Technology, 20(4), 407-527</i> <a class="doi" href="https://doi.org/10.1504/IJLT.2024.10064272">DOI</a></span></li>
+<li><span class="rt">Bridging the gap: Rethinking mathematics education curriculum for students from different backgrounds</span><span class="ra"><b>Hidayat, A.</b></span><span class="rv"><i>Contemporary Voices in Education, 1(1), 1-12</i></span></li>
+</ol>
+<h3 class="year">2024</h3><ol class="refs">
+<li><span class="rt">Navigating the tech frontier: a systematic review of technology integration in mathematics education</span><span class="ra"><b>Hidayat, A.</b>, &amp; Firmanti, P.</span><span class="rv"><i>Cogent Education, 11(1), 2373559</i> <a class="doi" href="https://doi.org/10.1080/2331186X.2024.2373559">DOI</a></span></li>
+<li><span class="rt">English in mathematics: Trends, benefits, and challenges in Southeast Asia Countries</span><span class="ra">Syafi'i, M.T., <b>Hidayat, A.</b>, Kusumaningsih, A., Friska, Y., &amp; Nurmalia, N.</span><span class="rv"><i>Jurnal Kependidikan: Jurnal Hasil Penelitian dan Kajian Kepustakaan di Bidang Pendidikan, Pengajaran, dan Pembelajaran, 10(3),1032-1042</i> <a class="doi" href="https://doi.org/10.33394/jk.v10i3.11979">DOI</a></span></li>
+</ol>
+<h3 class="year">2023</h3><ol class="refs">
+<li><span class="rt">The impact of problem-based learning augmented with HOTS problems on students’ mathematical problem-solving abilities</span><span class="ra">Sulistyawati, D., Hadi, W., <b>Hidayat, A.</b>, &amp; Muhammad, R. R.</span><span class="rv"><i>Kalamatika: Jurnal Pendidikan Matematika, 8(2), 219-236</i> <a class="doi" href="https://doi.org/10.22236/KALAMATIKA.vol8no2.2023pp221-238">DOI</a></span></li>
+<li><span class="rt">Metacognition of year 12 package c learners on permutation</span><span class="ra">Puadah, P. F., Suhendra, S., &amp; <b>Hidayat, A.</b></span><span class="rv"><i>Kalamatika: Jurnal Pendidikan Matematika, 8(2), 237-246</i> <a class="doi" href="https://doi.org/10.22236/KALAMATIKA.vol8no2.2023pp238-250">DOI</a></span></li>
+<li><span class="rt">Why Am I Supposed to Love Math?: Digital Mathematics Storytelling in Asian American Communities</span><span class="ra">Chao, T., <b>Hidayat, A.</b>, &amp; Oliwe, R. N.</span><span class="rv"><i>In Proceedings of the Forty-Fifth Annual Meeting of the North American Chapter of the International Group for the Psychology of Mathematics Education (Vol. 1). University of Nevada</i></span></li>
+<li><span class="rt">Teaching mathematics through a cultural lens: Allowing students to resonate the academic content</span><span class="ra"><b>Hidayat, A.</b></span><span class="rv"><i>Union: Jurnal Ilmiah Pendidikan Matematika, 11(3), 376-382</i> <a class="doi" href="https://doi.org/10.30738/union.v11i3.15840">DOI</a></span></li>
+<li><span class="rt">Incorporating Social Justice Education into Teacher Education: A Book Review of Communicating Social Justice in Teacher Education: Insights from a Critical Classroom Ethnography</span><span class="ra"><b>Hidayat, A.</b></span><span class="rv"><i>The Qualitative Report, 28(2), 387-391</i></span></li>
+</ol>
+<h3 class="year">2022</h3><ol class="refs">
+<li><span class="rt">Eliciting Youth Digital Mathematics Stories: The Impact of a Digital Mathematics Storytelling Summer Camp Experience</span><span class="ra">Chao, T., Adams-Corral, M., Ozturk, A., Lin, H.-C., &amp; <b>Hidayat, A.</b></span><span class="rv"><i>Proceedings of the Forty-Fourth Annual Meeting of the North American Chapter of the International Group for the Psychology of Mathematics Education. the Forty-Fourth Annual Meeting of the North American Chapter of the International Group for the Psychology of Mathematics Education</i></span></li>
+<li><span class="rt">Sisi Gelap Investasi: Menghindari Kebangkutan Pada Investasi dan Pembayaran Kekinian</span><span class="ra">Friska, Y., Kusumaningsih, A., Safi’i, M. T., &amp; <b>Hidayat, A.</b></span><span class="rv"><i>Jurnal Pengabdian Masyarakat Dharma Andalas, 1(1), 84-93</i></span></li>
+<li><span class="rt">Research &amp; Teaching Assistant: Jalan Lain Kuliah Gratis ke USA Selain dengan Beasiswa</span><span class="ra">Syafi'i, M. T., Friska, Y., Anggraini, A., Kusumaningsih, A., &amp; <b>Hidayat, A.</b></span><span class="rv"><i>Jurnal Pengabdian Masyarakat (abdira), 2(3), 109-116</i></span></li>
+<li><span class="rt">Pendampingan mahasiswa dan para pendidik untuk mendapatkan beasiswa luar negeri oleh penerima beasiswa</span><span class="ra">Kusumaningsih, A., Syafi'i, M. T., Friska, Y., Anggraini, A., &amp; <b>Hidayat, A.</b></span><span class="rv"><i>Abdi Laksana: Jurnal Pengabdian Kepada Masyarakat, 3(1), 92-102</i></span></li>
+</ol>
+<h3 class="year">2021</h3><ol class="refs">
+<li><span class="rt">Pendampingan belajar matematika dan bahasa inggris gratis untuk anak asuh yayasan al-kamilah</span><span class="ra"><b>Hidayat, A.</b>, Anggraini, A., Friska, Y., Kusumaningsih, A., &amp; Syafi’i, M. T.</span><span class="rv"><i>Jurnal Pengabdian Pendidikan Masyarakat (JPPM), 2(1), 19-24</i></span></li>
+<li><span class="rt">Tingkat pemahaman numerik dan keterampilan berbicara bahasa asing anak didik al-kamilah</span><span class="ra"><b>Hidayat, A.</b>, Friska, Y., Anggraini, A., Syafi’i, M. T., &amp; Kusumaningsih, A.</span><span class="rv"><i>In Prosiding Senantias: Seminar Nasional Hasil Penelitian dan Pengabdian kepada Masyarakat (Vol. 1, No. 1, pp. 749-758)</i></span></li>
+</ol>
+<h3 class="year">2020</h3><ol class="refs">
+<li><span class="rt">Augmented Reality pada Smartphone untuk Meningkatkan Motivasi Belajar dan Mengurangi Kecemasan Matematika</span><span class="ra"><b>Hidayat, A.</b>, &amp; Lia, A.</span><span class="rv"><i>Emasains: Jurnal Edukasi Matematika dan Sains, 9(2), 187-195</i></span></li>
+<li><span class="rt">Penerapan teknologi dalam analisis perilaku belajar reflektif berbasis sistem android untuk meningkatkan pembelajaran e-learning</span><span class="ra"><b>Hidayat, A.</b>, &amp; Prasetya, E. R.</span><span class="rv"><i>Gammath: Jurnal Ilmiah Program Studi Pendidikan Matematika, 4(2), 79-87</i></span></li>
+<li><span class="rt">E-Learning Interaktif dalam Pembelajaran Matematika Ekonomi dengan Menggunakan Aplikasi Blender</span><span class="ra">Asmalah, L., &amp; <b>Hidayat, A.</b></span><span class="rv"><i>MAJAMATH: Jurnal Matematika dan Pendidikan Matematika, 3(2), 140-147</i></span></li>
+<li><span class="rt">Students’ Perception of E-learning During Covid-19 Pandemic</span><span class="ra"><b>Hidayat, A.</b></span><span class="rv"><i>Mathema: Jurnal Pendidikan Matematika, 2(2), 34-45</i></span></li>
+<li><span class="rt">Studi penguasaan Matematika dan Bahasa Inggris anak asuh Yayasan Al-Kamilah, Depok, Jawa Barat</span><span class="ra"><b>Hidayat, A.</b>, Friska, Y. F. Y., Anggraini, A. A., Syafi’i, M. T., &amp; Kusumaningsih, A.</span><span class="rv"><i>Indonesia Berdaya, 1(2), 39-48</i></span></li>
+<li><span class="rt">Pengaruh Penggunaan Aplikasi Eviews Terhadap Sikap Belajar dan Kemampuan Pemecahan Masalah Statistik</span><span class="ra"><b>Hidayat, A.</b>, &amp; Sadewa, P.</span><span class="rv"><i>Edumaspul: Jurnal Pendidikan, 4(1), 321-328</i></span></li>
+<li><span class="rt">Pengaruh penggunaan aplikasi eviews terhadap kemampuan pemecahan masalah dan hasil belajar statistik</span><span class="ra"><b>Hidayat, A.</b></span><span class="rv"><i>MAJU: Jurnal Ilmiah Pendidikan Matematika, 7(1)</i></span></li>
+</ol>
+<h3 class="year">2019</h3><ol class="refs">
+<li><span class="rt">Peningkatan Keterampilan Dasar Matematika dan Bahasa Inggris Sebagai Upaya dalam Menghadapi Tantangan Era Revolusi Industri 5.0</span><span class="ra"><b>Hidayat, A.</b>, Friska, Y., Anggraini, A., Syafi’i, M. T., &amp; Kusumaningsih, A.</span><span class="rv"><i>Abdimisi, 1(1), 55-62</i></span></li>
+<li><span class="rt">Student’s self-concept profiles in problem posing according to cognitive styles: developing an evidence base for best practice of e-learning in mathematical economics course at pamulang university</span><span class="ra"><b>Hidayat, A.</b></span><span class="rv"><i>Jurnal Saintika Unpam: Jurnal Sains dan Matematika Unpam, 1(2), 158-165</i></span></li>
+</ol>
+  </section>
+
+  <!-- ============ PRESENTATIONS ============ -->
+  <section class="page" id="presentations">
+    <h2>Conference presentations</h2>
+    <ol class="plain" reversed>
+<li><b>Hidayat, A.</b> (2026, April). Cultivating Mathematical Identity through Digital Storytelling: Indonesian Teachers’ Journey of Professional Development. Paper presented at 2026 Annual Meeting of American Educational Research Association (AERA), Los Angeles, California, USA.</li>
+<li>Peker, H., <b>Hidayat, A.</b>, &amp; Halpern, C. (2025, October). The Fulbright FLTA experience as a transformative pedagogical journey: Identity, challenges, and growth. Paper presented at 2025 Fulbright Association 48th Annual Conference, Miami, Florida, USA.</li>
+<li><b>Hidayat, A.</b>, Ilgaz, S. G., &amp; Escalante, A. G. (2025, April). Effective Teaching in Challenging Environments: The Integration of Professional Learning Communities, Resource Constraints, and Technology Integration. Paper presented at 2025 Annual Meeting of American Educational Research Association (AERA), Denver, Colorado, USA.</li>
+<li><b>Hidayat, A.</b>, Abdulrahman, T., Qazi, M. Z. U. H., Abdi, K., Yin, C-H., Nurmalia, N., &amp; Azram, L. (2025, April). Intersecting Identities: Exploring Mathematics Through the Digital Stories of Muslim Immigrant Girls. Poster presented at 2025 Annual Meeting of American Educational Research Association (AERA), Denver, Colorado, USA.</li>
+<li><b>Hidayat, A.</b> (2025, April). Challenge Stereotypes: Rural Indonesian Youth’s Mathematical Identities through Digital Narratives. Poster presented at 2025 Annual Meeting of American Educational Research Association (AERA), Denver, Colorado, USA.</li>
+<li>Chao, T., Oliwe, R. N., <b>Hidayat, A.</b>, &amp; Feng, F. (2025, April). Digital Mathematics Storytelling with Recently Migrated Youth. Poster presented at 2025 Annual Meeting of American Educational Research Association (AERA), Denver, Colorado, USA.</li>
+<li>Chao, T., &amp; <b>Hidayat, A.</b> (2025, April). Engaging Indonesian Teachers through Digital Mathematics Storytelling: Enhancing Identity and Community Connection. Poster presented at 2025 Annual Meeting of American Educational Research Association (AERA), Denver, Colorado, USA.</li>
+<li>Yin, C-H., Abdi, K., <b>Hidayat, A.</b>, Abdulrahman, T., Qazi, M. Z. U. H., Nurmalia, N., &amp; Azram, L. (2025, March). Re-imagining Mathematics Education: Empowering Transnational Muslim Girls through Digital Storytelling and Intersecting Identity. Paper presented at National Council for Teachers of English Assembly for Research (NCTEAR) Conference, Columbus, Ohio, USA.</li>
+<li><b>Hidayat, A.</b>, Abdi, K., Abdulrahman, T., Qazi, M. Z. U. H., &amp; Yin, C-H. (2024, November). Empowering Voices: Digital Mathematics Storytelling for Muslim Immigrant Girls. Paper presented at 46th Annual Meeting of the North American Chapter of the International Group for the Psychology of Mathematics Education (PME-NA), Cleveland, Ohio, USA.</li>
+<li>Chao, T., Suhendra, S., <b>Hidayat, A.</b>, &amp; Oliwe, R. (2024, November). Teacher Identity and Community Knowledge Through Digital Mathematics Storytelling in Indonesia. Paper presented at 46th Annual Meeting of the North American Chapter of the International Group for the Psychology of Mathematics Education (PME-NA), Cleveland, Ohio, USA.</li>
+<li><b>Hidayat, A.</b>, Chao, T., &amp; Oliwe, R. (2024, October). Digital Mathematics Storytelling: Equity, Community, and Mathematics Stories. Paper presented at Ohio Council of Teachers of Mathematics (OCTM), Columbus, Ohio, USA.</li>
+<li><b>Hidayat, A.</b>, Chao, T., &amp; Oliwe, R. (2024, July). Mathematics in Their Words: Rural Youth's Experience with Digital Storytelling Workshops. Paper presented at 15th International Congress on Mathematical Education (ICME), Sydney, New South Wales, Australia.</li>
+<li>Chao, T., <b>Hidayat, A.</b>, &amp; Oliwe, R. (2024, July). Digital Mathematics Storytelling in Indonesia. Paper presented at 15th International Congress on Mathematical Education (ICME), Sydney, New South Wales, Australia.</li>
+<li>Oliwe, R., Chao, T., &amp; <b>Hidayat, A.</b> (2024, July). Black Female Pre-Service Teachers Use Comic Storytelling to Explore Their Mathematics Teacher Identity. Paper presented at 15th International Congress on Mathematical Education (ICME), Sydney, New South Wales, Australia.</li>
+<li>Abdi, K., Qazi, M. Z. U. H., Yin, C-H., <b>Hidayat, A.</b>, &amp; Abdulrahman, T. (2024, June). Bridging Cultures and Numbers: Exploring the Mathematical Identities of Transnational Youth through Digital Storytelling in Community Literacy Events. Paper presented at National Council of Teachers of English – National Council of Teachers of Mathematics (NCTE-NCTM) Joint Conference, New Orleans, Louisiana, USA.</li>
+<li><b>Hidayat, A.</b>, Ilgaz, S. G., &amp; Zhang, J. (2024, February). Readiness of Early Childhood Teachers to Implement STEAM on Their Self-Efficacy and Local Culture. Paper Presented at Education and Human Ecology (EHE) Research Forum, Columbus, Ohio, USA.</li>
+<li><b>Hidayat, A.</b>, Abdulrahman, T. R., &amp; Qazi, M. Z. U. H. (2023, June). Exploring the challenges and benefits of digital storytelling in mathematics education: A bibliometric and systematic review. Paper Presented at the 1st Mathematics and Mathematics Education International Conference (M2EIC), Bandung, Indonesia.</li>
+<li><b>Hidayat, A.</b> (2023, February). I love math here: Using digital mathematics storytelling to explore Indonesian American Mathematics Identity. Poster Presented at Education and Human Ecology (EHE) Research Forum, Columbus, Ohio, USA.</li>
+<li>Chao, T., Corral, M. A., Ozturk, A., Lin, H., &amp; <b>Hidayat, A.</b> (2022, November). Eliciting Youth Digital Mathematics Stories: The Impact of a digital mathematics storytelling summer camp experience. Paper presented at 44th Annual Meeting of the North American Chapter of the International Group for the Psychology of Mathematics Education (PMENA), Nashville, Tennessee, USA.</li>
+<li>Chao, T., Lin, H., Corral, M. A., Ozturk, A., <b>Hidayat, A.</b> &amp; Oliwe, R. (2022, September). Youth digital math stories: eliciting video math stories from students of color. Paper presented at National Council of Teachers of Mathematics (NCTM), Los Angeles, California, USA.</li>
+<li><b>Hidayat, A.</b> (2021, August). Indonesian teachers’ perceptions of online learning technology in mathematics classrooms during the Covid-19 pandemic. Paper presented at Fulbright Pre-Academic Training, Syracuse University, New York, USA.</li>
+    </ol>
+  </section>
+
+  <!-- ============ TALKS ============ -->
+  <section class="page" id="talks">
+    <h2>Invited talks and guest lectures</h2>
+    <ul class="plain">
+<li>Navigating Graduate School Funding (2026, March). Speaker in TRIO and Outreach Programs, Florida Gulf Coast University, USA.</li>
+<li>Digital Mathematics Storytelling for Research (2026, February). Speaker in Youth Center for Research, Pakistan.</li>
+<li>Unplugged Coding without Gadget (2026, February). Speaker in Rumah Cahaya Empat Ribu, Tangerang, Indonesia.</li>
+<li>Digital Mathematics Storytelling for Elementary School (2026, February). Speaker in Makassar State University, Makassar, Indonesia.</li>
+<li>Systematic Literature Review (2026, February). Speaker in Youth Center for Research, Pakistan.</li>
+<li>Digital Mathematics Storytelling for Early Childhood Education (2026, February). Speaker in Rumah Cahaya Empat Ribu, Tangerang, Indonesia.</li>
+<li>You’re Not Alone: How to Deal with the PhD Dissertation Process? (2025, December). Speaker in MathEdIndo-US Academic Group, East-Lansing, Michigan, USA.</li>
+<li>Research Funding: Tips, Strategies, and Real Experiences of AICEF Grant. (2025, December). Speaker in Indo Buckeye Talk, Columbus, USA.</li>
+<li>Between Two Worlds: My English Journey as Foreign Scholar. (2025, October). Guest Lecture in TSL 3080 Foundation of ESOL at Florida Gulf Coast University, Fort Myers, USA.</li>
+<li>The Push and Pull of Publishing in Math Ed: Quality, Quantity, or Both. (2025, October). Speaker in MathEdIndo-US Academic Group, East-Lansing, Michigan, USA.</li>
+<li>Breaking the Myths: Sharing Experience Publish in Scopus Q2 in 4 Months, Zero Fees, and a Single Participant. (2025, October). Speaker in Pamulang University, Indonesia.</li>
+<li>After Ph.D.: What’s Next? Preparing for An Academic Position in the U.S. (2025, September). Speaker in MathEdIndo-US Academic Group, East-Lansing, Michigan, USA.</li>
+<li>Global Engagement and Fellowship Pathways. (2025, August). Guest Lecture in IDH 3930 Honors Special Topic: Creativity and Innovation Course at Florida Gulf Coast University, Fort Myers, USA.</li>
+<li>How to Secure Grant and Other Funding During Doctoral Studies. (2025, January). Speaker in IndoBuckeye Talk, Columbus, USA.</li>
+<li>Q2 Scopus is Only for Empirical Articles, Not for Systematic Lit Reviews, Is It True? (2024, November). Speaker in Universitas Pamulang, Tangerang Selatan, Indonesia</li>
+<li>Empowering the Underrepresented: Integrating Digital Storytelling with Mathematics Identity for Rural, Low-Income First-Generation Pre-Service Teachers. (2024, August). Invited Speaker in to International Conference of Interdisciplinary Research and Studies in Mathematics (InCIReSMa), Universitas Negeri Surabaya, Indonesia.</li>
+<li>Systematic Literature Review Analysis for Research. (2023, November). Speaker in Youth Center for Research, Karachi, Pakistan.</li>
+<li>Funds of Knowledge in Learning about Students Socio-cultural Backgrounds. (2023, November). Speaker in Online Teaching and Design Fellowship 2023, Humanizing Education, Indonesia.</li>
+<li>Writing a High-Quality Research Proposal. (2023, November). Invited Speaker in Indonesia Mengglobal PhD Bootcamp 2023, Indonesia Mengglobal, Indonesia.</li>
+<li>Bibliometrics Analysis for Research. (2023, September). Speaker in Universitas Muhammadiyah Yogyakarta, Indonesia.</li>
+<li>Digital Mathematics Storytelling. (2023, August). Speaker in Forum of Doctoral Students of Mathematics Education Study Program, Universitas Pendidikan Indonesia, Indonesia.</li>
+<li>Ramadhan dan Lebaran di Luar Negeri. (2023, May). Speaker in Syahdunya Ramadhan, Indonesia.</li>
+<li>How to Get Fully Funded Scholarship in USA and Europe. (2023, March). Speaker in Pamulang University, Indonesia.</li>
+<li>Dare to Dream and Get Scholarship. (2023, February). Speaker in Aksara Pinggir, Indonesia.</li>
+<li>Research Trends at STEM Education. (2022, June). Speaker in Bincang Karya (BIANKA), Indonesian Embassy at USA, Washington DC, USA.</li>
+<li>Pendampingan Penulisan Essay Persiapan Pendaftaran IISMA 2022. (2022, April). Speaker in Pamulang University, Indonesia.</li>
+<li>Digital Storytelling: How Indonesian American Students Adapt with New Culture. (2022, March). Speaker in Seminar Series Matematika, Teknokrat University, Indonesia.</li>
+<li>How to be An Outstanding Candidate in Applying Scholarship. (2021, July). Speaker in NNF, Indonesia.</li>
+    </ul>
+  </section>
+
+  <!-- ============ FUNDING ============ -->
+  <section class="page" id="funding">
+    <h2>Funding &amp; awards</h2>
+
+    <h3>Fellowships</h3>
+    <div class="entries">
+      <div class="entry"><div class="when">2026 to 2028</div><div class="what"><b>Canada Impact+ Research Training Award (CIRTA)</b><span>Social Sciences and Humanities Research Council of Canada</span><span class="amt">CAD 140,000</span></div></div>
+      <div class="entry"><div class="when">2021 to 2024</div><div class="what"><b>Fulbright Foreign Student Program</b><span>Bureau of Educational and Cultural Affairs, U.S. Government</span><span class="amt">USD 111,816</span></div></div>
+      <div class="entry"><div class="when">2021 to 2024</div><div class="what"><b>OSU Fellowship</b><span>The Ohio State University</span><span class="amt">USD 200,777</span></div></div>
+      <div class="entry"><div class="when">2023 to 2024</div><div class="what"><b>Lowry Harding Fellowship</b><span>College of Education and Human Ecology, The Ohio State University</span><span class="amt">USD 1,358</span></div></div>
+      <div class="entry"><div class="when">2023 to 2024</div><div class="what"><b>Harding Scholarship</b><span>College of Education and Human Ecology, The Ohio State University</span><span class="amt">USD 1,358</span></div></div>
+      <div class="entry"><div class="when">2012 to 2014</div><div class="what"><b>Excellent Scholarship (Beasiswa Unggulan)</b><span>Ministry of Research, Technology and Higher Education, Indonesia</span><span class="amt">IDR 60,000,000</span></div></div>
+      <div class="entry"><div class="when">2011 to 2012</div><div class="what"><b>Indosat Scholarship</b><span>Indosat, Inc.</span></div></div>
+      <div class="entry"><div class="when">2010 to 2011</div><div class="what"><b>Student Learning Assistance Scholarship (Beasiswa BBM)</b><span>Ministry of Education and Culture, Indonesia</span><span class="amt">IDR 12,000,000</span></div></div>
+      <div class="entry"><div class="when">2009 to 2010</div><div class="what"><b>Improving Academic Achievement Scholarship (Beasiswa PPA)</b><span>Ministry of Education and Culture, Indonesia</span><span class="amt">IDR 12,000,000</span></div></div>
+    </div>
+
+    <h3>Awards</h3>
+    <div class="entries">
+      <div class="entry"><div class="when">2024</div><div class="what"><b>Outstanding Research Presentation</b><span>North American Chapter of the International Group for the Psychology of Mathematics Education (PME-NA)</span></div></div>
+      <div class="entry"><div class="when">2022</div><div class="what"><b>Exceptional Student</b><span>Department of Teaching and Learning, The Ohio State University</span></div></div>
+      <div class="entry"><div class="when">2018</div><div class="what"><b>Best Lecturer</b><span>Universitas Pamulang</span></div></div>
+    </div>
+
+    <h3>Research and travel grants</h3>
+    <div class="entries">
+      <div class="entry"><div class="when">2025</div><div class="what"><b>Department of Teaching and Learning Travel Award</b><span>The Ohio State University, for AERA 2025, Denver</span><span class="amt">USD 1,500</span></div></div>
+      <div class="entry"><div class="when">2024</div><div class="what"><b>PME-NA Registration Scholarship</b><span>For PME-NA 2024, Cleveland</span><span class="amt">USD 550</span></div></div>
+      <div class="entry"><div class="when">2024</div><div class="what"><b>American Indonesian Cultural &amp; Educational Foundation (AICEF) Grant</b><span>Dissertation data collection in Indonesia</span><span class="amt">USD 3,000</span></div></div>
+      <div class="entry"><div class="when">2024</div><div class="what"><b>ICME Solidarity Fund</b><span>For ICME-15, Sydney</span><span class="amt">AUD 1,600</span></div></div>
+      <div class="entry"><div class="when">2024</div><div class="what"><b>Department of Teaching and Learning Travel Awards</b><span>The Ohio State University, for ICME-15, Sydney</span><span class="amt">USD 5,350</span></div></div>
+      <div class="entry"><div class="when">2024</div><div class="what"><b>InSTEAM Travel Award</b><span>For ICME-15, Sydney</span><span class="amt">USD 500</span></div></div>
+      <div class="entry"><div class="when">2024</div><div class="what"><b>Office of Research, Innovation and Collaboration (ORIC) Grant</b><span>For ICME-15, Sydney</span><span class="amt">USD 250</span></div></div>
+      <div class="entry"><div class="when">2023</div><div class="what"><b>International Research and Scholarship Grant</b><span>Office of International Affairs, The Ohio State University. Equity for Rural Youth in Math: A Narrative Inquiry through Digital Storytelling</span><span class="amt">USD 2,000</span></div></div>
+      <div class="entry"><div class="when">2023</div><div class="what"><b>Department of Teaching and Learning Travel Award</b><span>The Ohio State University, for M2EIC, Bandung</span><span class="amt">USD 1,200</span></div></div>
+      <div class="entry"><div class="when">2022</div><div class="what"><b>Department of Teaching and Learning Research Grant</b><span>The Ohio State University. Digital mathematics storytelling with Indonesian middle school students</span><span class="amt">USD 2,700</span></div></div>
+      <div class="entry"><div class="when">2020</div><div class="what"><b>Research Grant</b><span>Ministry of Research, Technology and Higher Education, Indonesia. Augmented reality on smartphones to increase learning motivation and reduce math anxiety</span><span class="amt">IDR 15,000,000</span></div></div>
+      <div class="entry"><div class="when">2020</div><div class="what"><b>Research Grant</b><span>Ministry of Research, Technology and Higher Education, Indonesia. Interactive e-learning in mathematical economics using Blender</span><span class="amt">IDR 15,000,000</span></div></div>
+      <div class="entry"><div class="when">2019</div><div class="what"><b>Research Grant</b><span>Ministry of Research, Technology and Higher Education, Indonesia. Android technology and reflective learning theory in statistics e-learning</span><span class="amt">IDR 15,000,000</span></div></div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE ============ -->
+  <section class="page" id="experience">
+    <h2>Experience</h2>
+
+    <h3>Positions</h3>
+    <div class="entries">
+      <div class="entry"><div class="when">2026 to present</div><div class="what"><b>SSHRC Postdoctoral Fellow</b><span>Ontario Tech University, Canada</span>
+        <ul>
+          <li>Lead a mixed-methods study of pre-service STEAM teachers and generative AI</li>
+          <li>Teach graduate courses in the MEd program, including EDUC 5002G Introduction to Research in Education</li>
+          <li>Mentor research assistants in the Centre for Digital Innovation in Education (CDIE)</li>
+        </ul></div></div>
+      <div class="entry"><div class="when">2025 to 2026</div><div class="what"><b>Fellowship Advisor and Class Instructor</b><span>Florida Gulf Coast University, USA</span>
+        <ul>
+          <li>Designed and taught the Honors College course IDH 1930 Competitive Fellowship</li>
+          <li>Advised students applying for Fulbright, Knight-Hennessy, Gates Cambridge, and Rhodes</li>
+        </ul></div></div>
+      <div class="entry"><div class="when">2024 to 2025</div><div class="what"><b>Independent Teaching Associate</b><span>The Ohio State University, USA</span>
+        <ul><li>Taught EDUTL 5108 Teaching and Learning Mathematics in Grades PreK to 5</li></ul></div></div>
+      <div class="entry"><div class="when">2015 to 2021</div><div class="what"><b>Lecturer</b><span>Universitas Pamulang, Indonesia</span>
+        <ul><li>Taught statistics, quantitative research methods, and data analysis, and supervised undergraduate research</li></ul></div></div>
+      <div class="entry"><div class="when">2009 to 2015</div><div class="what"><b>Mathematics Teacher</b><span>Secondary schools and learning centres, Indonesia</span></div></div>
+    </div>
+
+    <h3>Education</h3>
+    <div class="entries">
+      <div class="entry"><div class="when">2021 to 2025</div><div class="what"><b>Ph.D. in STEM Education, Mathematics Education concentration</b><span>The Ohio State University, USA. Fulbright Scholar. Dissertation: Voices from the Margins: Digital Storytelling in Mathematics Education for First-Generation Pre-Service Teachers from Rural and Low-Income Backgrounds</span></div></div>
+      <div class="entry"><div class="when">2021 to 2024</div><div class="what"><b>Master of Arts</b><span>The Ohio State University, USA</span></div></div>
+      <div class="entry"><div class="when">2012 to 2015</div><div class="what"><b>Master of Education in Mathematics Education</b><span>Universitas Negeri Surabaya, Indonesia</span></div></div>
+      <div class="entry"><div class="when">2008 to 2012</div><div class="what"><b>Bachelor of Education in Mathematics Education</b><span>Universitas Muhammadiyah Prof. DR. HAMKA, Indonesia</span></div></div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICE ============ -->
+  <section class="page" id="service">
+    <h2>Service &amp; community</h2>
+
+    <h3>Editorial roles</h3>
+    <div class="entries">
+      <div class="entry"><div class="when">2025 to present</div><div class="what"><b>Editor-in-Chief</b><span>Contemporary Voices in Education</span></div></div>
+      <div class="entry"><div class="when">2026 to present</div><div class="what"><b>Editor</b><span>Southeast Asian Mathematics Education Journal</span></div></div>
+      <div class="entry"><div class="when">2023 to present</div><div class="what"><b>Editor</b><span>Gammath: Jurnal Ilmiah Program Studi Pendidikan Matematika</span></div></div>
+    </div>
+
+    <h3>Peer review</h3>
+    <p><i>Review of Education</i>, <i>European Education</i>, <i>Educational and Developmental Psychologist</i>, <i>Cogent Education</i>, <i>The Mathematics Educator</i>, <i>Journal of Urban Mathematics Education</i>, <i>Social Education Research</i>, <i>Journal of Infrastructure, Policy and Development</i>, and <i>Jurnal Ilmiah Matematika Realistik</i>. Conference reviewer for ICME (2024) and PME-NA (2024).</p>
+
+    <h3>Mentoring</h3>
+    <div class="entries">
+      <div class="entry"><div class="when">2023 to present</div><div class="what"><b>Advisor</b><span>Youth Center for Research</span></div></div>
+      <div class="entry"><div class="when">2023 to 2024</div><div class="what"><b>Mentor</b><span>Indonesia Mengglobal PhD Bootcamp</span></div></div>
+    </div>
+
+    <h3>Community leadership</h3>
+    <div class="entries">
+      <div class="entry"><div class="when">2021 to present</div><div class="what"><b>Founder, Rumah Cahaya Empat Ribu (RuMAER)</b><span>Free professional development for teachers in rural and remote Indonesia</span></div></div>
+      <div class="entry"><div class="when">2023 to 2024</div><div class="what"><b>Secretary</b><span>Buckeye Brighters, Fulbright grantee organization at The Ohio State University</span></div></div>
+      <div class="entry"><div class="when">2022 to 2024</div><div class="what"><b>Division of Book Review</b><span>PCIM USA</span></div></div>
+      <div class="entry"><div class="when">2018 to 2021</div><div class="what"><b>Volunteer Coordinator and Teacher</b><span>Al-Kamilah Foundation</span></div></div>
+      <div class="entry"><div class="when">2017 to 2018</div><div class="what"><b>Volunteer Teacher</b><span>Bani Fadil</span></div></div>
+    </div>
+
+    <h3>Professional memberships</h3>
+    <p>American Educational Research Association (AERA), National Council of Teachers of Mathematics (NCTM), and TODOS: Mathematics for ALL.</p>
+  </section>
+
+  <!-- ============ CV ============ -->
+  <section class="page" id="cv">
+    <h2>Curriculum vitae</h2>
+    <p>My full CV includes manuscripts under review, professional development, and complete details of all positions and awards.</p>
+    <p><a class="btn" href="cv.pdf">Download CV (PDF)</a></p>
+    <p style="color:var(--muted);font-size:15px">Last updated September 2026.</p>
+  </section>
+
+  </main>
+</div>
+
+<footer>© 2026 Angga Hidayat</footer>
+
+<script>
+  // Shows one section at a time, like separate pages
+  const pages = [...document.querySelectorAll('.page')];
+  const navLinks = [...document.querySelectorAll('.topbar nav a')];
+  function show(){
+    const id = (location.hash || '#home').slice(1);
+    const target = pages.find(p => p.id === id) ? id : 'home';
+    pages.forEach(p => p.hidden = p.id !== target);
+    navLinks.forEach(a => a.getAttribute('href') === '#' + target
+      ? a.setAttribute('aria-current','page') : a.removeAttribute('aria-current'));
+    const active = navLinks.find(a => a.getAttribute('href') === '#' + target);
+    if (active) active.parentElement.parentElement.parentElement.scrollLeft = active.offsetLeft - 40;
+    setTimeout(() => {
+      // On phones, jump to the content. On larger screens, stay at the top.
+      if (location.hash && window.innerWidth <= 900) document.querySelector('main').scrollIntoView();
+      else window.scrollTo(0, 0);
+    }, 0);
+  }
+  window.addEventListener('hashchange', show);
+  show();
+</script>
+</body>
+</html>
