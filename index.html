@@ -25,14 +25,16 @@
 
   /* top bar */
   .topbar{background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
-  .topbar .in{max-width:1180px;margin:0 auto;padding:0 20px;display:flex;align-items:center;gap:24px;height:58px}
+  .topbar .in{max-width:1180px;margin:0 auto;padding:0 20px;display:flex;align-items:stretch;gap:24px;height:62px}
+  .brand{display:flex;align-items:center}
   .brand{font-family:var(--serif);font-weight:600;font-size:19px;color:var(--text);text-decoration:none;white-space:nowrap}
   .topbar nav{margin-left:auto;overflow-x:auto;scrollbar-width:none}
   .topbar nav::-webkit-scrollbar{display:none}
   .topbar ul{list-style:none;margin:0;padding:0;display:flex;gap:4px;white-space:nowrap}
-  .topbar nav a{display:block;padding:6px 10px;border-radius:4px;color:var(--muted);text-decoration:none;font-size:15px}
-  .topbar nav a:hover{color:var(--text);background:var(--bg)}
-  .topbar nav a[aria-current="page"]{color:var(--accent);background:var(--accent-soft);font-weight:600}
+  .topbar ul{align-items:stretch;height:100%}
+  .topbar nav a{display:flex;align-items:center;height:100%;padding:0 13px;border-bottom:3px solid transparent;color:var(--text);text-decoration:none;font-size:15.5px;font-weight:500}
+  .topbar nav a:hover{color:var(--accent);border-bottom-color:#B9C7DC}
+  .topbar nav a[aria-current="page"]{color:var(--accent);border-bottom-color:var(--accent);font-weight:700}
 
   /* banner: the whole image is always shown, never cropped */
   .banner{background:var(--accent);line-height:0}
