@@ -36,7 +36,7 @@
 
   /* banner: the whole image is always shown, never cropped */
   .banner{background:var(--accent);line-height:0}
-  .banner img{width:100%;height:auto;display:block}
+  .banner img{width:100%;height:clamp(150px,17vw,250px);object-fit:cover;display:block}
 
   .layout{max-width:1180px;margin:0 auto;padding:0 20px 60px;display:grid;grid-template-columns:300px 1fr;gap:28px;align-items:start}
 
