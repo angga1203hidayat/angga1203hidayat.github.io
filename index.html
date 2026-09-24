@@ -97,6 +97,15 @@ main{padding:40px 0 44px;min-height:60vh}
   .entry ul{margin:6px 0 0;padding-left:18px;font-size:15.5px}
   .amt{font-size:14px;color:var(--accent);font-weight:600}
 
+  .cform{max-width:36em;margin-top:22px}
+  .cform label{display:block;font-size:14px;color:var(--muted);margin:16px 0 5px}
+  .cform input,.cform textarea{width:100%;font:inherit;font-size:16px;color:var(--text);
+    background:#fff;border:1px solid var(--line);border-radius:5px;padding:10px 12px}
+  .cform textarea{min-height:150px;resize:vertical}
+  .cform input:focus,.cform textarea:focus{border-color:var(--accent);outline:2px solid var(--accent-soft)}
+  .cform button{margin-top:18px;font:inherit;font-size:15px;font-weight:600;cursor:pointer;
+    background:var(--accent);color:#fff;border:0;border-radius:5px;padding:10px 26px}
+  .cform button:hover{background:#123560}
   footer{text-align:center;color:var(--muted);font-size:14px;padding:0 20px 40px}
 
   @media (max-width:900px){
@@ -131,7 +140,7 @@ main{padding:40px 0 44px;min-height:60vh}
         <li><a href="#funding">Funding &amp; Awards</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#service">Service</a></li>
-        <li><a href="#cv">CV</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </div>
@@ -466,9 +475,26 @@ main{padding:40px 0 44px;min-height:60vh}
     <p>American Educational Research Association (AERA), National Council of Teachers of Mathematics (NCTM), and TODOS: Mathematics for ALL.</p>
   </section>
 
-  <!-- ============ CV ============ -->
-  <section class="page" id="cv">
-    <h2>Curriculum vitae</h2>
+    <!-- ============ CONTACT ============ -->
+  <section class="page" id="contact">
+    <h2>Contact</h2>
+    <p>I welcome conversations about research collaboration, invited talks, and mentoring. Write to me directly at <a href="mailto:angga.hidayat@ontariotechu.ca">angga.hidayat@ontariotechu.ca</a>, or use the form below.</p>
+
+    <!-- Replace YOUR_FORM_ID with the ID from your Formspree account -->
+    <form class="cform" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <label for="cf-name">Name</label>
+      <input id="cf-name" type="text" name="name" required>
+
+      <label for="cf-email">Email</label>
+      <input id="cf-email" type="email" name="email" required>
+
+      <label for="cf-msg">Message</label>
+      <textarea id="cf-msg" name="message" required></textarea>
+
+      <button type="submit">Send</button>
+    </form>
+
+    <h3>Curriculum vitae</h3>
     <p>My full CV includes manuscripts under review, professional development, and complete details of all positions and awards.</p>
     <p><a class="btn" href="cv.pdf">Download CV (PDF)</a></p>
     <p style="color:var(--muted);font-size:15px">Last updated September 2026.</p>
