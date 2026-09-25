@@ -106,6 +106,19 @@ main{padding:40px 0 44px;min-height:60vh}
   .cform button{margin-top:18px;font:inherit;font-size:15px;font-weight:600;cursor:pointer;
     background:var(--accent);color:#fff;border:0;border-radius:5px;padding:10px 26px}
   .cform button:hover{background:#123560}
+
+  .posts{margin:0}
+  .post-item{padding:26px 0;border-bottom:1px solid var(--line);max-width:46em}
+  .post-item:first-child{padding-top:8px}
+  .post-date{font-size:14px;color:var(--muted);display:block;margin-bottom:6px}
+  .post-item h3{margin:0 0 8px;font-size:23px}
+  .post-item h3 a{text-decoration:none}
+  .post-item h3 a:hover{text-decoration:underline}
+  .post-item p{margin:0 0 14px}
+  .more{display:inline-block;font-size:15px;font-weight:600;text-decoration:none;
+    border:1px solid var(--line);border-radius:5px;padding:8px 18px;color:var(--accent)}
+  .more:hover{border-color:var(--accent);background:var(--accent-soft)}
+  .back{display:inline-block;font-size:15px;margin-bottom:18px;text-decoration:none}
   footer{text-align:center;color:var(--muted);font-size:14px;padding:0 20px 40px}
 
   @media (max-width:900px){
@@ -226,25 +239,49 @@ main{padding:40px 0 44px;min-height:60vh}
     <p>I welcome conversations about research collaboration, invited talks, and mentoring. Please reach me by email or through the profiles on this page.</p>
   </section>
 
-  <!-- ============ RESEARCH ============ -->
-  <section class="page" id="research">
-    <h2>Research</h2>
-    <p>My work is organized around four connected strands.</p>
+    <!-- ============ BLOG (list of posts) ============ -->
+  <section class="page" id="blog">
+    <h2>Blog</h2>
+    <p>Notes on research, teaching, and academic life.</p>
 
-    <h3>Digital mathematics storytelling and identity</h3>
-    <p>How pre-service teachers, immigrant youth, and rural students express their mathematical identities through digital stories. This strand includes my dissertation on first-generation pre-service teachers in Indonesia and community projects with Muslim immigrant girls and recently migrated youth in the United States.</p>
+    <div class="posts">
 
-    <h3>Generative AI in teacher education</h3>
-    <p>How generative AI shapes the epistemic agency, professional judgment, and critical AI literacy of pre-service STEAM teachers, with attention to rural and Global South contexts. This is the focus of my current SSHRC-funded project.</p>
+      <!-- To add a post: copy this whole <div class="post-item"> block, paste it at the
+           top of the list, and give it a new number (post-3, post-4, and so on). -->
+      <div class="post-item">
+        <span class="post-date">September 24, 2026</span>
+        <h3><a href="#post-2">Title of your second post</a></h3>
+        <p>Write two or three sentences here to draw the reader in. This is the preview that appears on the blog list, so stop it somewhere interesting…</p>
+        <a class="more" href="#post-2">Read more</a>
+      </div>
 
-    <h3>Equity and participation in STEM</h3>
-    <p>Who gets access to STEM opportunity, and on what terms. Recent work examines STEM participation in the Fulbright Foreign Student Program, the experiences of mothers in doctoral study, and structural inequality in mathematics teacher education.</p>
+      <div class="post-item">
+        <span class="post-date">September 1, 2026</span>
+        <h3><a href="#post-1">Title of your first post</a></h3>
+        <p>Write two or three sentences here to draw the reader in. This is the preview that appears on the blog list, so stop it somewhere interesting…</p>
+        <a class="more" href="#post-1">Read more</a>
+      </div>
 
-    <h3>Technology integration in mathematics education</h3>
-    <p>Systematic reviews and design studies on digital learning, augmented reality, and e-learning in mathematics classrooms, particularly in Indonesia.</p>
+    </div>
+  </section>
 
-    <h3>Methods</h3>
-    <p>Narrative inquiry, digital storytelling, systematic literature review, bibliometrics, collaborative autoethnography, and quantitative analysis. Software includes R, SPSS, Mplus, NVivo, and Transana.</p>
+  <!-- ============ BLOG POSTS (full text, one section each) ============ -->
+  <section class="page" id="post-2">
+    <a class="back" href="#blog">&larr; Back to all posts</a>
+    <h2>Title of your second post</h2>
+    <p style="color:var(--muted);font-size:15px;margin-top:-10px">September 24, 2026</p>
+    <p>Your full post goes here. Each paragraph sits inside its own pair of p tags.</p>
+    <p>Add as many paragraphs as you like. For a subheading inside the post, use h3 tags.</p>
+    <a class="back" href="#blog">&larr; Back to all posts</a>
+  </section>
+
+  <section class="page" id="post-1">
+    <a class="back" href="#blog">&larr; Back to all posts</a>
+    <h2>Title of your first post</h2>
+    <p style="color:var(--muted);font-size:15px;margin-top:-10px">September 1, 2026</p>
+    <p>Your full post goes here. Each paragraph sits inside its own pair of p tags.</p>
+    <p>Add as many paragraphs as you like. For a subheading inside the post, use h3 tags.</p>
+    <a class="back" href="#blog">&larr; Back to all posts</a>
   </section>
 
   <!-- ============ PUBLICATIONS ============ -->
