@@ -8,21 +8,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
-/* Typography: Literata for reading, Plus Jakarta Sans for headings and interface */
-body{font-family:var(--serif);font-size:18px;line-height:1.65}
-h1,h2,h3,.brand,.topbar nav a,.role,.kw,.btn,.contact,.links,
-.entry .when,.post-date,.amt,.back,.cform,footer{font-family:var(--sans)}
-.page h2{font-weight:700;letter-spacing:-0.025em}
-.page p,.note,.post-item{max-width:36em}
-.refs{max-width:44em}
-.refs .rt{font-weight:600}
-a:hover{color:var(--accent-dark)}
-.btn:hover,.cform button:hover{background:var(--accent-dark)}
-  /* Quieter "Read the full post" and DOI links */
-.more{border:0;padding:0;border-radius:0;background:none;font-family:var(--sans);font-size:15px;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:4px}
-.more:hover{background:none;text-decoration-color:currentColor}
-.doi{border:0;padding:0;margin-left:8px;font-family:var(--sans);font-size:13px;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}
-.doi:hover{text-decoration-color:currentColor}
 <style>
   :root{
     --bg:#FCFCFA; --card:#FCFCFA; --text:#1E2230; --muted:#5A6070;
@@ -159,6 +144,30 @@ main{padding:40px 0 44px;min-height:60vh}
 @media (max-width:560px){
   .moment{float:none;width:auto;max-width:280px;margin:0 0 24px}
 }
+  /* Typography: Literata for reading, Plus Jakarta Sans for headings and interface */
+body{font-family:var(--serif);font-size:18px;line-height:1.65}
+h1,h2,h3,.brand,.topbar nav a,.role,.kw,.btn,.contact,.links,
+.entry .when,.post-date,.amt,.back,.cform,footer{font-family:var(--sans)}
+.page h2{font-weight:700;letter-spacing:-0.025em}
+.page p,.note,.post-item{max-width:36em}
+.refs{max-width:44em}
+.refs .rt{font-weight:600}
+a:hover{color:var(--accent-dark)}
+.btn:hover,.cform button:hover{background:var(--accent-dark)}
+
+/* Banner: kawung batik pattern in tarum indigo */
+.banner{height:clamp(110px,12vw,170px);background-color:var(--accent);
+  background-size:44px 44px;background-position:center;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill='none' stroke='%23fff' stroke-opacity='.22' stroke-width='1.2'%3E%3Cellipse cx='10' cy='10' rx='6' ry='12.5' transform='rotate(-45 10 10)'/%3E%3Cellipse cx='30' cy='30' rx='6' ry='12.5' transform='rotate(-45 30 30)'/%3E%3Cellipse cx='30' cy='10' rx='6' ry='12.5' transform='rotate(45 30 10)'/%3E%3Cellipse cx='10' cy='30' rx='6' ry='12.5' transform='rotate(45 10 30)'/%3E%3C/g%3E%3Cg fill='%23C08A4E' fill-opacity='.75'%3E%3Ccircle cx='20' cy='20' r='1.6'/%3E%3Ccircle cx='0' cy='0' r='1.6'/%3E%3Ccircle cx='40' cy='0' r='1.6'/%3E%3Ccircle cx='0' cy='40' r='1.6'/%3E%3Ccircle cx='40' cy='40' r='1.6'/%3E%3C/g%3E%3C/svg%3E")}
+
+/* Opening paragraph, in place of the stat strip */
+.page p.lede{font-size:1.22em;line-height:1.5;margin-bottom:18px}
+
+/* Quieter "Read the full post" and DOI links */
+.more{border:0;padding:0;border-radius:0;background:none;font-family:var(--sans);font-size:15px;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:4px}
+.more:hover{background:none;text-decoration-color:currentColor}
+.doi{border:0;padding:0;margin-left:8px;font-family:var(--sans);font-size:13px;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}
+.doi:hover{text-decoration-color:currentColor}
 </style>
 </head>
 <body>
