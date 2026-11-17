@@ -7,15 +7,18 @@
 <meta name="description" content="Researcher webpage of Angga Hidayat, Ph.D., SSHRC Postdoctoral Fellow at Ontario Tech University. Keywords: STEM education, mathematics education, digital mathematics storytelling, generative AI in teacher education, mathematics identity, equity.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;1,6..96,400&family=Geist:wght@400;500&family=Geist+Mono:wght@400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,400;1,400&family=Hanken+Grotesk:wght@400;500&display=swap" rel="stylesheet">
 <style>
-/* Hallmark · shape: Narrative Workflow on home (the path as dated stages), Index-first on the record views · genre: editorial · theme: Specimen (deal 1/3, seed austere-academic-homepage-stem-409c·3a3e6a98·2026-11-17·r0) · redesign: full · draw: d7fca3 · job: hire, contact details close every view
- * hero: Stage (/#home), Banner (every other view) · nav: edge-aligned, the wordmark and nine section links, no button · footer: letter close, the invitation over email, office and profiles · imagery: photographs, the user's own 4, duotone · signature: the name in hairline Bodoni beside his portrait printed in ink on oat
- * axes: light/high-contrast-serif/cool · posture: restrained · contrast: pass · fold: pass · v2.0.0 */
-/* Hallmark · pre-emit critique: P4 H4 E4 S4 R5 V4 · weakest: S, a name beside a headshot could be any academic; the four figures he gave sit directly under it and the path is told in his own dated years */
-/* Hallmark · swapped the draw's Corridor hero for Stage · his own portrait is the strongest picture the site has, and Corridor carries none */
+/* Hallmark · theme: custom · idea: "a path from Indonesia to Canada told in indigo, the blue of batik dye, with photographs at full width in their own colour" · vibe: "indigo, quiet, scholarly, photographic, warm-handed" · redesign: full (revision 2, by request: blue-led, colour photographs, photographs as backgrounds) · genre: editorial · job: hire, contact details close every view
+ * paper: pale sky-white, deep indigo grounds for nav, hero, interludes and footer · accent: cobalt 258 on paper, sky 240 on indigo · faces: Libre Bodoni over Hanken Grotesk
+ * hero: his name in white over a full-bleed reading room under an indigo scrim, his colour portrait framed beside it · nav: edge-aligned on indigo, wordmark and nine section links · footer: letter close on indigo with photo credits · imagery: photographs, his own 4 in natural colour plus 3 library (Wikimedia, credited) · signature: the name over the reading room beside his portrait
+ * axes: light/high-contrast-serif/cool · posture: committed · contrast: pass · fold: pass · v2.0.0 */
+/* Hallmark · pre-emit critique: P4 H4 E4 S4 R4 V4 · weakest: R, three record views share one banner pattern; each banner carries its own photograph or a plain indigo field so they read apart */
+/* Hallmark · dismissed 76 · the three library photographs load from upload.wikimedia.org, which the build sandbox blocks; the URLs follow the library's own thumb pattern and load on the live site */
+/* Hallmark · dismissed F4 · the hero and footer sit on indigo, so their primary is the same button inverted, not a second recipe */
+/* Hallmark · colour: blue is the user's own pick, his favourite, so the category-hue rule yields to it */
 /* Hallmark · dismissed 77 · home holds seven sections nested in its view, so the top-level count reads two */
-/* Hallmark · dismissed render · Google Fonts is blocked in the build sandbox; the shots use Bodoni Moda and Geist installed locally, the live site loads them from the link */
+/* Hallmark · dismissed render · Google Fonts and Wikimedia are blocked in the build sandbox; the shots use Libre Bodoni and Hanken Grotesk installed locally and show the indigo ground where a library photo would load */
 /* Hallmark · dropped "Home" · the h1 with his name now heads the home view, so a heading that repeated the nav went */
 /* Hallmark · dropped the sidebar icon set and AH monogram · profile links are plain text in the footer, one treatment */
 /* Hallmark · reworded "Read more" to name each post, removed the arrows from "Back to all posts", and "41–50%" to "41 to 50%" · 19 and 63 name them */
@@ -33,17 +36,16 @@
   --container: 1440px; --gutter: 64px; --gap-columns: 32px; --section-gap-s: 120px; --section-gap: 144px; --section-gap-l: 176px;
   --nav-h: 64px;
   --z-base: 1; --z-raised: 10; --z-dropdown: 100; --z-sticky: 200; --z-sticky-nav: 300; --z-modal: 400; --z-toast: 500; --z-tooltip: 600;
-  --color-paper: oklch(96.5% 0.016 82); --color-paper-2: oklch(93.5% 0.02 80); --color-paper-3: oklch(89% 0.024 78);
-  --color-ink: oklch(17% 0.012 60); --color-ink-2: oklch(28% 0.014 60); --color-muted: oklch(49% 0.014 65);
-  --color-on-ink-muted: oklch(80% 0.018 75);
-  --color-rule: oklch(80% 0.018 75); --color-rule-2: oklch(66% 0.02 72); --color-rule-on-ink: oklch(36% 0.014 60);
-  --color-accent: oklch(45% 0.18 262); --color-accent-ink: oklch(97% 0.012 82); --color-focus: oklch(50% 0.18 262); --color-focus-on-ink: oklch(78% 0.12 262);
-  --color-guide: oklch(55% 0.16 262 / 0.5);
-  --font-display: "Bodoni Moda", ui-serif, Georgia, serif; --font-body: "Geist", ui-sans-serif, system-ui, sans-serif;
-  --font-outlier: "Geist Mono", ui-monospace, monospace;
+  --color-paper: oklch(97.6% 0.011 245); --color-paper-2: oklch(94.2% 0.024 248); --color-paper-3: oklch(89.5% 0.035 250);
+  --color-ink: oklch(23% 0.075 264); --color-ink-2: oklch(33% 0.065 262); --color-muted: oklch(47% 0.05 258);
+  --color-deep: oklch(25% 0.095 266); --color-deep-2: oklch(31% 0.1 264);
+  --color-on-deep: oklch(97% 0.012 245); --color-on-deep-muted: oklch(83% 0.04 245);
+  --color-rule: oklch(85% 0.03 248); --color-rule-2: oklch(70% 0.05 252); --color-rule-on-deep: oklch(44% 0.08 264);
+  --color-accent: oklch(48% 0.17 258); --color-accent-ink: oklch(97.6% 0.011 245); --color-accent-on-deep: oklch(80% 0.1 238); --color-focus: oklch(52% 0.18 258); --color-focus-on-ink: oklch(82% 0.1 238);
+  --font-display: "Libre Bodoni", ui-serif, Georgia, serif; --font-body: "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
   --radius-card: 0; --radius-pill: 0; --rule-hair: 1px;
   --shadow-card: none;
-  --tracking-display: -0.02em; --display-weight: 400; --display-optical: 96;
+  --tracking-display: -0.015em; --display-weight: 400; --display-optical: 96;
 }
 
 /* ---------- base (what the Floor already decided) ---------- */
@@ -73,25 +75,37 @@ button, input, select, textarea { font: inherit; }
 .num { font-variant-numeric: tabular-nums; }
 [data-slot] { position: relative; overflow: hidden; margin: 0; background: var(--color-paper-2); }
 [data-slot] > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-/* photographs: duotone ink paper con=8 */
-[data-slot]:has(> img) { isolation: isolate; background: var(--color-paper); outline: 1px solid color-mix(in oklab, var(--color-ink) 8%, transparent); outline-offset: -1px; }
-[data-slot] > img { z-index: 0; filter: grayscale(1) contrast(1.08); mix-blend-mode: multiply; }
-[data-slot]:has(> img)::before { content: ""; position: absolute; inset: 0; z-index: 1; background: var(--color-ink); mix-blend-mode: lighten; pointer-events: none; }
+/* photographs: natural colour, a hairline frame */
+[data-slot]:has(> img) { outline: 1px solid color-mix(in oklab, var(--color-ink) 12%, transparent); outline-offset: -1px; }
+/* photographs as grounds: the picture full-bleed under an indigo scrim, text on the scrim */
+.photo-bg { position: relative; isolation: isolate; overflow: hidden; background: var(--color-deep); color: var(--color-on-deep); }
+.photo-bg > .bg { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; }
+.photo-bg::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: linear-gradient(90deg, color-mix(in oklab, var(--color-deep) 92%, transparent) 0%, color-mix(in oklab, var(--color-deep) 70%, transparent) 50%, color-mix(in oklab, var(--color-deep) 25%, transparent) 100%); }
+.photo-bg--rise::before { background: linear-gradient(0deg, color-mix(in oklab, var(--color-deep) 92%, transparent) 0%, color-mix(in oklab, var(--color-deep) 45%, transparent) 55%, color-mix(in oklab, var(--color-deep) 10%, transparent) 100%); }
+.on-deep h1, .on-deep h2, .photo-bg h1, .photo-bg h2 { color: var(--color-on-deep); }
+.on-deep a, .photo-bg a:not(.btn) { text-decoration-color: var(--color-accent-on-deep); }
+.on-deep :focus-visible, .photo-bg :focus-visible { outline-color: var(--color-focus-on-ink); }
+.on-deep .btn:focus-visible, .photo-bg .btn:focus-visible, .on-deep a:focus-visible, .photo-bg a:focus-visible { outline-color: var(--color-focus-on-ink); }
+.on-deep .btn, .photo-bg .btn { background: var(--color-on-deep); color: var(--color-deep); border-color: var(--color-on-deep); }
+.on-deep .btn:hover, .photo-bg .btn:hover { background: var(--color-paper-2); }
+.on-deep .btn--quiet, .photo-bg .btn--quiet { background: transparent; color: var(--color-on-deep); }
+.on-deep .btn--quiet:hover, .photo-bg .btn--quiet:hover { background: color-mix(in oklab, var(--color-on-deep) 12%, transparent); }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; } }
 
 /* ---------- nav: edge-aligned ---------- */
-.topbar { position: sticky; top: 0; z-index: var(--z-sticky-nav); background: var(--color-paper); border-bottom: var(--rule-hair) solid var(--color-rule); }
+.topbar { position: sticky; top: 0; z-index: var(--z-sticky-nav); background: var(--color-deep); border-bottom: var(--rule-hair) solid var(--color-rule-on-deep); }
+.topbar :focus-visible { outline-color: var(--color-focus-on-ink); }
 .topbar .in { display: flex; align-items: stretch; gap: var(--space-xl); height: var(--nav-h); }
-.brand { display: flex; align-items: center; flex-shrink: 0; font-family: var(--font-display); font-size: var(--text-lg); letter-spacing: -0.01em; color: var(--color-ink); text-decoration: none; white-space: nowrap; }
+.brand { display: flex; align-items: center; flex-shrink: 0; font-family: var(--font-display); font-size: var(--text-lg); letter-spacing: -0.01em; color: var(--color-on-deep); text-decoration: none; white-space: nowrap; }
 .brand:hover { text-decoration: underline; text-decoration-thickness: 1px; }
 .topbar nav { margin-left: auto; min-width: 0; overflow-x: auto; scrollbar-width: none; }
 .topbar nav::-webkit-scrollbar { display: none; }
 .topbar ul { list-style: none; margin: 0; padding: 0; display: flex; height: 100%; white-space: nowrap; }
-.topbar nav a { display: flex; align-items: center; height: 100%; padding-inline: var(--space-sm); border-bottom: 2px solid transparent; color: var(--color-ink-2); text-decoration: none; font-size: var(--text-sm); font-weight: 500; transition: border-color var(--dur-short) var(--ease-out), color var(--dur-short) var(--ease-out); }
-.topbar nav a:hover { color: var(--color-ink); border-bottom-color: var(--color-rule-2); }
-.topbar nav a:active { color: var(--color-ink); }
+.topbar nav a { display: flex; align-items: center; height: 100%; padding-inline: var(--space-sm); border-bottom: 2px solid transparent; color: var(--color-on-deep-muted); text-decoration: none; font-size: var(--text-sm); font-weight: 500; transition: border-color var(--dur-short) var(--ease-out), color var(--dur-short) var(--ease-out); }
+.topbar nav a:hover { color: var(--color-on-deep); border-bottom-color: var(--color-rule-on-deep); }
+.topbar nav a:active { color: var(--color-on-deep); }
 .topbar nav a:focus-visible { outline-offset: -2px; }
-.topbar nav a[aria-current="page"] { color: var(--color-ink); border-bottom-color: var(--color-accent); }
+.topbar nav a[aria-current="page"] { color: var(--color-on-deep); border-bottom-color: var(--color-accent-on-deep); }
 .topbar nav li:last-child a { padding-right: 0; }
 
 /* ---------- controls ---------- */
@@ -106,22 +120,25 @@ button, input, select, textarea { font: inherit; }
 
 /* ---------- views ---------- */
 main { min-height: 60dvh; }
-.view-head { padding-block: var(--space-3xl) var(--space-2xl); }
+.view-head { padding-block: var(--space-4xl) var(--space-2xl); background: var(--color-deep); color: var(--color-on-deep); margin-bottom: var(--space-3xl); }
+.view-head.photo-bg { min-height: 56dvh; display: grid; align-items: end; }
 .view-head .grid { row-gap: var(--space-lg); align-items: end; }
 .view-head h2 { grid-column: 1 / 9; }
-.view-head p { grid-column: 1 / 8; color: var(--color-ink-2); }
+.view-head p { grid-column: 1 / 8; color: var(--color-on-deep-muted); }
+.view-head h2 { color: var(--color-on-deep); }
 .view-body { padding-bottom: var(--section-gap-s); }
 .sub { display: grid; gap: var(--space-xl); }
 .sub + .sub { margin-top: var(--space-3xl); }
 
 /* hero: Stage */
 .hero { min-height: calc(100dvh - var(--nav-h)); display: grid; align-items: center; padding-block: var(--space-2xl); }
+.hero > .bg { object-position: 50% 40%; }
 .hero .grid { align-items: center; }
 .hero__text { grid-column: 1 / 8; display: grid; gap: var(--space-lg); }
 .hero__text h1 { max-width: 14ch; font-size: clamp(3rem, 6vw + 1rem, 6.5rem); }
-.hero__text .role { font-size: var(--text-lead); line-height: 1.45; color: var(--color-ink-2); }
+.hero__text .role { font-size: var(--text-lead); line-height: 1.45; color: var(--color-on-deep-muted); }
 .hero__text .actions { margin-top: var(--space-sm); }
-.portrait { grid-column: 8 / 13; aspect-ratio: 4 / 5; max-height: calc(100dvh - var(--nav-h) - 2 * var(--space-2xl)); width: calc(100% + var(--gutter)); margin-right: calc(-1 * var(--gutter)); justify-self: end; }
+.portrait { grid-column: 8 / 12; aspect-ratio: 4 / 5; max-height: calc(100dvh - var(--nav-h) - 2 * var(--space-2xl)); width: 100%; justify-self: end; outline: 1px solid var(--color-accent-on-deep); outline-offset: var(--space-sm); }
 .portrait > img { object-position: 50% 28%; }
 
 /* introduction + figures */
@@ -141,25 +158,28 @@ main { min-height: 60dvh; }
 .areas li { padding-block: var(--space-md); border-top: var(--rule-hair) solid var(--color-rule); font-family: var(--font-display); font-size: var(--text-2xl); letter-spacing: -0.01em; line-height: 1.15; }
 
 /* current project: paper band */
-.band { background: var(--color-paper-2); padding-block: var(--section-gap-s); }
+.band { background: var(--color-paper-2); padding-block: var(--section-gap-s); border-left: 0; }
 .band h2 { grid-column: 1 / 5; }
 .band .lead { grid-column: 6 / 13; max-width: none; }
 .band .lead b { font-weight: 400; }
 
 /* path: dated stages, photo pinned */
-.path { padding-block: var(--section-gap-l) var(--section-gap); }
-.path h2 { grid-column: 1 / 9; margin-bottom: var(--space-2xl); }
+.interlude { min-height: 72dvh; display: grid; align-items: end; padding-block: var(--space-3xl) var(--space-2xl); }
+.interlude > .bg { object-position: 50% 60%; }
+.interlude h2 { grid-column: 1 / 9; font-size: var(--text-display); }
+.interlude p { grid-column: 1 / 7; color: var(--color-on-deep-muted); margin-top: var(--space-md); }
+.path { padding-block: var(--space-3xl) var(--section-gap); }
 .stages { grid-column: 1 / 8; list-style: none; margin: 0; padding: 0; }
 .stages li { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 5fr); column-gap: var(--gap-columns); padding-block: var(--space-xl); border-top: var(--rule-hair) solid var(--color-rule); }
 .stages li:last-child { border-bottom: var(--rule-hair) solid var(--color-rule); }
 .stages time { font-family: var(--font-display); font-size: var(--text-display-s); font-variation-settings: "opsz" var(--display-optical); letter-spacing: var(--tracking-display); line-height: 1; font-variant-numeric: lining-nums; }
-.path .plate { grid-column: 9 / 13; grid-row: 2; align-self: start; position: sticky; top: calc(var(--nav-h) + var(--space-xl)); aspect-ratio: 3 / 4; }
+.path .plate { grid-column: 9 / 13; grid-row: 1; align-self: start; position: sticky; top: calc(var(--nav-h) + var(--space-xl)); aspect-ratio: 3 / 4; }
 
 /* beyond: ink band */
-.ink { background: var(--color-ink); color: var(--color-paper); padding-block: var(--section-gap-s); }
-.ink h2 { grid-column: 1 / 6; color: var(--color-paper); }
-.ink .lead { grid-column: 7 / 13; max-width: none; color: var(--color-paper); }
-.ink :focus-visible { outline-color: var(--color-focus-on-ink); }
+.ink { padding-block: var(--section-gap); }
+.ink > .bg { object-position: 50% 35%; }
+.ink h2 { grid-column: 1 / 7; }
+.ink .lead { grid-column: 1 / 7; max-width: none; color: var(--color-on-deep); margin-top: var(--space-lg); }
 
 /* blog */
 .posts { border-top: var(--rule-hair) solid var(--color-rule); }
@@ -195,9 +215,9 @@ main { min-height: 60dvh; }
 
 /* presentations and talks: list beside a pinned plate */
 .listing { align-items: start; }
-.listing .plain { grid-column: 1 / 9; }
+.listing .plain { grid-column: 1 / 11; }
 .listing .plate { grid-column: 10 / 13; grid-row: 1; position: sticky; top: calc(var(--nav-h) + var(--space-xl)); aspect-ratio: 3 / 4; }
-.listing--flip .plain { grid-column: 5 / 13; }
+.listing--flip .plain { grid-column: 1 / 11; }
 .listing--flip .plate { grid-column: 1 / 4; }
 .plain { margin: 0; padding-left: var(--space-xl); }
 .plain li:first-child { border-top: var(--rule-hair) solid var(--color-rule); }
@@ -214,7 +234,7 @@ main { min-height: 60dvh; }
 .ledger td.award { width: 34%; font-weight: 500; }
 .ledger td.from { color: var(--color-ink-2); }
 .ledger .amt { text-align: right; padding-right: 0; white-space: nowrap; }
-.ledger td.amt { font-family: var(--font-outlier); font-size: var(--text-sm); }
+.ledger td.amt { font-size: var(--text-sm); color: var(--color-ink-2); }
 
 /* experience and service: entries */
 .entries { border-top: var(--rule-hair) solid var(--color-rule); }
@@ -242,27 +262,29 @@ main { min-height: 60dvh; }
 .cform .btn { justify-self: start; margin-top: var(--space-lg); }
 
 /* footer: letter close */
-.site-foot { background: var(--color-paper); padding-block: var(--section-gap-s) var(--space-xl); }
+.site-foot { background: var(--color-deep); color: var(--color-on-deep); padding-block: var(--section-gap-s) var(--space-xl); }
 .site-foot .grid { row-gap: var(--space-xl); }
 .site-foot h2 { grid-column: 1 / 7; }
-.site-foot .invite { grid-column: 7 / 13; align-self: end; color: var(--color-ink-2); }
-.contact { grid-column: 1 / 13; margin: var(--space-xl) 0 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: var(--gap-columns); padding-top: var(--space-lg); border-top: var(--rule-hair) solid var(--color-rule); }
+.site-foot .invite { grid-column: 7 / 13; align-self: end; color: var(--color-on-deep-muted); }
+.contact { grid-column: 1 / 13; margin: var(--space-xl) 0 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: var(--gap-columns); padding-top: var(--space-lg); border-top: var(--rule-hair) solid var(--color-rule-on-deep); }
 .contact > div { display: grid; gap: var(--space-xs); align-content: start; }
-.contact dt { font-size: var(--text-sm); color: var(--color-muted); }
+.contact dt { font-size: var(--text-sm); color: var(--color-on-deep-muted); }
 .contact dd { margin: 0; overflow-wrap: break-word; min-width: 0; }
 .links { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, max-content)); column-gap: var(--space-xl); row-gap: var(--space-2xs); }
-.colophon { grid-column: 1 / 13; font-size: var(--text-sm); color: var(--color-muted); padding-top: var(--space-lg); border-top: var(--rule-hair) solid var(--color-rule); }
+.colophon { grid-column: 1 / 13; font-size: var(--text-sm); color: var(--color-on-deep-muted); padding-top: var(--space-lg); border-top: var(--rule-hair) solid var(--color-rule-on-deep); display: grid; gap: var(--space-xs); }
 
 /* ---------- responsive ---------- */
 @media (max-width: 60rem) { :root { --gutter: 24px; --section-gap-s: 80px; --section-gap: 96px; --section-gap-l: 120px; } }
 @media (max-width: 40rem) { :root { --gutter: 16px; --section-gap-s: 56px; --section-gap: 72px; --section-gap-l: 96px; --gap-columns: 16px; } }
 @media (max-width: 60rem) {
-  .grid > *, .hero__text, .portrait, .intro .lead, .research h2, .research .body, .band h2, .band .lead, .path h2, .stages, .path .plate, .ink h2, .ink .lead,
+  .grid > *, .hero__text, .portrait, .intro .lead, .research h2, .research .body, .band h2, .band .lead, .interlude h2, .interlude p, .stages, .path .plate, .ink h2, .ink .lead,
   .post-date, .post-item .what, .article .col, .year-group .year, .refs, .listing .plain, .listing .plate, .contact-view .head, .cform,
   .site-foot h2, .site-foot .invite, .view-head h2, .view-head p { grid-column: 1 / -1; }
   .grid { row-gap: var(--space-xl); }
   .hero { min-height: 0; padding-block: var(--space-2xl); }
-  .portrait { max-height: none; max-width: 30rem; width: 100%; margin-right: 0; justify-self: start; }
+  .portrait { max-height: none; max-width: 26rem; width: 100%; justify-self: start; }
+  .interlude { min-height: 56dvh; }
+  .view-head.photo-bg { min-height: 44dvh; }
   .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: var(--space-xl); }
   .facts > div:nth-child(3) { padding-left: 0; border-left: 0; }
   .path .plate, .listing .plate { position: relative; top: auto; grid-row: auto; max-width: 22rem; width: 100%; }
@@ -283,7 +305,7 @@ main { min-height: 60dvh; }
   .ledger .amt { text-align: left; }
   .plain { padding-left: var(--space-lg); }
 }
-@media print { .topbar, .portrait, .plate, .site-foot { display: none; } .page { display: block !important; } }
+@media print { .topbar, .portrait, .plate, .site-foot, .bg { display: none; } .photo-bg, .view-head { background: none; color: inherit; } .page { display: block !important; } }
 </style>
 </head>
 <body>
@@ -312,7 +334,8 @@ main { min-height: 60dvh; }
   <!-- ============ HOME ============ -->
   <section class="page" id="home">
 
-    <section class="hero">
+    <section class="hero photo-bg">
+      <img class="bg" onerror="this.remove()" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Suzzallo_Reading_Room_University_of_Washington_restoration_Seattle_Washington_2026.jpg/1920px-Suzzallo_Reading_Room_University_of_Washington_restoration_Seattle_Washington_2026.jpg" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Suzzallo_Reading_Room_University_of_Washington_restoration_Seattle_Washington_2026.jpg/960px-Suzzallo_Reading_Room_University_of_Washington_restoration_Seattle_Washington_2026.jpg 960w, https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Suzzallo_Reading_Room_University_of_Washington_restoration_Seattle_Washington_2026.jpg/1280px-Suzzallo_Reading_Room_University_of_Washington_restoration_Seattle_Washington_2026.jpg 1280w, https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Suzzallo_Reading_Room_University_of_Washington_restoration_Seattle_Washington_2026.jpg/1920px-Suzzallo_Reading_Room_University_of_Washington_restoration_Seattle_Washington_2026.jpg 1920w" sizes="100vw" alt="" width="1920" height="1440" fetchpriority="high">
       <div class="container grid">
         <div class="hero__text">
           <h1>Angga Hidayat, Ph.D.</h1>
@@ -365,9 +388,15 @@ main { min-height: 60dvh; }
       </div>
     </section>
 
-    <section class="path">
+    <section class="interlude photo-bg photo-bg--rise">
+      <img class="bg" onerror="this.remove()" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Cumulus_clouds_as_seen_from_an_airplane.JPG/1920px-Cumulus_clouds_as_seen_from_an_airplane.JPG" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Cumulus_clouds_as_seen_from_an_airplane.JPG/960px-Cumulus_clouds_as_seen_from_an_airplane.JPG 960w, https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Cumulus_clouds_as_seen_from_an_airplane.JPG/1280px-Cumulus_clouds_as_seen_from_an_airplane.JPG 1280w, https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Cumulus_clouds_as_seen_from_an_airplane.JPG/1920px-Cumulus_clouds_as_seen_from_an_airplane.JPG 1920w" sizes="100vw" alt="" width="1920" height="1280" loading="lazy">
       <div class="container grid">
         <h2>My path</h2>
+      </div>
+    </section>
+
+    <section class="path">
+      <div class="container grid">
         <!-- EDIT: This is a draft. Add your own voice, a memory, or a turning point. -->
         <ol class="stages">
           <li><time datetime="2009">2009</time><p>I am a first-generation scholar from Indonesia. I began teaching mathematics in 2009, in high schools and learning centres, helping students prepare for national examinations and university entry. I then earned a Master of Education in Mathematics Education at Universitas Negeri Surabaya.</p></li>
@@ -380,7 +409,8 @@ main { min-height: 60dvh; }
       </div>
     </section>
 
-    <section class="ink">
+    <section class="ink photo-bg">
+      <img class="bg" onerror="this.remove()" src="talks.jpeg" alt="" width="3024" height="4032" loading="lazy">
       <div class="container grid">
         <h2>Beyond the university</h2>
         <p class="lead">I founded Rumah Cahaya Empat Ribu (RuMAER), a foundation that offers free professional development to teachers in rural and remote areas. I also serve as editor in some journals and mentor early-career researchers through the Youth Center for Research.</p>
@@ -458,7 +488,7 @@ main { min-height: 60dvh; }
 
   <!-- ============ PUBLICATIONS ============ -->
   <section class="page" id="publications">
-    <div class="view-head"><div class="container grid">
+    <div class="view-head photo-bg"><img class="bg" onerror="this.remove()" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/13-11-02-olb-by-RalfR-03.jpg/1920px-13-11-02-olb-by-RalfR-03.jpg" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/13-11-02-olb-by-RalfR-03.jpg/960px-13-11-02-olb-by-RalfR-03.jpg 960w, https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/13-11-02-olb-by-RalfR-03.jpg/1280px-13-11-02-olb-by-RalfR-03.jpg 1280w, https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/13-11-02-olb-by-RalfR-03.jpg/1920px-13-11-02-olb-by-RalfR-03.jpg 1920w" sizes="100vw" alt="" width="1920" height="1275" loading="lazy"><div class="container grid">
       <h2>Publications</h2>
       <p class="lead">Peer-reviewed articles and proceedings, newest first. For citation counts, see my <a href="https://scholar.google.com/citations?hl=en&amp;user=uDfHpEwAAAAJ" target="_blank">Google Scholar profile</a>.</p>
     </div></div>
@@ -543,7 +573,7 @@ main { min-height: 60dvh; }
 
   <!-- ============ PRESENTATIONS ============ -->
   <section class="page" id="presentations">
-    <div class="view-head"><div class="container grid">
+    <div class="view-head photo-bg"><img class="bg" onerror="this.remove()" src="presentation.jpg" alt="Angga Hidayat in a blazer presenting in a conference in Columbus" loading="lazy"><div class="container grid">
       <h2>Conference presentations</h2>
     </div></div>
     <div class="view-body"><div class="container grid listing">
@@ -572,21 +602,15 @@ main { min-height: 60dvh; }
 <li>Chao, T., Lin, H., Corral, M. A., Ozturk, A., <b>Hidayat, A.</b> &amp; Oliwe, R. (2022, September). Youth digital math stories: eliciting video math stories from students of color. Paper presented at National Council of Teachers of Mathematics (NCTM), Los Angeles, California, USA.</li>
 <li><b>Hidayat, A.</b> (2021, August). Indonesian teachers’ perceptions of online learning technology in mathematics classrooms during the Covid-19 pandemic. Paper presented at Fulbright Pre-Academic Training, Syracuse University, New York, USA.</li>
       </ol>
-      <figure class="plate moment" data-slot="presentation" data-alt="Angga Hidayat in a blazer presenting in a conference in Columbus">
-        <img src="presentation.jpg" alt="Angga Hidayat in a blazer presenting in a conference in Columbus" loading="lazy">
-      </figure>
     </div></div>
   </section>
 
   <!-- ============ TALKS ============ -->
   <section class="page" id="talks">
-    <div class="view-head"><div class="container grid">
+    <div class="view-head photo-bg"><img class="bg" onerror="this.remove()" src="talks.jpeg" alt="Angga Hidayat in a blazer and batik teaching a class" loading="lazy"><div class="container grid">
       <h2>Invited talks and guest lectures</h2>
     </div></div>
     <div class="view-body"><div class="container grid listing listing--flip">
-      <figure class="plate moment" data-slot="talks" data-alt="Angga Hidayat in a blazer and batik teaching a class">
-        <img src="talks.jpeg" alt="Angga Hidayat in a blazer and batik teaching a class" loading="lazy">
-      </figure>
       <ol class="plain" reversed>
 <li>R for Quantitative Research. (2026, November). Speaker in Doctoral Program in Education, Ontario Tech University, Oshawa, Canada.</li>
 <li>When Selves’ Experiences Become Data: Understanding (Auto)Ethnography as a Research Method. (2026, November). Speaker in Doctoral Program in Mathematics Education, Universitas Negeri Surabaya (Surabaya State University), Surabaya, Indonesia.</li>
@@ -791,7 +815,7 @@ main { min-height: 60dvh; }
 
 </main>
 
-<footer class="site-foot">
+<footer class="site-foot on-deep">
   <div class="container grid">
     <h2>Get in touch</h2>
     <p class="invite">I welcome conversations about research collaboration, invited talks, and mentoring. Please reach me by email or through the profiles on this page.</p>
@@ -819,7 +843,7 @@ main { min-height: 60dvh; }
         </dd>
       </div>
     </dl>
-    <p class="colophon">© 2026 Angga Hidayat</p>
+    <p class="colophon"><span>© 2026 Angga Hidayat</span><span>Library photographs: <a href="https://commons.wikimedia.org/wiki/File:Suzzallo_Reading_Room_University_of_Washington_restoration_Seattle_Washington_2026.jpg" target="_blank">Guywelch2000</a> (CC BY 4.0), <a href="https://commons.wikimedia.org/wiki/File:Cumulus_clouds_as_seen_from_an_airplane.JPG" target="_blank">Jakec</a> (CC BY-SA 3.0), <a href="https://commons.wikimedia.org/wiki/File:13-11-02-olb-by-RalfR-03.jpg" target="_blank">Ralf Roletschek</a> (CC BY 3.0), via Wikimedia Commons.</span></p>
   </div>
 </footer>
 
