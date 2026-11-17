@@ -7,173 +7,289 @@
 <meta name="description" content="Researcher webpage of Angga Hidayat, Ph.D., SSHRC Postdoctoral Fellow at Ontario Tech University. Keywords: STEM education, mathematics education, digital mathematics storytelling, generative AI in teacher education, mathematics identity, equity.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;1,6..96,400&family=Geist:wght@400;500&family=Geist+Mono:wght@400&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --bg:#FCFCFA; --card:#FCFCFA; --text:#1E2230; --muted:#5A6070;
-    --line:#E3E2DC; --accent:#2B3A67; --accent-soft:#E9ECF4; --accent-dark:#1C2748;
-    --sans:"Plus Jakarta Sans",-apple-system,"Segoe UI",sans-serif;
-    --serif:"Literata",Georgia,"Times New Roman",serif;
-  }
-  *{box-sizing:border-box}
-  html{scroll-padding-top:70px}
-  body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:17px;line-height:1.6}
-  a{color:var(--accent);text-underline-offset:2px}
-  a:hover{color:#123560}
-  :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-  h1,h2,h3{font-family:var(--serif);font-weight:700;letter-spacing:-0.02em;line-height:1.25;color:var(--text)}
+/* Hallmark · shape: Narrative Workflow on home (the path as dated stages), Index-first on the record views · genre: editorial · theme: Specimen (deal 1/3, seed austere-academic-homepage-stem-409c·3a3e6a98·2026-11-17·r0) · redesign: full · draw: d7fca3 · job: hire, contact details close every view
+ * hero: Stage (/#home), Banner (every other view) · nav: edge-aligned, the wordmark and nine section links, no button · footer: letter close, the invitation over email, office and profiles · imagery: photographs, the user's own 4, duotone · signature: the name in hairline Bodoni beside his portrait printed in ink on oat
+ * axes: light/high-contrast-serif/cool · posture: restrained · contrast: pass · fold: pass · v2.0.0 */
+/* Hallmark · pre-emit critique: P4 H4 E4 S4 R5 V4 · weakest: S, a name beside a headshot could be any academic; the four figures he gave sit directly under it and the path is told in his own dated years */
+/* Hallmark · swapped the draw's Corridor hero for Stage · his own portrait is the strongest picture the site has, and Corridor carries none */
+/* Hallmark · dismissed 77 · home holds seven sections nested in its view, so the top-level count reads two */
+/* Hallmark · dismissed render · Google Fonts is blocked in the build sandbox; the shots use Bodoni Moda and Geist installed locally, the live site loads them from the link */
+/* Hallmark · dropped "Home" · the h1 with his name now heads the home view, so a heading that repeated the nav went */
+/* Hallmark · dropped the sidebar icon set and AH monogram · profile links are plain text in the footer, one treatment */
+/* Hallmark · reworded "Read more" to name each post, removed the arrows from "Back to all posts", and "41–50%" to "41 to 50%" · 19 and 63 name them */
 
-  /* top bar */
-  .topbar{background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
-  .topbar .in{max-width:1180px;margin:0 auto;padding:0 20px;display:flex;align-items:stretch;gap:24px;height:62px}
-  .brand{display:flex;align-items:center}
-  .brand{font-family:var(--serif);font-weight:600;font-size:19px;color:var(--text);text-decoration:none;white-space:nowrap}
-  .topbar nav{margin-left:auto;overflow-x:auto;scrollbar-width:none}
-  .topbar nav::-webkit-scrollbar{display:none}
-  .topbar ul{list-style:none;margin:0;padding:0;display:flex;gap:4px;white-space:nowrap}
-  .topbar ul{align-items:stretch;height:100%}
-  .topbar nav a{display:flex;align-items:center;height:100%;padding:0 13px;border-bottom:3px solid transparent;color:var(--text);text-decoration:none;font-size:15.5px;font-weight:500}
-  .topbar nav a:hover{color:var(--accent);border-bottom-color:#B9C7DC}
-  .topbar nav a[aria-current="page"]{color:var(--accent);border-bottom-color:var(--accent);font-weight:700}
-
-  /* banner: the whole image is always shown, never cropped */
-  .banner{background:var(--accent);line-height:0}
-  .banner img{width:100%;height:clamp(110px,12vw,170px);object-fit:cover;display:block}
-
-  .layout{max-width:1180px;margin:0 auto;padding:0 20px 60px;display:grid;grid-template-columns:290px 1fr;gap:44px;align-items:start}
-
-  /* profile card */
-  .profile{padding:0;margin-top:-48px;text-align:center}
-  .avatar{width:168px;height:168px;border-radius:50%;margin:0 auto 16px;border:5px solid var(--card);background:var(--accent-soft);overflow:hidden;display:grid;place-items:center}
-  .profile .avatar-wrap{padding-top:18px}
-  .avatar img{width:100%;height:100%;object-fit:cover;display:block}
-  .avatar span{font-family:var(--serif);font-size:52px;color:var(--accent)}
-  .profile h1{font-size:24px;margin:0 0 4px}
-  .profile .role{margin:0 0 14px;color:var(--muted);font-size:15.5px;line-height:1.45}
-  .kw{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:0 0 18px;padding:0;list-style:none}
-  .kw li{font-size:13px;padding:2px 4px;color:var(--muted)}
-  .btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;padding:8px 18px;border-radius:4px;font-weight:600;font-size:15px}
-  .btn:hover{background:#123560;color:#fff}
-  .profile hr{border:0;border-top:1px solid var(--line);margin:20px 0}
-  .contact{text-align:left;font-size:15px}
-  .contact dt{color:var(--muted);font-size:13px;margin-top:10px}
-  .contact dd{margin:0;overflow-wrap:anywhere}
-  .links{list-style:none;padding:0;margin:0;text-align:left;font-size:15px}
-  .links li{border-bottom:1px solid var(--line)}
-  .links a{display:flex;align-items:center;gap:10px;padding:8px 2px;text-decoration:none}
-  .links a:hover{text-decoration:underline}
-  .links svg{width:19px;height:19px;flex:none;color:var(--muted)}
-  .links a:hover svg{color:var(--accent)}
-  .links li:last-child{border-bottom:0}
-
-  /* content */
-main{padding:40px 0 44px;min-height:60vh}
-  .page h2{font-size:30px;margin:0 0 20px;padding-bottom:12px;border-bottom:1px solid var(--line)}
-  .page h3{font-size:21px;margin:32px 0 10px}
-  .page p{margin:0 0 14px;max-width:46em}
-    .note{padding:0;margin:20px 0 24px;max-width:46em}
-  .note p:last-child{margin-bottom:0}
-  .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin:28px 0 34px;max-width:46em;
-         border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 0}
-  .facts b{display:block;font-size:32px;font-weight:700;color:var(--accent);letter-spacing:-0.02em;line-height:1.1}
-  .facts span{font-size:14px;color:var(--muted);line-height:1.35;display:block;margin-top:4px}
-
-  .refs{list-style:none;padding:0;margin:0 0 8px}
-  .refs li{padding:12px 0;border-bottom:1px solid var(--line)}
-  .refs .rt{display:block;font-weight:600;line-height:1.4}
-  .refs .ra{display:block;font-size:15px;color:var(--muted)}
-  .refs .ra b{color:var(--text)}
-  .refs .rv{display:block;font-size:15px}
-  .doi{font-size:13px;font-weight:600;border:1px solid var(--accent);border-radius:3px;padding:0 6px;margin-left:6px;text-decoration:none;white-space:nowrap}
-  .year{font-size:19px!important;color:var(--accent)!important;margin-top:28px!important}
-  .plain{padding-left:20px;margin:0}
-  .plain li{padding:6px 0;font-size:15.5px}
-
-  .entries{margin:0}
-  .entry{display:grid;grid-template-columns:130px 1fr;gap:18px;padding:14px 0;border-bottom:1px solid var(--line)}
-  .entry .when{color:var(--muted);font-size:15px}
-  .entry .what b{display:block}
-  .entry .what span{color:var(--muted);font-size:15px;display:block}
-  .entry ul{margin:6px 0 0;padding-left:18px;font-size:15.5px}
-  .amt{font-size:14px;color:var(--accent);font-weight:600}
-
-  .cform{max-width:36em;margin-top:22px}
-  .cform label{display:block;font-size:14px;color:var(--muted);margin:16px 0 5px}
-  .cform input,.cform textarea{width:100%;font:inherit;font-size:16px;color:var(--text);
-    background:#fff;border:1px solid var(--line);border-radius:5px;padding:10px 12px}
-  .cform textarea{min-height:150px;resize:vertical}
-  .cform input:focus,.cform textarea:focus{border-color:var(--accent);outline:2px solid var(--accent-soft)}
-  .cform button{margin-top:18px;font:inherit;font-size:15px;font-weight:600;cursor:pointer;
-    background:var(--accent);color:#fff;border:0;border-radius:5px;padding:10px 26px}
-  .cform button:hover{background:#123560}
-
-  .posts{margin:0}
-  .post-item{padding:26px 0;border-bottom:1px solid var(--line);max-width:46em}
-  .post-item:first-child{padding-top:8px}
-  .post-date{font-size:14px;color:var(--muted);display:block;margin-bottom:6px}
-  .post-item h3{margin:0 0 8px;font-size:23px}
-  .post-item h3 a{text-decoration:none}
-  .post-item h3 a:hover{text-decoration:underline}
-  .post-item p{margin:0 0 14px}
-  .more{display:inline-block;font-size:15px;font-weight:600;text-decoration:none;
-    border:1px solid var(--line);border-radius:5px;padding:8px 18px;color:var(--accent)}
-  .more:hover{border-color:var(--accent);background:var(--accent-soft)}
-  .back{display:inline-block;font-size:15px;margin-bottom:18px;text-decoration:none}
-  footer{text-align:center;color:var(--muted);font-size:14px;padding:0 20px 40px}
-
-  @media (max-width:900px){
-    .layout{grid-template-columns:1fr}
-    .profile{position:static;margin-top:-40px}
-    .layout>aside{border-bottom:1px solid var(--line);padding:0 0 28px}
-    main{padding:28px 0}
-    .facts{grid-template-columns:repeat(2,1fr)}
-  }
-  @media (max-width:560px){
-    .topbar .in{gap:12px}
-    .brand{display:none}
-    .topbar nav{margin-left:0}
-    .entry{grid-template-columns:1fr;gap:2px}
-    .page h2{font-size:26px}
-  }
-  @media print{.topbar,.banner,.profile{display:none}.page{display:block!important}main{border:0}}
-
-.moment{float:right;width:250px;margin:4px 0 20px 32px}
-.moment img{width:100%;height:auto;display:block;border-radius:3px}
-.moment figcaption{margin-top:8px;font-size:14px;color:var(--muted);line-height:1.45}
-.page::after{content:"";display:table;clear:both}
-@media (max-width:560px){
-  .moment{float:none;width:auto;max-width:280px;margin:0 0 24px}
+/* ---------- tokens (Specimen, plus the shared scale) ---------- */
+:root {
+  color-scheme: light;
+  --space-3xs: 2px; --space-2xs: 4px; --space-xs: 8px; --space-sm: 12px; --space-md: 16px; --space-lg: 24px; --space-xl: 40px; --space-2xl: 64px; --space-3xl: 96px; --space-4xl: 144px;
+  --text-xs: 0.8125rem; --text-sm: 0.875rem; --text-md: 1rem; --text-body: 1.0625rem; --text-lg: 1.25rem; --text-xl: 1.5625rem; --text-2xl: 1.953rem; --text-3xl: 2.441rem;
+  --text-display-s: clamp(2.25rem, 4vw + 0.5rem, 3.75rem); --text-display: clamp(2.75rem, 5vw + 1rem, 5.25rem);
+  --text-section: clamp(2rem, 2.5vw + 1rem, 3.5rem); --text-title: clamp(1.25rem, 0.75vw + 0.875rem, 1.625rem); --text-lead: clamp(1.125rem, 0.35vw + 1rem, 1.375rem);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1); --ease-in: cubic-bezier(0.7, 0, 0.84, 0); --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro: 120ms; --dur-short: 220ms; --dur-long: 420ms;
+  --color-error: oklch(52% 0.19 27); --color-success: oklch(50% 0.12 150);
+  --container: 1440px; --gutter: 64px; --gap-columns: 32px; --section-gap-s: 120px; --section-gap: 144px; --section-gap-l: 176px;
+  --nav-h: 64px;
+  --z-base: 1; --z-raised: 10; --z-dropdown: 100; --z-sticky: 200; --z-sticky-nav: 300; --z-modal: 400; --z-toast: 500; --z-tooltip: 600;
+  --color-paper: oklch(96.5% 0.016 82); --color-paper-2: oklch(93.5% 0.02 80); --color-paper-3: oklch(89% 0.024 78);
+  --color-ink: oklch(17% 0.012 60); --color-ink-2: oklch(28% 0.014 60); --color-muted: oklch(49% 0.014 65);
+  --color-on-ink-muted: oklch(80% 0.018 75);
+  --color-rule: oklch(80% 0.018 75); --color-rule-2: oklch(66% 0.02 72); --color-rule-on-ink: oklch(36% 0.014 60);
+  --color-accent: oklch(45% 0.18 262); --color-accent-ink: oklch(97% 0.012 82); --color-focus: oklch(50% 0.18 262); --color-focus-on-ink: oklch(78% 0.12 262);
+  --color-guide: oklch(55% 0.16 262 / 0.5);
+  --font-display: "Bodoni Moda", ui-serif, Georgia, serif; --font-body: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-outlier: "Geist Mono", ui-monospace, monospace;
+  --radius-card: 0; --radius-pill: 0; --rule-hair: 1px;
+  --shadow-card: none;
+  --tracking-display: -0.02em; --display-weight: 400; --display-optical: 96;
 }
-  /* Typography: Literata for reading, Plus Jakarta Sans for headings and interface */
-body{font-family:var(--serif);font-size:18px;line-height:1.65}
-h1,h2,h3,.brand,.topbar nav a,.role,.kw,.btn,.contact,.links,
-.entry .when,.post-date,.amt,.back,.cform,footer{font-family:var(--sans)}
-.page h2{font-weight:700;letter-spacing:-0.025em}
-.page p,.note,.post-item{max-width:36em}
-.refs{max-width:44em}
-.refs .rt{font-weight:600}
-a:hover{color:var(--accent-dark)}
-.btn:hover,.cform button:hover{background:var(--accent-dark)}
 
-/* Banner: kawung batik pattern in tarum indigo */
-.banner{height:clamp(110px,12vw,170px);background-color:var(--accent);
-  background-size:44px 44px;background-position:center;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill='none' stroke='%23fff' stroke-opacity='.22' stroke-width='1.2'%3E%3Cellipse cx='10' cy='10' rx='6' ry='12.5' transform='rotate(-45 10 10)'/%3E%3Cellipse cx='30' cy='30' rx='6' ry='12.5' transform='rotate(-45 30 30)'/%3E%3Cellipse cx='30' cy='10' rx='6' ry='12.5' transform='rotate(45 30 10)'/%3E%3Cellipse cx='10' cy='30' rx='6' ry='12.5' transform='rotate(45 10 30)'/%3E%3C/g%3E%3Cg fill='%23C08A4E' fill-opacity='.75'%3E%3Ccircle cx='20' cy='20' r='1.6'/%3E%3Ccircle cx='0' cy='0' r='1.6'/%3E%3Ccircle cx='40' cy='0' r='1.6'/%3E%3Ccircle cx='0' cy='40' r='1.6'/%3E%3Ccircle cx='40' cy='40' r='1.6'/%3E%3C/g%3E%3C/svg%3E")}
+/* ---------- base (what the Floor already decided) ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { overflow-x: clip; }
+html { scrollbar-color: var(--color-muted) var(--color-paper); scroll-padding-top: var(--space-3xl); }
+body { margin: 0; background: var(--color-paper); color: var(--color-ink); font-family: var(--font-body); font-size: var(--text-body); line-height: 1.55; -webkit-font-smoothing: antialiased; caret-color: var(--color-accent); }
+::selection { background: color-mix(in oklab, var(--color-accent) 22%, transparent); color: var(--color-ink); }
+:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+a { color: inherit; text-decoration-color: var(--color-accent); text-decoration-thickness: 1px; text-underline-offset: 0.18em; transition: text-decoration-thickness var(--dur-micro) var(--ease-out); }
+a:hover { text-decoration-thickness: 2px; }
+h1, h2, h3 { margin: 0; font-family: var(--font-display); font-weight: var(--display-weight); font-synthesis: none; letter-spacing: var(--tracking-display); line-height: 1.05; overflow-wrap: break-word; min-width: 0; text-wrap: balance; }
+h1, h2 { font-variation-settings: "opsz" var(--display-optical); }
+h1 { max-width: 20ch; font-size: var(--text-display); line-height: 1.02; }
+h2 { max-width: 30ch; font-size: var(--text-section); }
+h3 { max-width: 40ch; font-size: var(--text-title); line-height: 1.15; font-optical-sizing: auto; letter-spacing: -0.01em; }
+b, strong { font-weight: 500; }
+.lead { font-size: var(--text-lead); line-height: 1.45; max-width: 52ch; }
+p { margin: 0; text-wrap: pretty; }
+p:not([class]) { max-width: 65ch; }
+img, video { max-width: 100%; height: auto; display: block; }
+svg { display: block; }
+[hidden] { display: none !important; }
+button, input, select, textarea { font: inherit; }
+.container { width: 100%; max-width: var(--container); margin-inline: auto; padding-inline: var(--gutter); }
+.grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gap-columns); }
+.num { font-variant-numeric: tabular-nums; }
+[data-slot] { position: relative; overflow: hidden; margin: 0; background: var(--color-paper-2); }
+[data-slot] > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+/* photographs: duotone ink paper con=8 */
+[data-slot]:has(> img) { isolation: isolate; background: var(--color-paper); outline: 1px solid color-mix(in oklab, var(--color-ink) 8%, transparent); outline-offset: -1px; }
+[data-slot] > img { z-index: 0; filter: grayscale(1) contrast(1.08); mix-blend-mode: multiply; }
+[data-slot]:has(> img)::before { content: ""; position: absolute; inset: 0; z-index: 1; background: var(--color-ink); mix-blend-mode: lighten; pointer-events: none; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; } }
 
-/* Opening paragraph, in place of the stat strip */
-.page p.lede{font-size:1.22em;line-height:1.5;margin-bottom:18px}
+/* ---------- nav: edge-aligned ---------- */
+.topbar { position: sticky; top: 0; z-index: var(--z-sticky-nav); background: var(--color-paper); border-bottom: var(--rule-hair) solid var(--color-rule); }
+.topbar .in { display: flex; align-items: stretch; gap: var(--space-xl); height: var(--nav-h); }
+.brand { display: flex; align-items: center; flex-shrink: 0; font-family: var(--font-display); font-size: var(--text-lg); letter-spacing: -0.01em; color: var(--color-ink); text-decoration: none; white-space: nowrap; }
+.brand:hover { text-decoration: underline; text-decoration-thickness: 1px; }
+.topbar nav { margin-left: auto; min-width: 0; overflow-x: auto; scrollbar-width: none; }
+.topbar nav::-webkit-scrollbar { display: none; }
+.topbar ul { list-style: none; margin: 0; padding: 0; display: flex; height: 100%; white-space: nowrap; }
+.topbar nav a { display: flex; align-items: center; height: 100%; padding-inline: var(--space-sm); border-bottom: 2px solid transparent; color: var(--color-ink-2); text-decoration: none; font-size: var(--text-sm); font-weight: 500; transition: border-color var(--dur-short) var(--ease-out), color var(--dur-short) var(--ease-out); }
+.topbar nav a:hover { color: var(--color-ink); border-bottom-color: var(--color-rule-2); }
+.topbar nav a:active { color: var(--color-ink); }
+.topbar nav a:focus-visible { outline-offset: -2px; }
+.topbar nav a[aria-current="page"] { color: var(--color-ink); border-bottom-color: var(--color-accent); }
+.topbar nav li:last-child a { padding-right: 0; }
 
-/* Quieter "Read the full post" and DOI links */
-.more{border:0;padding:0;border-radius:0;background:none;font-family:var(--sans);font-size:15px;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:4px}
-.more:hover{background:none;text-decoration-color:currentColor}
-.doi{border:0;padding:0;margin-left:8px;font-family:var(--sans);font-size:13px;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}
-.doi:hover{text-decoration-color:currentColor}
+/* ---------- controls ---------- */
+.btn { display: inline-flex; align-items: center; min-height: 48px; padding: 0 var(--space-lg); border: var(--rule-hair) solid var(--color-ink); border-radius: var(--radius-card); background: var(--color-ink); color: var(--color-paper); font: 500 var(--text-md)/1 var(--font-body); white-space: nowrap; text-decoration: none; cursor: pointer; transition: background-color var(--dur-short) var(--ease-out), transform var(--dur-micro) var(--ease-out); }
+.btn:hover { background: var(--color-ink-2); }
+.btn:active { transform: translateY(1px); }
+.btn:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+.btn:disabled, .btn[aria-disabled="true"] { opacity: 0.55; cursor: not-allowed; transform: none; }
+.btn--quiet { background: transparent; color: var(--color-ink); }
+.btn--quiet:hover { background: var(--color-paper-2); }
+.actions { display: flex; flex-wrap: wrap; gap: var(--space-sm); }
+
+/* ---------- views ---------- */
+main { min-height: 60dvh; }
+.view-head { padding-block: var(--space-3xl) var(--space-2xl); }
+.view-head .grid { row-gap: var(--space-lg); align-items: end; }
+.view-head h2 { grid-column: 1 / 9; }
+.view-head p { grid-column: 1 / 8; color: var(--color-ink-2); }
+.view-body { padding-bottom: var(--section-gap-s); }
+.sub { display: grid; gap: var(--space-xl); }
+.sub + .sub { margin-top: var(--space-3xl); }
+
+/* hero: Stage */
+.hero { min-height: calc(100dvh - var(--nav-h)); display: grid; align-items: center; padding-block: var(--space-2xl); }
+.hero .grid { align-items: center; }
+.hero__text { grid-column: 1 / 8; display: grid; gap: var(--space-lg); }
+.hero__text h1 { max-width: 14ch; font-size: clamp(3rem, 6vw + 1rem, 6.5rem); }
+.hero__text .role { font-size: var(--text-lead); line-height: 1.45; color: var(--color-ink-2); }
+.hero__text .actions { margin-top: var(--space-sm); }
+.portrait { grid-column: 8 / 13; aspect-ratio: 4 / 5; max-height: calc(100dvh - var(--nav-h) - 2 * var(--space-2xl)); width: calc(100% + var(--gutter)); margin-right: calc(-1 * var(--gutter)); justify-self: end; }
+.portrait > img { object-position: 50% 28%; }
+
+/* introduction + figures */
+.intro { padding-block: var(--section-gap-s); border-top: var(--rule-hair) solid var(--color-rule); }
+.intro .lead { grid-column: 1 / 9; max-width: none; font-size: var(--text-xl); line-height: 1.4; }
+.facts { grid-column: 1 / 13; margin: var(--space-2xl) 0 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: var(--gap-columns); }
+.facts > div { padding-left: var(--space-lg); border-left: var(--rule-hair) solid var(--color-rule); display: grid; gap: var(--space-xs); align-content: start; }
+.facts > div:first-child { padding-left: 0; border-left: 0; }
+.facts b { font-family: var(--font-display); font-weight: var(--display-weight); font-size: var(--text-display-s); font-variation-settings: "opsz" var(--display-optical); letter-spacing: var(--tracking-display); line-height: 1; font-variant-numeric: lining-nums tabular-nums; }
+.facts span { font-size: var(--text-sm); color: var(--color-muted); max-width: 22ch; }
+
+/* research */
+.research { padding-block: var(--section-gap-s) var(--section-gap); }
+.research h2 { grid-column: 1 / 5; align-self: start; }
+.research .body { grid-column: 6 / 13; display: grid; gap: var(--space-md); }
+.areas { list-style: none; margin: var(--space-xl) 0 0; padding: 0; border-bottom: var(--rule-hair) solid var(--color-rule); }
+.areas li { padding-block: var(--space-md); border-top: var(--rule-hair) solid var(--color-rule); font-family: var(--font-display); font-size: var(--text-2xl); letter-spacing: -0.01em; line-height: 1.15; }
+
+/* current project: paper band */
+.band { background: var(--color-paper-2); padding-block: var(--section-gap-s); }
+.band h2 { grid-column: 1 / 5; }
+.band .lead { grid-column: 6 / 13; max-width: none; }
+.band .lead b { font-weight: 400; }
+
+/* path: dated stages, photo pinned */
+.path { padding-block: var(--section-gap-l) var(--section-gap); }
+.path h2 { grid-column: 1 / 9; margin-bottom: var(--space-2xl); }
+.stages { grid-column: 1 / 8; list-style: none; margin: 0; padding: 0; }
+.stages li { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 5fr); column-gap: var(--gap-columns); padding-block: var(--space-xl); border-top: var(--rule-hair) solid var(--color-rule); }
+.stages li:last-child { border-bottom: var(--rule-hair) solid var(--color-rule); }
+.stages time { font-family: var(--font-display); font-size: var(--text-display-s); font-variation-settings: "opsz" var(--display-optical); letter-spacing: var(--tracking-display); line-height: 1; font-variant-numeric: lining-nums; }
+.path .plate { grid-column: 9 / 13; grid-row: 2; align-self: start; position: sticky; top: calc(var(--nav-h) + var(--space-xl)); aspect-ratio: 3 / 4; }
+
+/* beyond: ink band */
+.ink { background: var(--color-ink); color: var(--color-paper); padding-block: var(--section-gap-s); }
+.ink h2 { grid-column: 1 / 6; color: var(--color-paper); }
+.ink .lead { grid-column: 7 / 13; max-width: none; color: var(--color-paper); }
+.ink :focus-visible { outline-color: var(--color-focus-on-ink); }
+
+/* blog */
+.posts { border-top: var(--rule-hair) solid var(--color-rule); }
+.post-item { padding-block: var(--space-xl); border-bottom: var(--rule-hair) solid var(--color-rule); }
+.post-item .grid { row-gap: var(--space-sm); }
+.post-date { grid-column: 1 / 4; font-size: var(--text-sm); color: var(--color-muted); padding-top: var(--space-2xs); }
+.post-item .what { grid-column: 4 / 11; display: grid; gap: var(--space-md); justify-items: start; }
+.post-item h3 { font-size: var(--text-2xl); max-width: 32ch; }
+.post-item h3 a { text-decoration-color: transparent; }
+.post-item h3 a:hover { text-decoration-color: var(--color-accent); }
+.more { font-size: var(--text-sm); font-weight: 500; }
+
+/* single post */
+.article { padding-block: var(--space-3xl) var(--section-gap-s); }
+.article .col { grid-column: 3 / 11; display: grid; gap: var(--space-md); }
+.article h2 { font-size: var(--text-display-s); max-width: 24ch; margin-top: var(--space-lg); }
+.post-meta { font-size: var(--text-sm); color: var(--color-muted); margin-bottom: var(--space-lg); }
+.back { justify-self: start; font-size: var(--text-sm); font-weight: 500; color: var(--color-ink-2); }
+.article .back:last-child { margin-top: var(--space-xl); }
+
+/* publications: year index */
+.year-group { padding-block: var(--space-xl); border-top: var(--rule-hair) solid var(--color-rule); }
+.year-group .year { grid-column: 1 / 4; align-self: start; position: sticky; top: calc(var(--nav-h) + var(--space-lg)); font-size: var(--text-display-s); font-variation-settings: "opsz" var(--display-optical); line-height: 1; font-variant-numeric: lining-nums; }
+.refs { grid-column: 4 / 13; list-style: none; margin: 0; padding: 0; }
+.refs li { display: grid; gap: var(--space-2xs); padding-block: var(--space-md); border-top: var(--rule-hair) solid var(--color-rule); max-width: 80ch; }
+.refs li:first-child { border-top: 0; padding-top: 0; }
+.refs .rt { font-weight: 500; line-height: 1.4; }
+.refs .ra { font-size: var(--text-sm); color: var(--color-muted); }
+.refs .ra b { color: var(--color-ink); }
+.refs .rv { font-size: var(--text-sm); color: var(--color-ink-2); }
+.refs .rv i, .service-body i { font-family: var(--font-display); font-size: 1.05em; }
+.doi { margin-left: var(--space-xs); font-weight: 500; white-space: nowrap; color: var(--color-ink); }
+
+/* presentations and talks: list beside a pinned plate */
+.listing { align-items: start; }
+.listing .plain { grid-column: 1 / 9; }
+.listing .plate { grid-column: 10 / 13; grid-row: 1; position: sticky; top: calc(var(--nav-h) + var(--space-xl)); aspect-ratio: 3 / 4; }
+.listing--flip .plain { grid-column: 5 / 13; }
+.listing--flip .plate { grid-column: 1 / 4; }
+.plain { margin: 0; padding-left: var(--space-xl); }
+.plain li:first-child { border-top: var(--rule-hair) solid var(--color-rule); }
+.plain li { padding-block: var(--space-md) var(--space-md); padding-left: var(--space-xs); border-bottom: var(--rule-hair) solid var(--color-rule); max-width: 80ch; }
+.plain li::marker { color: var(--color-muted); font-size: var(--text-sm); font-variant-numeric: tabular-nums; }
+
+/* funding: ledgers */
+.ledger { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.ledger thead th { text-align: left; font-size: var(--text-sm); font-weight: 500; color: var(--color-muted); padding: 0 var(--space-md) var(--space-sm) 0; border-bottom: var(--rule-hair) solid var(--color-rule-2); }
+.ledger--lead { border-top: 3px double var(--color-rule-2); }
+.ledger--lead thead th { padding-top: var(--space-md); }
+.ledger td { padding: var(--space-md) var(--space-md) var(--space-md) 0; border-bottom: var(--rule-hair) solid var(--color-rule); vertical-align: baseline; }
+.ledger td.when { width: 16%; color: var(--color-muted); white-space: nowrap; }
+.ledger td.award { width: 34%; font-weight: 500; }
+.ledger td.from { color: var(--color-ink-2); }
+.ledger .amt { text-align: right; padding-right: 0; white-space: nowrap; }
+.ledger td.amt { font-family: var(--font-outlier); font-size: var(--text-sm); }
+
+/* experience and service: entries */
+.entries { border-top: var(--rule-hair) solid var(--color-rule); }
+.entry { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gap-columns); padding-block: var(--space-lg); border-bottom: var(--rule-hair) solid var(--color-rule); }
+.entry .when { grid-column: 1 / 4; color: var(--color-muted); font-size: var(--text-sm); padding-top: var(--space-2xs); font-variant-numeric: tabular-nums; }
+.entry .what { grid-column: 4 / 11; display: grid; gap: var(--space-2xs); }
+.entry .what b { font-family: var(--font-display); font-weight: var(--display-weight); font-size: var(--text-xl); letter-spacing: -0.01em; line-height: 1.2; }
+.entry .what span { color: var(--color-ink-2); }
+.entry ul { margin: var(--space-xs) 0 0; padding-left: var(--space-lg); color: var(--color-ink-2); display: grid; gap: var(--space-2xs); }
+.service-body { max-width: 72ch; }
+.sub > h3 { font-size: var(--text-2xl); }
+
+/* contact */
+.contact-view { padding-block: var(--space-3xl) var(--section-gap-s); }
+.contact-view .grid { align-items: start; }
+.contact-view .head { grid-column: 1 / 6; display: grid; gap: var(--space-lg); }
+.cform { grid-column: 7 / 13; display: grid; gap: var(--space-xs); }
+.cform label { font-size: var(--text-sm); font-weight: 500; color: var(--color-ink-2); margin-top: var(--space-md); }
+.cform label:first-child { margin-top: 0; }
+.cform input, .cform textarea { width: 100%; min-height: 48px; padding: var(--space-sm) var(--space-md); color: var(--color-ink); background: var(--color-paper); border: var(--rule-hair) solid var(--color-muted); border-radius: var(--radius-card); outline: 2px solid transparent; outline-offset: -1px; }
+.cform textarea { min-height: 180px; resize: vertical; }
+.cform input:hover, .cform textarea:hover { background: var(--color-paper-2); }
+.cform input:focus-visible, .cform textarea:focus-visible { outline-color: var(--color-focus); }
+.cform input:disabled, .cform textarea:disabled { opacity: 0.55; cursor: not-allowed; }
+.cform .btn { justify-self: start; margin-top: var(--space-lg); }
+
+/* footer: letter close */
+.site-foot { background: var(--color-paper); padding-block: var(--section-gap-s) var(--space-xl); }
+.site-foot .grid { row-gap: var(--space-xl); }
+.site-foot h2 { grid-column: 1 / 7; }
+.site-foot .invite { grid-column: 7 / 13; align-self: end; color: var(--color-ink-2); }
+.contact { grid-column: 1 / 13; margin: var(--space-xl) 0 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: var(--gap-columns); padding-top: var(--space-lg); border-top: var(--rule-hair) solid var(--color-rule); }
+.contact > div { display: grid; gap: var(--space-xs); align-content: start; }
+.contact dt { font-size: var(--text-sm); color: var(--color-muted); }
+.contact dd { margin: 0; overflow-wrap: break-word; min-width: 0; }
+.links { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, max-content)); column-gap: var(--space-xl); row-gap: var(--space-2xs); }
+.colophon { grid-column: 1 / 13; font-size: var(--text-sm); color: var(--color-muted); padding-top: var(--space-lg); border-top: var(--rule-hair) solid var(--color-rule); }
+
+/* ---------- responsive ---------- */
+@media (max-width: 60rem) { :root { --gutter: 24px; --section-gap-s: 80px; --section-gap: 96px; --section-gap-l: 120px; } }
+@media (max-width: 40rem) { :root { --gutter: 16px; --section-gap-s: 56px; --section-gap: 72px; --section-gap-l: 96px; --gap-columns: 16px; } }
+@media (max-width: 60rem) {
+  .grid > *, .hero__text, .portrait, .intro .lead, .research h2, .research .body, .band h2, .band .lead, .path h2, .stages, .path .plate, .ink h2, .ink .lead,
+  .post-date, .post-item .what, .article .col, .year-group .year, .refs, .listing .plain, .listing .plate, .contact-view .head, .cform,
+  .site-foot h2, .site-foot .invite, .view-head h2, .view-head p { grid-column: 1 / -1; }
+  .grid { row-gap: var(--space-xl); }
+  .hero { min-height: 0; padding-block: var(--space-2xl); }
+  .portrait { max-height: none; max-width: 30rem; width: 100%; margin-right: 0; justify-self: start; }
+  .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: var(--space-xl); }
+  .facts > div:nth-child(3) { padding-left: 0; border-left: 0; }
+  .path .plate, .listing .plate { position: relative; top: auto; grid-row: auto; max-width: 22rem; width: 100%; }
+  .year-group .year { position: static; }
+  .refs li:first-child { padding-top: var(--space-md); border-top: var(--rule-hair) solid var(--color-rule); }
+  .post-item .grid, .year-group.grid, .listing.grid { row-gap: var(--space-md); }
+  .contact { grid-template-columns: minmax(0, 1fr); row-gap: var(--space-lg); }
+  .entry .when, .entry .what { grid-column: 1 / -1; }
+}
+@media (max-width: 40rem) {
+  .brand { font-size: var(--text-md); }
+  .topbar .in { gap: var(--space-md); }
+  .stages li { grid-template-columns: minmax(0, 1fr); row-gap: var(--space-sm); }
+  .ledger thead { display: none; }
+  .ledger, .ledger tbody, .ledger tr, .ledger td { display: block; width: auto; }
+  .ledger tr { padding-block: var(--space-md); border-bottom: var(--rule-hair) solid var(--color-rule); }
+  .ledger td, .ledger td.when, .ledger td.award { width: auto; padding: 0; border: 0; white-space: normal; }
+  .ledger .amt { text-align: left; }
+  .plain { padding-left: var(--space-lg); }
+}
+@media print { .topbar, .portrait, .plate, .site-foot { display: none; } .page { display: block !important; } }
 </style>
 </head>
 <body>
 
 <header class="topbar">
-  <div class="in">
+  <div class="container in">
     <a class="brand" href="#home">Angga Hidayat</a>
     <nav aria-label="Main">
       <ul>
@@ -191,187 +307,221 @@ a:hover{color:var(--accent-dark)}
   </div>
 </header>
 
-<div class="banner" aria-hidden="true"></div>
-
-<div class="layout">
-
-  <aside class="profile">
-    <div class="avatar-wrap">
-      <div class="avatar">
-        <!-- Save your headshot as photo.jpg next to this file -->
-        <img src="photo.jpg" alt="Angga Hidayat" onerror="this.remove()">
-        <span aria-hidden="true">AH</span>
-      </div>
-    </div>
-    <h1>Angga Hidayat, Ph.D.</h1>
-    <p class="role">Fulbright Scholar (USA)<br>SSHRC CIRTA Scholar (Canada)</p>
-    <ul class="kw">
-      <li>STEM education</li>
-      <li>Digital storytelling</li>
-      <li>GenAI in teacher education</li>
-    </ul>
-    <!-- Save your CV as cv.pdf next to this file -->
-    <a class="btn" href="cv.pdf">Curriculum vitae</a>
-    <hr>
-    <dl class="contact">
-      <dt>Email</dt>
-      <dd><a href="mailto:angga.hidayat@fulbrightmail.org">angga.hidayat@fulbrightmail.org</a><br>
-          <a href="mailto:angga.hidayat@ontariotechu.ca">angga.hidayat@ontariotechu.ca</a></dd>
-      <dt>Office</dt>
-      <dd>Ontario Tech University<br>2000 Simcoe Street North<br>Oshawa, Ontario, Canada</dd>
-    </dl>
-    <hr>
-    <!-- Replace each # below with your real profile link -->
-    <ul class="links">
-      <li><a href="https://scholar.google.com/citations?hl=en&amp;user=uDfHpEwAAAAJ" target="_blank"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2 1 8.5 12 15l9-5.32V16h2V8.5zM5 13.2v3.6c0 2.2 3.13 4.2 7 4.2s7-2 7-4.2v-3.6l-7 4.14z"/></svg>Google Scholar</a></li>
-      <li><a href="https://www.scopus.com/authid/detail.uri?authorId=59206909200" target="_blank"><svg viewBox="0 0 24 24" aria-hidden="true"><text x="12" y="17" text-anchor="middle" font-size="16" font-weight="700" font-family="Georgia,serif" fill="currentColor">S</text></svg>Scopus</a></li>
-            <li><a href="https://www.linkedin.com/in/angga-hidayat-1203/" target="_blank"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.4 3H3.6A.6.6 0 0 0 3 3.6v16.8c0 .33.27.6.6.6h16.8a.6.6 0 0 0 .6-.6V3.6a.6.6 0 0 0-.6-.6zM8.3 18.3H5.4V9.7h2.9zM6.9 8.5a1.7 1.7 0 1 1 0-3.4 1.7 1.7 0 0 1 0 3.4zm11.7 9.8h-2.9v-4.2c0-1 0-2.3-1.4-2.3s-1.6 1.1-1.6 2.2v4.3h-3V9.7h2.8v1.2h.05a3.1 3.1 0 0 1 2.8-1.5c3 0 3.5 2 3.5 4.5z"/></svg>LinkedIn</a></li>
-      <li><a href="https://www.instagram.com/angga1203_hidayat/" target="_blank"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.2c3.2 0 3.6 0 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9s.68.82.9 1.38c.16.42.36 1.06.41 2.23.06 1.25.07 1.63.07 4.81s0 3.56-.07 4.81c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38s-.82.68-1.38.9c-.42.16-1.06.36-2.23.41-1.25.06-1.63.07-4.85.07s-3.6 0-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.8 3.8 0 0 1-1.38-.9 3.8 3.8 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.56 2.16 15.18 2.16 12s0-3.56.07-4.81c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38s.82-.68 1.38-.9c.42-.16 1.06-.36 2.23-.41C8.4 2.21 8.78 2.2 12 2.2zm0 1.8c-3.14 0-3.5.01-4.74.07-.9.04-1.39.19-1.71.32-.43.17-.74.37-1.06.69s-.52.63-.69 1.06c-.13.32-.28.81-.32 1.71C3.42 8.1 3.4 8.46 3.4 12s.02 3.9.08 5.15c.4.9.19 1.39.32 1.71.17.43.37.74.69 1.06s.63.52 1.06.69c.32.13.81.28 1.71.32 1.24.06 1.6.07 4.74.07s3.5-.01 4.74-.07c.9-.04 1.39-.19 1.71-.32.43-.17.74-.37 1.06-.69s.52-.63.69-1.06c.13-.32.28-.81.32-1.71.06-1.25.07-1.61.07-5.15s-.01-3.9-.07-5.15c-.04-.9-.19-1.39-.32-1.71a2.9 2.9 0 0 0-.69-1.06 2.9 2.9 0 0 0-1.06-.69c-.32-.13-.81-.28-1.71-.32C15.5 4.01 15.14 4 12 4zm0 3.06a4.94 4.94 0 1 1 0 9.88 4.94 4.94 0 0 1 0-9.88zm0 1.8a3.14 3.14 0 1 0 0 6.28 3.14 3.14 0 0 0 0-6.28zm5.15-3.2a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3z"/></svg>Instagram</a></li>
-      <li><a href="https://www.youtube.com/@AnggaHidayat" target="_blank"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21.6 7.2a2.5 2.5 0 0 0-1.76-1.77C18.25 5 12 5 12 5s-6.25 0-7.84.43A2.5 2.5 0 0 0 2.4 7.2 26 26 0 0 0 2 12a26 26 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.76 1.77C5.75 19 12 19 12 19s6.25 0 7.84-.43a2.5 2.5 0 0 0 1.76-1.77A26 26 0 0 0 22 12a26 26 0 0 0-.4-4.8zM10 15.05v-6.1L15.2 12z"/></svg>YouTube</a></li>
-      <li><a href="https://www.threads.com/@angga1203_hidayat" target="_blank"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.5 11.28c-.1-.05-.2-.1-.3-.14-.18-3.25-1.96-5.11-4.94-5.13h-.04c-1.79 0-3.27.76-4.19 2.15l1.64 1.13c.69-1.04 1.76-1.26 2.55-1.26h.03c.98 0 1.72.29 2.2.85.35.4.58.97.7 1.68a12.6 12.6 0 0 0-2.83-.14c-2.85.17-4.68 1.83-4.56 4.15.06 1.17.65 2.18 1.65 2.84.85.55 1.94.82 3.07.76 1.5-.08 2.67-.65 3.49-1.68.62-.79 1.01-1.8 1.19-3.08.72.43 1.25 1 1.55 1.69.5 1.17.53 3.1-1.04 4.67-1.38 1.37-3.03 1.97-5.53 1.99-2.77-.02-4.87-.91-6.23-2.63C3.66 17.6 3 15.35 2.98 12c.02-3.35.68-5.6 1.95-7.18C6.3 3.1 8.4 2.21 11.17 2.19c2.79.02 4.92.92 6.34 2.66.7.86 1.22 1.94 1.57 3.2l1.93-.51c-.42-1.56-1.09-2.9-2-4.01C17.2 1.31 14.55.15 11.18.13h-.01C7.8.15 5.18 1.32 3.4 3.6 1.83 5.62 1.02 8.43 1 12v.01c.02 3.57.83 6.38 2.4 8.4 1.78 2.27 4.4 3.44 7.77 3.46h.01c3-.02 5.11-.8 6.85-2.54 2.28-2.27 2.21-5.12 1.46-6.87-.54-1.25-1.57-2.27-2.99-2.95zm-4.62 5.09c-1.25.07-2.55-.49-2.61-1.66-.05-.87.61-1.83 2.69-1.95l.4-.01c.76 0 1.47.07 2.11.21-.24 2.98-1.64 3.35-2.59 3.4z"/></svg>Threads</a></li>
-    </ul>
-  </aside>
-
-  <main>
+<main>
 
   <!-- ============ HOME ============ -->
   <section class="page" id="home">
-    <h2>Home</h2>
-    <figure class="moment">
-  <img src="fulbright-association.jpg" alt="Angga Hidayat in a blazer in front of a blue Fulbright Association backdrop" loading="lazy">
-</figure>
-    <p>I am an associate graduate faculty and researcher at the Faculty of Education at Ontario Tech University, Canada. I earned my Ph.D. in STEM Education at The Ohio State University, the US.</p>
 
-    <div class="facts">
-      <div><b>50+</b><span>peer-reviewed publications</span></div>
-      <div><b>940+</b><span>Google Scholar citations</span></div>
-      <div><b>17+</b><span>years of teaching across Indonesia, USA, and Canada</span></div>
-      <div><b>20+</b><span>awards and fellowships</span></div>
-    </div>
+    <section class="hero">
+      <div class="container grid">
+        <div class="hero__text">
+          <h1>Angga Hidayat, Ph.D.</h1>
+          <p class="role">Fulbright Scholar (USA)<br>SSHRC CIRTA Scholar (Canada)</p>
+          <div class="actions">
+            <!-- Save your CV as cv.pdf next to this file -->
+            <a class="btn" href="cv.pdf">Curriculum vitae</a>
+            <a class="btn btn--quiet" href="#contact">Contact</a>
+          </div>
+        </div>
+        <!-- Save your headshot as photo.jpg next to this file -->
+        <figure class="portrait" data-slot="portrait" data-alt="Angga Hidayat">
+          <img src="photo.jpg" alt="Angga Hidayat" width="1119" height="1248" fetchpriority="high" onerror="this.remove()">
+        </figure>
+      </div>
+    </section>
 
-        <h3>My research</h3>
-    <p>My research sits at the intersection of STEM education, technology, and equity. I study how teachers and students from underrepresented communities experience STEM, and how technology can widen access to it.</p>
-    <p>I want this work to do more than produce publications. The aim is practical support, so that every learner has access to the same quality of education regardless of their background.</p>
-    <p>I work across qualitative, quantitative, and mixed-methods traditions. Much of my work uses narrative inquiry and QuantCrit, a critical approach to quantitative research that asks what numbers leave out and whose interests they serve.</p>
+    <section class="intro">
+      <div class="container grid">
+        <p class="lead">I am an associate graduate faculty and researcher at the Faculty of Education at Ontario Tech University, Canada. I earned my Ph.D. in STEM Education at The Ohio State University, the US.</p>
+        <div class="facts">
+          <div><b>50+</b><span>peer-reviewed publications</span></div>
+          <div><b>940+</b><span>Google Scholar citations</span></div>
+          <div><b>17+</b><span>years of teaching across Indonesia, USA, and Canada</span></div>
+          <div><b>20+</b><span>awards and fellowships</span></div>
+        </div>
+      </div>
+    </section>
 
-    <div class="note">
-      <p><b>Current project.</b> I am leading an explanatory sequential mixed-methods study of how pre-service STEAM teachers develop epistemic agency, professional judgment, and critical AI literacy as they work with generative AI. The project is funded by the SSHRC Canada Impact+ Research Training Award (2026 to 2028).</p>
-    </div>
+    <section class="research">
+      <div class="container grid">
+        <h2>My research</h2>
+        <div class="body">
+          <p>My research sits at the intersection of STEM education, technology, and equity. I study how teachers and students from underrepresented communities experience STEM, and how technology can widen access to it.</p>
+          <p>I want this work to do more than produce publications. The aim is practical support, so that every learner has access to the same quality of education regardless of their background.</p>
+          <p>I work across qualitative, quantitative, and mixed-methods traditions. Much of my work uses narrative inquiry and QuantCrit, a critical approach to quantitative research that asks what numbers leave out and whose interests they serve.</p>
+          <ul class="areas kw">
+            <li>STEM education</li>
+            <li>Digital storytelling</li>
+            <li>GenAI in teacher education</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-    <h3>My path</h3>
-    <!-- EDIT: This is a draft. Add your own voice, a memory, or a turning point. -->
-    <p>I am a first-generation scholar from Indonesia. I began teaching mathematics in 2009, in high schools and learning centres, helping students prepare for national examinations and university entry. I then earned a Master of Education in Mathematics Education at Universitas Negeri Surabaya.</p>
-    <p>From 2015 to 2021 I taught statistics, research methods, and mathematical economics at Universitas Pamulang, where I received the Best Lecturer award in 2018. In 2021 I received a Fulbright scholarship to pursue a Ph.D. at The Ohio State University under the guidance of Dr. Theodore Chao. My dissertation, <i>Voices from the Margins</i>, explored digital storytelling in mathematics education with first-generation pre-service teachers from rural and low-income backgrounds.</p>
-    <p>Before joining Ontario Tech, I served as Fellowship Advisor and Honors College instructor at Florida Gulf Coast University, where I helped students prepare competitive fellowship applications for awards such as Fulbright.</p>
+    <section class="band note">
+      <div class="container grid">
+        <h2>Current project</h2>
+        <p class="lead">I am leading an explanatory sequential mixed-methods study of how pre-service STEAM teachers develop epistemic agency, professional judgment, and critical AI literacy as they work with generative AI. The project is funded by the SSHRC Canada Impact+ Research Training Award (2026 to 2028).</p>
+      </div>
+    </section>
 
-    <h3>Beyond the university</h3>
-    <p>I founded Rumah Cahaya Empat Ribu (RuMAER), a foundation that offers free professional development to teachers in rural and remote areas. I also serve as editor in some journals and mentor early-career researchers through the Youth Center for Research.</p>
+    <section class="path">
+      <div class="container grid">
+        <h2>My path</h2>
+        <!-- EDIT: This is a draft. Add your own voice, a memory, or a turning point. -->
+        <ol class="stages">
+          <li><time datetime="2009">2009</time><p>I am a first-generation scholar from Indonesia. I began teaching mathematics in 2009, in high schools and learning centres, helping students prepare for national examinations and university entry. I then earned a Master of Education in Mathematics Education at Universitas Negeri Surabaya.</p></li>
+          <li><time datetime="2015">2015</time><p>From 2015 to 2021 I taught statistics, research methods, and mathematical economics at Universitas Pamulang, where I received the Best Lecturer award in 2018. In 2021 I received a Fulbright scholarship to pursue a Ph.D. at The Ohio State University under the guidance of Dr. Theodore Chao. My dissertation, <i>Voices from the Margins</i>, explored digital storytelling in mathematics education with first-generation pre-service teachers from rural and low-income backgrounds.</p></li>
+          <li><time datetime="2025">2025</time><p>Before joining Ontario Tech, I served as Fellowship Advisor and Honors College instructor at Florida Gulf Coast University, where I helped students prepare competitive fellowship applications for awards such as Fulbright.</p></li>
+        </ol>
+        <figure class="plate moment" data-slot="fulbright" data-alt="Angga Hidayat in a blazer in front of a blue Fulbright Association backdrop">
+          <img src="fulbright-association.jpg" alt="Angga Hidayat in a blazer in front of a blue Fulbright Association backdrop" loading="lazy">
+        </figure>
+      </div>
+    </section>
 
-    <h3>Get in touch</h3>
-    <p>I welcome conversations about research collaboration, invited talks, and mentoring. Please reach me by email or through the profiles on this page.</p>
+    <section class="ink">
+      <div class="container grid">
+        <h2>Beyond the university</h2>
+        <p class="lead">I founded Rumah Cahaya Empat Ribu (RuMAER), a foundation that offers free professional development to teachers in rural and remote areas. I also serve as editor in some journals and mentor early-career researchers through the Youth Center for Research.</p>
+      </div>
+    </section>
   </section>
 
-    <!-- ============ BLOG (list of posts) ============ -->
+  <!-- ============ BLOG (list of posts) ============ -->
   <section class="page" id="blog">
-    <h2>Blog</h2>
-    <p>Notes on research, teaching, and academic life.</p>
+    <div class="view-head"><div class="container grid">
+      <h2>Blog</h2>
+      <p class="lead">Notes on research, teaching, and academic life.</p>
+    </div></div>
 
-    <div class="posts">
+    <div class="view-body"><div class="container">
+      <div class="posts">
 
-      <!-- To add a post: copy this whole <div class="post-item"> block, paste it at the
-           top of the list, and give it a new number (post-3, post-4, and so on). -->
-      <div class="post-item">
-        <span class="post-date">September 24, 2026</span>
-        <h3><a href="#post-2">Who Gets to Study STEM? What 16,627 Fulbright Students Reveal</a></h3>
-        <p>As a Fulbright Scholar with a PhD in STEM education, I was curious about which countries get to send students to study STEM under the Fulbright Foreign Student Program.
+        <!-- To add a post: copy this whole <div class="post-item"> block, paste it at the
+             top of the list, and give it a new number (post-3, post-4, and so on). -->
+        <div class="post-item"><div class="grid">
+          <time class="post-date" datetime="2026-09-24">September 24, 2026</time>
+          <div class="what">
+            <h3><a href="#post-2">Who Gets to Study STEM? What 16,627 Fulbright Students Reveal</a></h3>
+            <p>As a Fulbright Scholar with a PhD in STEM education, I was curious about which countries get to send students to study STEM under the Fulbright Foreign Student Program. Here is something interesting we found from the data (16,627 students from 161 countries):</p>
+            <a class="more" href="#post-2">Read the Fulbright STEM post</a>
+          </div>
+        </div></div>
 
-Here is something interesting we found from the data (16,627 students from 161 countries):</p>
-        <a class="more" href="#post-2">Read more</a>
+        <div class="post-item"><div class="grid">
+          <time class="post-date" datetime="2026-08-18">August 18, 2026</time>
+          <div class="what">
+            <h3><a href="#post-1">An Undergrad Just Published in a High-Ranking Journal, Before Even Writing His Thesis</a></h3>
+            <p>This article was written not by someone with a doctorate, not by a PhD student, not by a master’s student. It was written by an undergrad student, someone who has not even graduated from college yet (and has not even started his undergrad thesis), but he can manage to get his very first article accepted as first author in a high-ranking journal from a reputable publisher.</p>
+            <a class="more" href="#post-1">Read the undergrad author post</a>
+          </div>
+        </div></div>
+
       </div>
-
-      <div class="post-item">
-        <span class="post-date">August 18, 2026</span>
-        <h3><a href="#post-1">An Undergrad Just Published in a High-Ranking Journal, Before Even Writing His Thesis</a></h3>
-        <p>This article was written not by someone with a doctorate, not by a PhD student, not by a master's student. It was written by an undergrad student, someone who has not even graduated from college yet (and has not even started his undergrad thesis), but he can manage to get his very first article accepted as first author in a high-ranking journal from a reputable publisher.</p>
-        <a class="more" href="#post-1">Read more</a>
-      </div>
-
-    </div>
+    </div></div>
   </section>
 
   <!-- ============ BLOG POSTS (full text, one section each) ============ -->
   <section class="page" id="post-2">
-    <a class="back" href="#blog">&larr; Back to all posts</a>
-    <h2>Who Gets to Study STEM? What 16,627 Fulbright Students Reveal</h2>
-    <p style="color:var(--muted);font-size:15px;margin-top:-10px">September 24, 2026</p>
-    <p>As a Fulbright Scholar with a PhD in STEM education, I was curious about which countries get to send students to study STEM under the Fulbright Foreign Student Program. Here is something interesting we found from the data (16,627 students from 161 countries):</p>
-    <p>1) There is one country that sent more than 10 times the typical median country's count. One country basically dominates the leaderboard.</p>
-    <p>2) The top 10 countries out of 161 total grab 41–50% of ALL the spots every single year. So, less than 7% of countries take up nearly half of all the opportunities.</p>
-    <p>3) In 2017, it was even more interesting, the top 10 countries took over half (50.3%) of all STEM spots that year.</p>
-    <p>4) The surprising plot twist: even though wealthy countries send the most students overall, low-income countries have the HIGHEST proportion of their Fulbright students going into STEM (52%), higher than high-income countries (36%).</p>
-    <p>5) When a student from a lower-income country does get selected, they are disproportionately likely to choose STEM, possibly because a STEM degree is seen as the highest-value ticket to future opportunity.</p>
-    <p>If you want to read more about the article, <a href="https://link.springer.com/article/10.1007/s10763-026-10709-4" target="_blank">here is the link</a>.</p>
-    <a class="back" href="#blog">&larr; Back to all posts</a>
+    <div class="article"><div class="container grid"><div class="col">
+      <a class="back" href="#blog">Back to all posts</a>
+      <h2>Who Gets to Study STEM? What 16,627 Fulbright Students Reveal</h2>
+      <p class="post-meta"><time datetime="2026-09-24">September 24, 2026</time></p>
+      <p>As a Fulbright Scholar with a PhD in STEM education, I was curious about which countries get to send students to study STEM under the Fulbright Foreign Student Program. Here is something interesting we found from the data (16,627 students from 161 countries):</p>
+      <p>1) There is one country that sent more than 10 times the typical median country’s count. One country basically dominates the leaderboard.</p>
+      <p>2) The top 10 countries out of 161 total grab 41 to 50% of ALL the spots every single year. So, less than 7% of countries take up nearly half of all the opportunities.</p>
+      <p>3) In 2017, it was even more interesting, the top 10 countries took over half (50.3%) of all STEM spots that year.</p>
+      <p>4) The surprising plot twist: even though wealthy countries send the most students overall, low-income countries have the HIGHEST proportion of their Fulbright students going into STEM (52%), higher than high-income countries (36%).</p>
+      <p>5) When a student from a lower-income country does get selected, they are disproportionately likely to choose STEM, possibly because a STEM degree is seen as the highest-value ticket to future opportunity.</p>
+      <p>If you want to read more about the article, <a href="https://link.springer.com/article/10.1007/s10763-026-10709-4" target="_blank">here is the link</a>.</p>
+      <a class="back" href="#blog">Back to all posts</a>
+    </div></div></div>
   </section>
 
   <section class="page" id="post-1">
-    <a class="back" href="#blog">&larr; Back to all posts</a>
-    <h2>An Undergrad Just Published in a High-Ranking Journal, Before Even Writing His Thesis</h2>
-    <p style="color:var(--muted);font-size:15px;margin-top:-10px">August 18, 2026</p>
-    <p>This article was written not by someone with a doctorate, not by a PhD student, not by a master's student. It was written by an undergrad student, someone who has not even graduated from college yet (and has not even started his undergrad thesis), but he can manage to get his very first article accepted as first author in a high-ranking journal from a reputable publisher.</p>
-    <p>This student is Gabriel Kronbach, one of my students (but technically he never enrolled in my class) from a university in Florida.</p>
-    <p>The editor and the reviewers were very impressed with his work, and he received only very minor revisions (that was the first time I ever received very minor revisions from a reputable publisher). That is why the time from submission to acceptance was less than 2 months.</p>
-    <p>Here is what we found from this project:</p>
-    <p>1) AI is not inherently good or bad for meaning. It is actually a mirror. It reflects the orientation you bring to it. Use it as a thinking partner and engage critically, and meaning tends to grow. Let it do your thinking for you, and meaning tends to shrink. We call this pattern existential outsourcing.</p>
-    <p>2) Companion AI helps most in the middle. AI companionship boosted wellbeing most for people who already had moderate social connection (not the most isolated, and not the most connected).</p>
-    <p>3) How you prompt AI might matter more than how often you use it. People who treated AI as a collaborator (not a shortcut) showed dramatically different psychological outcomes than people who simply outsourced their thinking to it.</p>
-    <p>If you want to read more about the article, <a href="https://www.tandfonline.com/doi/full/10.1080/23311908.2026.2715699" target="_blank">here is the link</a>.</p>
-    <a class="back" href="#blog">&larr; Back to all posts</a>
+    <div class="article"><div class="container grid"><div class="col">
+      <a class="back" href="#blog">Back to all posts</a>
+      <h2>An Undergrad Just Published in a High-Ranking Journal, Before Even Writing His Thesis</h2>
+      <p class="post-meta"><time datetime="2026-08-18">August 18, 2026</time></p>
+      <p>This article was written not by someone with a doctorate, not by a PhD student, not by a master’s student. It was written by an undergrad student, someone who has not even graduated from college yet (and has not even started his undergrad thesis), but he can manage to get his very first article accepted as first author in a high-ranking journal from a reputable publisher.</p>
+      <p>This student is Gabriel Kronbach, one of my students (but technically he never enrolled in my class) from a university in Florida.</p>
+      <p>The editor and the reviewers were very impressed with his work, and he received only very minor revisions (that was the first time I ever received very minor revisions from a reputable publisher). That is why the time from submission to acceptance was less than 2 months.</p>
+      <p>Here is what we found from this project:</p>
+      <p>1) AI is not inherently good or bad for meaning. It is actually a mirror. It reflects the orientation you bring to it. Use it as a thinking partner and engage critically, and meaning tends to grow. Let it do your thinking for you, and meaning tends to shrink. We call this pattern existential outsourcing.</p>
+      <p>2) Companion AI helps most in the middle. AI companionship boosted wellbeing most for people who already had moderate social connection (not the most isolated, and not the most connected).</p>
+      <p>3) How you prompt AI might matter more than how often you use it. People who treated AI as a collaborator (not a shortcut) showed dramatically different psychological outcomes than people who simply outsourced their thinking to it.</p>
+      <p>If you want to read more about the article, <a href="https://www.tandfonline.com/doi/full/10.1080/23311908.2026.2715699" target="_blank">here is the link</a>.</p>
+      <a class="back" href="#blog">Back to all posts</a>
+    </div></div></div>
   </section>
 
   <!-- ============ PUBLICATIONS ============ -->
   <section class="page" id="publications">
-    <h2>Publications</h2>
-    <p>Peer-reviewed articles and proceedings, newest first. For citation counts, see my Google Scholar profile.</p>
+    <div class="view-head"><div class="container grid">
+      <h2>Publications</h2>
+      <p class="lead">Peer-reviewed articles and proceedings, newest first. For citation counts, see my <a href="https://scholar.google.com/citations?hl=en&amp;user=uDfHpEwAAAAJ" target="_blank">Google Scholar profile</a>.</p>
+    </div></div>
+    <div class="view-body"><div class="container">
     <!-- To add a new paper, copy one <li> ... </li> block and edit it. -->
-<h3 class="year">2026</h3><ol class="refs">
+    <div class="year-group grid">
+      <h3 class="year">2026</h3>
+      <ol class="refs">
 <li><span class="rt">STEM Participation in Global Higher Education: Core-Periphery Structure and Scientific Capital in Fulbright Foreign Student Program</span><span class="ra"><b>Hidayat, A.</b>, Sukamto, I., Syahbrudin, J., Nurmalia, N., Maulina, H., &amp; Anggraini, A.</span><span class="rv"><i>International Journal of Science and Mathematics Education, 24, 86</i> <a class="doi" href="https://doi.org/10.1007/s10763-026-10709-4">DOI</a></span></li>
 <li><span class="rt">Mathematics, Migration, and Voices: Digital Storytelling as Belonging and Epistemic Resistance for Muslim Immigrant Girls</span><span class="ra"><b>Hidayat, A.</b>, Abdulrahman, T., Qazi, M. Z. U. H., Abdi, K., Yin, C-H., Nurmalia, N., &amp; Azram, L.</span><span class="rv"><i>Pedagogy, Culture &amp; Society, 1-22</i> <a class="doi" href="https://doi.org/10.1080/14681366.2026.2686993">DOI</a></span></li>
 <li><span class="rt">Governing Inequality: How Law and Technology Shape Justice for the Marginalized</span><span class="ra">Alnakshabandi, A.W., <b>Hidayat, A.</b>, &amp; Qazi, M.Z.U.H.</span><span class="rv"><i>Cogent Social Science, 12(1)</i> <a class="doi" href="https://doi.org/10.1080/23311886.2026.2644754">DOI</a></span></li>
 <li><span class="rt">Artificial Intelligence and Meaning in Life: A Systematic Literature Review of Psychological Mechanisms</span><span class="ra">Kronbach, G., <b>Hidayat, A.</b>, &amp; Wulandari, M.</span><span class="rv"><i>Cogent Psychology, 13(1)</i> <a class="doi" href="https://doi.org/10.1080/23311908.2026.2715699">DOI</a></span></li>
 <li><span class="rt">Scaffold or crutch? EFL learners’ multimodal GenAI experiences in Indonesia</span><span class="ra">Friska, Y., <b>Hidayat, A.</b>, Kusumaningsih, A., Syafi’I,M. T., &amp; Nurmalia.</span><span class="rv"><i>Indonesian EFL Journal, 12(3), 769-780</i> <a class="doi" href="https://doi.org/10.25134/ieflj.v12i3.150">DOI</a></span></li>
 <li><span class="rt">Mathematical Thinking as Discourse: A Commognitive Analysis of Students with Different Problem-Solving Behavior</span><span class="ra">Dzulfikar, A., Turmudi, Herman, T., Kusnandi, &amp; <b>Hidayat, A.</b></span><span class="rv"><i>Mathematics Education Journal, 20(3), 789-822</i> <a class="doi" href="https://jpm.ejournal.unsri.ac.id/index.php/jpm/article/view/568">DOI</a></span></li>
-</ol>
-<h3 class="year">2025</h3><ol class="refs">
+      </ol>
+    </div>
+    <div class="year-group grid">
+      <h3 class="year">2025</h3>
+      <ol class="refs">
 <li><span class="rt">“Mom, why do you always work?”: the complex realities of PhD mamas navigating doctoral studies in mathematics education</span><span class="ra"><b>Hidayat, A.</b>, Kusumaningsih, A., Friska, Y., Syafi’i, M. T., &amp; Nurmalia, N.</span><span class="rv"><i>International Journal of Qualitative Studies in Education, 1-26</i> <a class="doi" href="https://doi.org/10.1080/09518398.2025.2539382">DOI</a></span></li>
 <li><span class="rt">Math beyond borders: Digital storytelling of immigrant students</span><span class="ra"><b>Hidayat, A.</b>, &amp; Chao, T.</span><span class="rv"><i>In AIP Conference Proceedings (Vol. 3316, No. 1, p. 090001). AIP Publishing LLC</i> <a class="doi" href="https://doi.org/10.1063/5.0290007">DOI</a></span></li>
 <li><span class="rt">Thinking Beyond the Equations: A Deep Dive into Reflective Thinking for Mathematics Learning</span><span class="ra">Kuncoro, K.S., <b>Hidayat, A.</b>, Nadzeri, M.B., Hendriyanto, A., Meirani, A., &amp; Juandi, D.</span><span class="rv"><i>Participatory Educational Research, 12(5), 310-334</i> <a class="doi" href="https://doi.org/10.17275/per.25.75.12.5">DOI</a></span></li>
 <li><span class="rt">Unleashing Mathematics Teachers: Insights from a Systematic Literature Review on Digital Learning in Indonesia</span><span class="ra"><b>Hidayat, A.</b>, &amp; Chao, T.</span><span class="rv"><i>Cogent Education, 12(1), 2442868</i> <a class="doi" href="https://doi.org/10.1080/2331186X.2024.2442868">DOI</a></span></li>
 <li><span class="rt">Exploring digital storytelling in mathematics education: A systematic review of trends, benefits, and implementation challenges</span><span class="ra"><b>Hidayat, A.</b>, Abdulrahman, T., &amp; Qazi, M.Z.U.H.</span><span class="rv"><i>International Journal of Learning Technology, 20(4), 407-527</i> <a class="doi" href="https://doi.org/10.1504/IJLT.2024.10064272">DOI</a></span></li>
 <li><span class="rt">Bridging the gap: Rethinking mathematics education curriculum for students from different backgrounds</span><span class="ra"><b>Hidayat, A.</b></span><span class="rv"><i>Contemporary Voices in Education, 1(1), 1-12</i></span></li>
-</ol>
-<h3 class="year">2024</h3><ol class="refs">
+      </ol>
+    </div>
+    <div class="year-group grid">
+      <h3 class="year">2024</h3>
+      <ol class="refs">
 <li><span class="rt">Navigating the tech frontier: a systematic review of technology integration in mathematics education</span><span class="ra"><b>Hidayat, A.</b>, &amp; Firmanti, P.</span><span class="rv"><i>Cogent Education, 11(1), 2373559</i> <a class="doi" href="https://doi.org/10.1080/2331186X.2024.2373559">DOI</a></span></li>
-<li><span class="rt">English in mathematics: Trends, benefits, and challenges in Southeast Asia Countries</span><span class="ra">Syafi'i, M.T., <b>Hidayat, A.</b>, Kusumaningsih, A., Friska, Y., &amp; Nurmalia, N.</span><span class="rv"><i>Jurnal Kependidikan: Jurnal Hasil Penelitian dan Kajian Kepustakaan di Bidang Pendidikan, Pengajaran, dan Pembelajaran, 10(3),1032-1042</i> <a class="doi" href="https://doi.org/10.33394/jk.v10i3.11979">DOI</a></span></li>
-</ol>
-<h3 class="year">2023</h3><ol class="refs">
+<li><span class="rt">English in mathematics: Trends, benefits, and challenges in Southeast Asia Countries</span><span class="ra">Syafi’i, M.T., <b>Hidayat, A.</b>, Kusumaningsih, A., Friska, Y., &amp; Nurmalia, N.</span><span class="rv"><i>Jurnal Kependidikan: Jurnal Hasil Penelitian dan Kajian Kepustakaan di Bidang Pendidikan, Pengajaran, dan Pembelajaran, 10(3),1032-1042</i> <a class="doi" href="https://doi.org/10.33394/jk.v10i3.11979">DOI</a></span></li>
+      </ol>
+    </div>
+    <div class="year-group grid">
+      <h3 class="year">2023</h3>
+      <ol class="refs">
 <li><span class="rt">The impact of problem-based learning augmented with HOTS problems on students’ mathematical problem-solving abilities</span><span class="ra">Sulistyawati, D., Hadi, W., <b>Hidayat, A.</b>, &amp; Muhammad, R. R.</span><span class="rv"><i>Kalamatika: Jurnal Pendidikan Matematika, 8(2), 219-236</i> <a class="doi" href="https://doi.org/10.22236/KALAMATIKA.vol8no2.2023pp221-238">DOI</a></span></li>
 <li><span class="rt">Metacognition of year 12 package c learners on permutation</span><span class="ra">Puadah, P. F., Suhendra, S., &amp; <b>Hidayat, A.</b></span><span class="rv"><i>Kalamatika: Jurnal Pendidikan Matematika, 8(2), 237-246</i> <a class="doi" href="https://doi.org/10.22236/KALAMATIKA.vol8no2.2023pp238-250">DOI</a></span></li>
 <li><span class="rt">Why Am I Supposed to Love Math?: Digital Mathematics Storytelling in Asian American Communities</span><span class="ra">Chao, T., <b>Hidayat, A.</b>, &amp; Oliwe, R. N.</span><span class="rv"><i>In Proceedings of the Forty-Fifth Annual Meeting of the North American Chapter of the International Group for the Psychology of Mathematics Education (Vol. 1). University of Nevada</i></span></li>
 <li><span class="rt">Teaching mathematics through a cultural lens: Allowing students to resonate the academic content</span><span class="ra"><b>Hidayat, A.</b></span><span class="rv"><i>Union: Jurnal Ilmiah Pendidikan Matematika, 11(3), 376-382</i> <a class="doi" href="https://doi.org/10.30738/union.v11i3.15840">DOI</a></span></li>
 <li><span class="rt">Incorporating Social Justice Education into Teacher Education: A Book Review of Communicating Social Justice in Teacher Education: Insights from a Critical Classroom Ethnography</span><span class="ra"><b>Hidayat, A.</b></span><span class="rv"><i>The Qualitative Report, 28(2), 387-391</i></span></li>
-</ol>
-<h3 class="year">2022</h3><ol class="refs">
+      </ol>
+    </div>
+    <div class="year-group grid">
+      <h3 class="year">2022</h3>
+      <ol class="refs">
 <li><span class="rt">Eliciting Youth Digital Mathematics Stories: The Impact of a Digital Mathematics Storytelling Summer Camp Experience</span><span class="ra">Chao, T., Adams-Corral, M., Ozturk, A., Lin, H.-C., &amp; <b>Hidayat, A.</b></span><span class="rv"><i>Proceedings of the Forty-Fourth Annual Meeting of the North American Chapter of the International Group for the Psychology of Mathematics Education. the Forty-Fourth Annual Meeting of the North American Chapter of the International Group for the Psychology of Mathematics Education</i></span></li>
 <li><span class="rt">Sisi Gelap Investasi: Menghindari Kebangkutan Pada Investasi dan Pembayaran Kekinian</span><span class="ra">Friska, Y., Kusumaningsih, A., Safi’i, M. T., &amp; <b>Hidayat, A.</b></span><span class="rv"><i>Jurnal Pengabdian Masyarakat Dharma Andalas, 1(1), 84-93</i></span></li>
-<li><span class="rt">Research &amp; Teaching Assistant: Jalan Lain Kuliah Gratis ke USA Selain dengan Beasiswa</span><span class="ra">Syafi'i, M. T., Friska, Y., Anggraini, A., Kusumaningsih, A., &amp; <b>Hidayat, A.</b></span><span class="rv"><i>Jurnal Pengabdian Masyarakat (abdira), 2(3), 109-116</i></span></li>
-<li><span class="rt">Pendampingan mahasiswa dan para pendidik untuk mendapatkan beasiswa luar negeri oleh penerima beasiswa</span><span class="ra">Kusumaningsih, A., Syafi'i, M. T., Friska, Y., Anggraini, A., &amp; <b>Hidayat, A.</b></span><span class="rv"><i>Abdi Laksana: Jurnal Pengabdian Kepada Masyarakat, 3(1), 92-102</i></span></li>
-</ol>
-<h3 class="year">2021</h3><ol class="refs">
+<li><span class="rt">Research &amp; Teaching Assistant: Jalan Lain Kuliah Gratis ke USA Selain dengan Beasiswa</span><span class="ra">Syafi’i, M. T., Friska, Y., Anggraini, A., Kusumaningsih, A., &amp; <b>Hidayat, A.</b></span><span class="rv"><i>Jurnal Pengabdian Masyarakat (abdira), 2(3), 109-116</i></span></li>
+<li><span class="rt">Pendampingan mahasiswa dan para pendidik untuk mendapatkan beasiswa luar negeri oleh penerima beasiswa</span><span class="ra">Kusumaningsih, A., Syafi’i, M. T., Friska, Y., Anggraini, A., &amp; <b>Hidayat, A.</b></span><span class="rv"><i>Abdi Laksana: Jurnal Pengabdian Kepada Masyarakat, 3(1), 92-102</i></span></li>
+      </ol>
+    </div>
+    <div class="year-group grid">
+      <h3 class="year">2021</h3>
+      <ol class="refs">
 <li><span class="rt">Pendampingan belajar matematika dan bahasa inggris gratis untuk anak asuh yayasan al-kamilah</span><span class="ra"><b>Hidayat, A.</b>, Anggraini, A., Friska, Y., Kusumaningsih, A., &amp; Syafi’i, M. T.</span><span class="rv"><i>Jurnal Pengabdian Pendidikan Masyarakat (JPPM), 2(1), 19-24</i></span></li>
 <li><span class="rt">Tingkat pemahaman numerik dan keterampilan berbicara bahasa asing anak didik al-kamilah</span><span class="ra"><b>Hidayat, A.</b>, Friska, Y., Anggraini, A., Syafi’i, M. T., &amp; Kusumaningsih, A.</span><span class="rv"><i>In Prosiding Senantias: Seminar Nasional Hasil Penelitian dan Pengabdian kepada Masyarakat (Vol. 1, No. 1, pp. 749-758)</i></span></li>
-</ol>
-<h3 class="year">2020</h3><ol class="refs">
+      </ol>
+    </div>
+    <div class="year-group grid">
+      <h3 class="year">2020</h3>
+      <ol class="refs">
 <li><span class="rt">Augmented Reality pada Smartphone untuk Meningkatkan Motivasi Belajar dan Mengurangi Kecemasan Matematika</span><span class="ra"><b>Hidayat, A.</b>, &amp; Lia, A.</span><span class="rv"><i>Emasains: Jurnal Edukasi Matematika dan Sains, 9(2), 187-195</i></span></li>
 <li><span class="rt">Penerapan teknologi dalam analisis perilaku belajar reflektif berbasis sistem android untuk meningkatkan pembelajaran e-learning</span><span class="ra"><b>Hidayat, A.</b>, &amp; Prasetya, E. R.</span><span class="rv"><i>Gammath: Jurnal Ilmiah Program Studi Pendidikan Matematika, 4(2), 79-87</i></span></li>
 <li><span class="rt">E-Learning Interaktif dalam Pembelajaran Matematika Ekonomi dengan Menggunakan Aplikasi Blender</span><span class="ra">Asmalah, L., &amp; <b>Hidayat, A.</b></span><span class="rv"><i>MAJAMATH: Jurnal Matematika dan Pendidikan Matematika, 3(2), 140-147</i></span></li>
@@ -379,21 +529,25 @@ Here is something interesting we found from the data (16,627 students from 161 c
 <li><span class="rt">Studi penguasaan Matematika dan Bahasa Inggris anak asuh Yayasan Al-Kamilah, Depok, Jawa Barat</span><span class="ra"><b>Hidayat, A.</b>, Friska, Y. F. Y., Anggraini, A. A., Syafi’i, M. T., &amp; Kusumaningsih, A.</span><span class="rv"><i>Indonesia Berdaya, 1(2), 39-48</i></span></li>
 <li><span class="rt">Pengaruh Penggunaan Aplikasi Eviews Terhadap Sikap Belajar dan Kemampuan Pemecahan Masalah Statistik</span><span class="ra"><b>Hidayat, A.</b>, &amp; Sadewa, P.</span><span class="rv"><i>Edumaspul: Jurnal Pendidikan, 4(1), 321-328</i></span></li>
 <li><span class="rt">Pengaruh penggunaan aplikasi eviews terhadap kemampuan pemecahan masalah dan hasil belajar statistik</span><span class="ra"><b>Hidayat, A.</b></span><span class="rv"><i>MAJU: Jurnal Ilmiah Pendidikan Matematika, 7(1)</i></span></li>
-</ol>
-<h3 class="year">2019</h3><ol class="refs">
+      </ol>
+    </div>
+    <div class="year-group grid">
+      <h3 class="year">2019</h3>
+      <ol class="refs">
 <li><span class="rt">Peningkatan Keterampilan Dasar Matematika dan Bahasa Inggris Sebagai Upaya dalam Menghadapi Tantangan Era Revolusi Industri 5.0</span><span class="ra"><b>Hidayat, A.</b>, Friska, Y., Anggraini, A., Syafi’i, M. T., &amp; Kusumaningsih, A.</span><span class="rv"><i>Abdimisi, 1(1), 55-62</i></span></li>
 <li><span class="rt">Student’s self-concept profiles in problem posing according to cognitive styles: developing an evidence base for best practice of e-learning in mathematical economics course at pamulang university</span><span class="ra"><b>Hidayat, A.</b></span><span class="rv"><i>Jurnal Saintika Unpam: Jurnal Sains dan Matematika Unpam, 1(2), 158-165</i></span></li>
-</ol>
+      </ol>
+    </div>
+    </div></div>
   </section>
 
   <!-- ============ PRESENTATIONS ============ -->
   <section class="page" id="presentations">
-    <h2>Conference presentations</h2>
-<figure class="moment">
-  <img src="presentation.jpg" alt="Angga Hidayat in a blazer presenting in a conference in Columbus" loading="lazy">
-</figure>
-    
-    <ol class="plain" reversed>
+    <div class="view-head"><div class="container grid">
+      <h2>Conference presentations</h2>
+    </div></div>
+    <div class="view-body"><div class="container grid listing">
+      <ol class="plain" reversed>
 <li>Kronbach, G., <b>Hidayat, A.</b>, &amp; Karl, J.  (2026, October). Measuring What Travels: Cross-National Comparability of Educational Values and Intergenerational Investment Across 66 Societies. Paper presented at Learning Sciences Graduate Student Conference (LSGSC). University of Buffalo, New York, USA.</li>
 <li>Kronbach, G., &amp; <b>Hidayat, A.</b> (2026, October). Existential Outsourcing: A Systematic Review of How Artificial Intelligence Shapes Meaning in Life Across Disciplines. Paper presented at International Conference on AI Across Discipline (ICAAD’26), Selçuk Universitesi, Konya, Türkiye.</li>
 <li><b>Hidayat, A.</b> (2026, April). Cultivating Mathematical Identity through Digital Storytelling: Indonesian Teachers’ Journey of Professional Development. Paper presented at 2026 Annual Meeting of American Educational Research Association (AERA), Los Angeles, California, USA.</li>
@@ -407,26 +561,33 @@ Here is something interesting we found from the data (16,627 students from 161 c
 <li><b>Hidayat, A.</b>, Abdi, K., Abdulrahman, T., Qazi, M. Z. U. H., &amp; Yin, C-H. (2024, November). Empowering Voices: Digital Mathematics Storytelling for Muslim Immigrant Girls. Paper presented at 46th Annual Meeting of the North American Chapter of the International Group for the Psychology of Mathematics Education (PME-NA), Cleveland, Ohio, USA.</li>
 <li>Chao, T., Suhendra, S., <b>Hidayat, A.</b>, &amp; Oliwe, R. (2024, November). Teacher Identity and Community Knowledge Through Digital Mathematics Storytelling in Indonesia. Paper presented at 46th Annual Meeting of the North American Chapter of the International Group for the Psychology of Mathematics Education (PME-NA), Cleveland, Ohio, USA.</li>
 <li><b>Hidayat, A.</b>, Chao, T., &amp; Oliwe, R. (2024, October). Digital Mathematics Storytelling: Equity, Community, and Mathematics Stories. Paper presented at Ohio Council of Teachers of Mathematics (OCTM), Columbus, Ohio, USA.</li>
-<li><b>Hidayat, A.</b>, Chao, T., &amp; Oliwe, R. (2024, July). Mathematics in Their Words: Rural Youth's Experience with Digital Storytelling Workshops. Paper presented at 15th International Congress on Mathematical Education (ICME), Sydney, New South Wales, Australia.</li>
+<li><b>Hidayat, A.</b>, Chao, T., &amp; Oliwe, R. (2024, July). Mathematics in Their Words: Rural Youth’s Experience with Digital Storytelling Workshops. Paper presented at 15th International Congress on Mathematical Education (ICME), Sydney, New South Wales, Australia.</li>
 <li>Chao, T., <b>Hidayat, A.</b>, &amp; Oliwe, R. (2024, July). Digital Mathematics Storytelling in Indonesia. Paper presented at 15th International Congress on Mathematical Education (ICME), Sydney, New South Wales, Australia.</li>
 <li>Oliwe, R., Chao, T., &amp; <b>Hidayat, A.</b> (2024, July). Black Female Pre-Service Teachers Use Comic Storytelling to Explore Their Mathematics Teacher Identity. Paper presented at 15th International Congress on Mathematical Education (ICME), Sydney, New South Wales, Australia.</li>
-<li>Abdi, K., Qazi, M. Z. U. H., Yin, C-H., <b>Hidayat, A.</b>, &amp; Abdulrahman, T. (2024, June). Bridging Cultures and Numbers: Exploring the Mathematical Identities of Transnational Youth through Digital Storytelling in Community Literacy Events. Paper presented at National Council of Teachers of English – National Council of Teachers of Mathematics (NCTE-NCTM) Joint Conference, New Orleans, Louisiana, USA.</li>
+<li>Abdi, K., Qazi, M. Z. U. H., Yin, C-H., <b>Hidayat, A.</b>, &amp; Abdulrahman, T. (2024, June). Bridging Cultures and Numbers: Exploring the Mathematical Identities of Transnational Youth through Digital Storytelling in Community Literacy Events. Paper presented at National Council of Teachers of English and National Council of Teachers of Mathematics (NCTE-NCTM) Joint Conference, New Orleans, Louisiana, USA.</li>
 <li><b>Hidayat, A.</b>, Ilgaz, S. G., &amp; Zhang, J. (2024, February). Readiness of Early Childhood Teachers to Implement STEAM on Their Self-Efficacy and Local Culture. Paper Presented at Education and Human Ecology (EHE) Research Forum, Columbus, Ohio, USA.</li>
 <li><b>Hidayat, A.</b>, Abdulrahman, T. R., &amp; Qazi, M. Z. U. H. (2023, June). Exploring the challenges and benefits of digital storytelling in mathematics education: A bibliometric and systematic review. Paper Presented at the 1st Mathematics and Mathematics Education International Conference (M2EIC), Bandung, Indonesia.</li>
 <li><b>Hidayat, A.</b> (2023, February). I love math here: Using digital mathematics storytelling to explore Indonesian American Mathematics Identity. Poster Presented at Education and Human Ecology (EHE) Research Forum, Columbus, Ohio, USA.</li>
 <li>Chao, T., Corral, M. A., Ozturk, A., Lin, H., &amp; <b>Hidayat, A.</b> (2022, November). Eliciting Youth Digital Mathematics Stories: The Impact of a digital mathematics storytelling summer camp experience. Paper presented at 44th Annual Meeting of the North American Chapter of the International Group for the Psychology of Mathematics Education (PMENA), Nashville, Tennessee, USA.</li>
 <li>Chao, T., Lin, H., Corral, M. A., Ozturk, A., <b>Hidayat, A.</b> &amp; Oliwe, R. (2022, September). Youth digital math stories: eliciting video math stories from students of color. Paper presented at National Council of Teachers of Mathematics (NCTM), Los Angeles, California, USA.</li>
 <li><b>Hidayat, A.</b> (2021, August). Indonesian teachers’ perceptions of online learning technology in mathematics classrooms during the Covid-19 pandemic. Paper presented at Fulbright Pre-Academic Training, Syracuse University, New York, USA.</li>
-    </ol>
+      </ol>
+      <figure class="plate moment" data-slot="presentation" data-alt="Angga Hidayat in a blazer presenting in a conference in Columbus">
+        <img src="presentation.jpg" alt="Angga Hidayat in a blazer presenting in a conference in Columbus" loading="lazy">
+      </figure>
+    </div></div>
   </section>
 
   <!-- ============ TALKS ============ -->
   <section class="page" id="talks">
-    <h2>Invited talks and guest lectures</h2>
-    <figure class="moment">
-  <img src="talks.jpeg" alt="Angga Hidayat in a blazer and batik teaching a class" loading="lazy">
-</figure>
-    <ol class="plain" reversed>
+    <div class="view-head"><div class="container grid">
+      <h2>Invited talks and guest lectures</h2>
+    </div></div>
+    <div class="view-body"><div class="container grid listing listing--flip">
+      <figure class="plate moment" data-slot="talks" data-alt="Angga Hidayat in a blazer and batik teaching a class">
+        <img src="talks.jpeg" alt="Angga Hidayat in a blazer and batik teaching a class" loading="lazy">
+      </figure>
+      <ol class="plain" reversed>
 <li>R for Quantitative Research. (2026, November). Speaker in Doctoral Program in Education, Ontario Tech University, Oshawa, Canada.</li>
 <li>When Selves’ Experiences Become Data: Understanding (Auto)Ethnography as a Research Method. (2026, November). Speaker in Doctoral Program in Mathematics Education, Universitas Negeri Surabaya (Surabaya State University), Surabaya, Indonesia.</li>
 <li>Unpacking Ethical Issues in the Educational Technology Profession in the Age of Artificial Intelligence (2026, November). Speaker in Professional Ethics in Educational Technology Course, Universitas Pendidikan Indonesia (Indonesia University of Education), Bandung, Indonesia.</li>
@@ -458,56 +619,76 @@ Here is something interesting we found from the data (16,627 students from 161 c
 <li>Pendampingan Penulisan Essay Persiapan Pendaftaran IISMA 2022. (2022, April). Speaker in Pamulang University, Indonesia.</li>
 <li>Digital Storytelling: How Indonesian American Students Adapt with New Culture. (2022, March). Speaker in Seminar Series Matematika, Teknokrat University, Indonesia.</li>
 <li>How to be An Outstanding Candidate in Applying Scholarship. (2021, July). Speaker in NNF, Indonesia.</li>
-    </ol>
+      </ol>
+    </div></div>
   </section>
 
   <!-- ============ FUNDING ============ -->
   <section class="page" id="funding">
-    <h2>Funding &amp; awards</h2>
-    
-    <h3>Fellowships</h3>
-    <div class="entries">
-      <div class="entry"><div class="when">2026 to 2028</div><div class="what"><b>Canada Impact+ Research Training Award (CIRTA)</b><span>Social Sciences and Humanities Research Council of Canada</span><span class="amt">CAD 140,000</span></div></div>
-      <div class="entry"><div class="when">2021 to 2024</div><div class="what"><b>Fulbright Foreign Student Program</b><span>Bureau of Educational and Cultural Affairs, U.S. Government</span><span class="amt">USD 111,816</span></div></div>
-      <div class="entry"><div class="when">2021 to 2024</div><div class="what"><b>OSU Fellowship</b><span>The Ohio State University</span><span class="amt">USD 200,777</span></div></div>
-      <div class="entry"><div class="when">2023 to 2024</div><div class="what"><b>Lowry Harding Fellowship</b><span>College of Education and Human Ecology, The Ohio State University</span><span class="amt">USD 1,358</span></div></div>
-      <div class="entry"><div class="when">2023 to 2024</div><div class="what"><b>Harding Scholarship</b><span>College of Education and Human Ecology, The Ohio State University</span><span class="amt">USD 1,358</span></div></div>
-      <div class="entry"><div class="when">2012 to 2014</div><div class="what"><b>Excellent Scholarship (Beasiswa Unggulan)</b><span>Ministry of Research, Technology and Higher Education, Indonesia</span><span class="amt">IDR 60,000,000</span></div></div>
-      <div class="entry"><div class="when">2011 to 2012</div><div class="what"><b>Indosat Scholarship</b><span>Indosat, Inc.</span></div></div>
-      <div class="entry"><div class="when">2010 to 2011</div><div class="what"><b>Student Learning Assistance Scholarship (Beasiswa BBM)</b><span>Ministry of Education and Culture, Indonesia</span><span class="amt">IDR 12,000,000</span></div></div>
-      <div class="entry"><div class="when">2009 to 2010</div><div class="what"><b>Improving Academic Achievement Scholarship (Beasiswa PPA)</b><span>Ministry of Education and Culture, Indonesia</span><span class="amt">IDR 12,000,000</span></div></div>
-    </div>
-
-    <h3>Awards</h3>
-    <div class="entries">
-      <div class="entry"><div class="when">2024</div><div class="what"><b>Outstanding Research Presentation</b><span>North American Chapter of the International Group for the Psychology of Mathematics Education (PME-NA)</span></div></div>
-      <div class="entry"><div class="when">2022</div><div class="what"><b>Exceptional Student</b><span>Department of Teaching and Learning, The Ohio State University</span></div></div>
-      <div class="entry"><div class="when">2018</div><div class="what"><b>Best Lecturer</b><span>Universitas Pamulang</span></div></div>
-    </div>
-
-    <h3>Research and travel grants</h3>
-    <div class="entries">
-      <div class="entry"><div class="when">2025</div><div class="what"><b>Department of Teaching and Learning Travel Award</b><span>The Ohio State University, for AERA 2025, Denver</span><span class="amt">USD 1,500</span></div></div>
-      <div class="entry"><div class="when">2024</div><div class="what"><b>PME-NA Registration Scholarship</b><span>For PME-NA 2024, Cleveland</span><span class="amt">USD 550</span></div></div>
-      <div class="entry"><div class="when">2024</div><div class="what"><b>American Indonesian Cultural &amp; Educational Foundation (AICEF) Grant</b><span>Dissertation data collection in Indonesia</span><span class="amt">USD 3,000</span></div></div>
-      <div class="entry"><div class="when">2024</div><div class="what"><b>ICME Solidarity Fund</b><span>For ICME-15, Sydney</span><span class="amt">AUD 1,600</span></div></div>
-      <div class="entry"><div class="when">2024</div><div class="what"><b>Department of Teaching and Learning Travel Awards</b><span>The Ohio State University, for ICME-15, Sydney</span><span class="amt">USD 5,350</span></div></div>
-      <div class="entry"><div class="when">2024</div><div class="what"><b>InSTEAM Travel Award</b><span>For ICME-15, Sydney</span><span class="amt">USD 500</span></div></div>
-      <div class="entry"><div class="when">2024</div><div class="what"><b>Office of Research, Innovation and Collaboration (ORIC) Grant</b><span>For ICME-15, Sydney</span><span class="amt">USD 250</span></div></div>
-      <div class="entry"><div class="when">2023</div><div class="what"><b>International Research and Scholarship Grant</b><span>Office of International Affairs, The Ohio State University. Equity for Rural Youth in Math: A Narrative Inquiry through Digital Storytelling</span><span class="amt">USD 2,000</span></div></div>
-      <div class="entry"><div class="when">2023</div><div class="what"><b>Department of Teaching and Learning Travel Award</b><span>The Ohio State University, for M2EIC, Bandung</span><span class="amt">USD 1,200</span></div></div>
-      <div class="entry"><div class="when">2022</div><div class="what"><b>Department of Teaching and Learning Research Grant</b><span>The Ohio State University. Digital mathematics storytelling with Indonesian middle school students</span><span class="amt">USD 2,700</span></div></div>
-      <div class="entry"><div class="when">2020</div><div class="what"><b>Research Grant</b><span>Ministry of Research, Technology and Higher Education, Indonesia. Augmented reality on smartphones to increase learning motivation and reduce math anxiety</span><span class="amt">IDR 15,000,000</span></div></div>
-      <div class="entry"><div class="when">2020</div><div class="what"><b>Research Grant</b><span>Ministry of Research, Technology and Higher Education, Indonesia. Interactive e-learning in mathematical economics using Blender</span><span class="amt">IDR 15,000,000</span></div></div>
-      <div class="entry"><div class="when">2019</div><div class="what"><b>Research Grant</b><span>Ministry of Research, Technology and Higher Education, Indonesia. Android technology and reflective learning theory in statistics e-learning</span><span class="amt">IDR 15,000,000</span></div></div>
-    </div>
+    <div class="view-head"><div class="container grid">
+      <h2>Funding &amp; awards</h2>
+    </div></div>
+    <div class="view-body"><div class="container">
+      <div class="sub">
+        <h3>Fellowships</h3>
+        <table class="ledger ledger--lead">
+          <thead><tr><th scope="col">Years</th><th scope="col">Award</th><th scope="col">From</th><th scope="col" class="amt">Amount</th></tr></thead>
+          <tbody>
+          <tr><td class="when">2026 to 2028</td><td class="award">Canada Impact+ Research Training Award (CIRTA)</td><td class="from">Social Sciences and Humanities Research Council of Canada</td><td class="amt">CAD 140,000</td></tr>
+          <tr><td class="when">2021 to 2024</td><td class="award">Fulbright Foreign Student Program</td><td class="from">Bureau of Educational and Cultural Affairs, U.S. Government</td><td class="amt">USD 111,816</td></tr>
+          <tr><td class="when">2021 to 2024</td><td class="award">OSU Fellowship</td><td class="from">The Ohio State University</td><td class="amt">USD 200,777</td></tr>
+          <tr><td class="when">2023 to 2024</td><td class="award">Lowry Harding Fellowship</td><td class="from">College of Education and Human Ecology, The Ohio State University</td><td class="amt">USD 1,358</td></tr>
+          <tr><td class="when">2023 to 2024</td><td class="award">Harding Scholarship</td><td class="from">College of Education and Human Ecology, The Ohio State University</td><td class="amt">USD 1,358</td></tr>
+          <tr><td class="when">2012 to 2014</td><td class="award">Excellent Scholarship (Beasiswa Unggulan)</td><td class="from">Ministry of Research, Technology and Higher Education, Indonesia</td><td class="amt">IDR 60,000,000</td></tr>
+          <tr><td class="when">2011 to 2012</td><td class="award">Indosat Scholarship</td><td class="from">Indosat, Inc.</td><td class="amt"></td></tr>
+          <tr><td class="when">2010 to 2011</td><td class="award">Student Learning Assistance Scholarship (Beasiswa BBM)</td><td class="from">Ministry of Education and Culture, Indonesia</td><td class="amt">IDR 12,000,000</td></tr>
+          <tr><td class="when">2009 to 2010</td><td class="award">Improving Academic Achievement Scholarship (Beasiswa PPA)</td><td class="from">Ministry of Education and Culture, Indonesia</td><td class="amt">IDR 12,000,000</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="sub">
+        <h3>Awards</h3>
+        <table class="ledger">
+          <thead><tr><th scope="col">Years</th><th scope="col">Award</th><th scope="col">From</th><th scope="col" class="amt">Amount</th></tr></thead>
+          <tbody>
+          <tr><td class="when">2024</td><td class="award">Outstanding Research Presentation</td><td class="from">North American Chapter of the International Group for the Psychology of Mathematics Education (PME-NA)</td><td class="amt"></td></tr>
+          <tr><td class="when">2022</td><td class="award">Exceptional Student</td><td class="from">Department of Teaching and Learning, The Ohio State University</td><td class="amt"></td></tr>
+          <tr><td class="when">2018</td><td class="award">Best Lecturer</td><td class="from">Universitas Pamulang</td><td class="amt"></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="sub">
+        <h3>Research and travel grants</h3>
+        <table class="ledger">
+          <thead><tr><th scope="col">Years</th><th scope="col">Award</th><th scope="col">From</th><th scope="col" class="amt">Amount</th></tr></thead>
+          <tbody>
+          <tr><td class="when">2025</td><td class="award">Department of Teaching and Learning Travel Award</td><td class="from">The Ohio State University, for AERA 2025, Denver</td><td class="amt">USD 1,500</td></tr>
+          <tr><td class="when">2024</td><td class="award">PME-NA Registration Scholarship</td><td class="from">For PME-NA 2024, Cleveland</td><td class="amt">USD 550</td></tr>
+          <tr><td class="when">2024</td><td class="award">American Indonesian Cultural &amp; Educational Foundation (AICEF) Grant</td><td class="from">Dissertation data collection in Indonesia</td><td class="amt">USD 3,000</td></tr>
+          <tr><td class="when">2024</td><td class="award">ICME Solidarity Fund</td><td class="from">For ICME-15, Sydney</td><td class="amt">AUD 1,600</td></tr>
+          <tr><td class="when">2024</td><td class="award">Department of Teaching and Learning Travel Awards</td><td class="from">The Ohio State University, for ICME-15, Sydney</td><td class="amt">USD 5,350</td></tr>
+          <tr><td class="when">2024</td><td class="award">InSTEAM Travel Award</td><td class="from">For ICME-15, Sydney</td><td class="amt">USD 500</td></tr>
+          <tr><td class="when">2024</td><td class="award">Office of Research, Innovation and Collaboration (ORIC) Grant</td><td class="from">For ICME-15, Sydney</td><td class="amt">USD 250</td></tr>
+          <tr><td class="when">2023</td><td class="award">International Research and Scholarship Grant</td><td class="from">Office of International Affairs, The Ohio State University. Equity for Rural Youth in Math: A Narrative Inquiry through Digital Storytelling</td><td class="amt">USD 2,000</td></tr>
+          <tr><td class="when">2023</td><td class="award">Department of Teaching and Learning Travel Award</td><td class="from">The Ohio State University, for M2EIC, Bandung</td><td class="amt">USD 1,200</td></tr>
+          <tr><td class="when">2022</td><td class="award">Department of Teaching and Learning Research Grant</td><td class="from">The Ohio State University. Digital mathematics storytelling with Indonesian middle school students</td><td class="amt">USD 2,700</td></tr>
+          <tr><td class="when">2020</td><td class="award">Research Grant</td><td class="from">Ministry of Research, Technology and Higher Education, Indonesia. Augmented reality on smartphones to increase learning motivation and reduce math anxiety</td><td class="amt">IDR 15,000,000</td></tr>
+          <tr><td class="when">2020</td><td class="award">Research Grant</td><td class="from">Ministry of Research, Technology and Higher Education, Indonesia. Interactive e-learning in mathematical economics using Blender</td><td class="amt">IDR 15,000,000</td></tr>
+          <tr><td class="when">2019</td><td class="award">Research Grant</td><td class="from">Ministry of Research, Technology and Higher Education, Indonesia. Android technology and reflective learning theory in statistics e-learning</td><td class="amt">IDR 15,000,000</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div></div>
   </section>
 
   <!-- ============ EXPERIENCE ============ -->
   <section class="page" id="experience">
-    <h2>Experience</h2>
-
-    <h3>Positions</h3>
+    <div class="view-head"><div class="container grid">
+      <h2>Experience</h2>
+    </div></div>
+    <div class="view-body"><div class="container">
+      <div class="sub">
+        <h3>Positions</h3>
     <div class="entries">
       <div class="entry"><div class="when">2026 to present</div><div class="what"><b>Associate Graduate Faculty and SSHRC Researcher</b><span>Ontario Tech University, Canada</span>
         <ul>
@@ -525,21 +706,27 @@ Here is something interesting we found from the data (16,627 students from 161 c
         <ul><li>Taught statistics, research methods, and mathematical economics, and supervised undergraduate research</li></ul></div></div>
       <div class="entry"><div class="when">2009 to 2015</div><div class="what"><b>Mathematics Teacher</b><span>Secondary schools and learning centres, Indonesia</span></div></div>
     </div>
-
-    <h3>Education</h3>
+      </div>
+      <div class="sub">
+        <h3>Education</h3>
     <div class="entries">
       <div class="entry"><div class="when">2021 to 2025</div><div class="what"><b>Ph.D. in STEM Education, Mathematics Education concentration</b><span>The Ohio State University, USA. Fulbright Scholar. Dissertation: Voices from the Margins: Digital Storytelling in Mathematics Education for First-Generation Pre-Service Teachers from Rural and Low-Income Backgrounds</span></div></div>
       <div class="entry"><div class="when">2021 to 2024</div><div class="what"><b>Master of Arts</b><span>The Ohio State University, USA</span></div></div>
       <div class="entry"><div class="when">2012 to 2015</div><div class="what"><b>Master of Education in Mathematics Education</b><span>Universitas Negeri Surabaya, Indonesia</span></div></div>
       <div class="entry"><div class="when">2008 to 2012</div><div class="what"><b>Bachelor of Education in Mathematics Education</b><span>Universitas Muhammadiyah Prof. DR. HAMKA, Indonesia</span></div></div>
     </div>
+      </div>
+    </div></div>
   </section>
 
   <!-- ============ SERVICE ============ -->
   <section class="page" id="service">
-    <h2>Service &amp; community</h2>
-
-    <h3>Editorial roles</h3>
+    <div class="view-head"><div class="container grid">
+      <h2>Service &amp; community</h2>
+    </div></div>
+    <div class="view-body"><div class="container">
+      <div class="sub">
+        <h3>Editorial roles</h3>
     <div class="entries">
       <div class="entry"><div class="when">2025 to present</div><div class="what"><b>Editor-in-Chief</b><span>Contemporary Voices in Education</span></div></div>
       <div class="entry"><div class="when">2026 to present</div><div class="what"><b>Guest Editor</b><span>Frontiers in Education</span></div></div>
@@ -547,56 +734,94 @@ Here is something interesting we found from the data (16,627 students from 161 c
       <div class="entry"><div class="when">2026 to present</div><div class="what"><b>Editor</b><span>Southeast Asian Mathematics Education Journal</span></div></div>
       <div class="entry"><div class="when">2023 to present</div><div class="what"><b>Editor</b><span>Gammath: Jurnal Ilmiah Program Studi Pendidikan Matematika</span></div></div>
     </div>
-
-    <h3>Reviewer</h3>
-    <p><i>Review of Education</i>, <i>European Education</i>, <i>Educational and Developmental Psychologist</i>, <i>Cogent Education</i>, <i>The Mathematics Educator</i>, <i>Journal of Urban Mathematics Education</i>, <i>Social Education Research</i>, <i>Journal of Infrastructure, Policy and Development</i>, and <i>Jurnal Ilmiah Matematika Realistik</i>. Conference reviewer for ICME (2024) and PME-NA (2024).</p>
-
-    <h3>Community leadership</h3>
+      </div>
+      <div class="sub">
+        <h3>Reviewer</h3>
+    <p class="service-body"><i>Review of Education</i>, <i>European Education</i>, <i>Educational and Developmental Psychologist</i>, <i>Cogent Education</i>, <i>The Mathematics Educator</i>, <i>Journal of Urban Mathematics Education</i>, <i>Social Education Research</i>, <i>Journal of Infrastructure, Policy and Development</i>, and <i>Jurnal Ilmiah Matematika Realistik</i>. Conference reviewer for ICME (2024) and PME-NA (2024).</p>
+      </div>
+      <div class="sub">
+        <h3>Community leadership</h3>
     <div class="entries">
       <div class="entry"><div class="when">2021 to present</div><div class="what"><b>Co-Founder, Rumah Cahaya Empat Ribu (RuMAER)</b><span>Sustained professional development for teachers and students from underrepresented communities</span></div></div>
       <div class="entry"><div class="when">2026 to present</div><div class="what"><b>Co-Founder</b><span>Academic Research Hub, Ltd.</span></div></div>
       <div class="entry"><div class="when">2026 to present</div><div class="what"><b>Volunteer</b><span>Indonesianpostdoc.org</span></div></div>
       <div class="entry"><div class="when">2023 to 2024</div><div class="what"><b>Secretary</b><span>Buckeye Brighters, Fulbright grantee organization at The Ohio State University</span></div></div>
-      <div class="entry"><div class="when">2022 to 2024</div><div class="what"><b>Division of Book Review</b><span>PCIM USA</span></div></div>
+      <div class="entry"><div class="when">2022 to 2024</div><div class="what"><b>Division of Book Review</b><span><abbr>PCIM USA</abbr></span></div></div>
       <div class="entry"><div class="when">2018 to 2021</div><div class="what"><b>Volunteer Coordinator and Teacher</b><span>Al-Kamilah Foundation</span></div></div>
       <div class="entry"><div class="when">2017 to 2018</div><div class="what"><b>Volunteer Teacher</b><span>Bani Fadil</span></div></div>
     </div>
-
-    <h3>Mentoring</h3>
+      </div>
+      <div class="sub">
+        <h3>Mentoring</h3>
     <div class="entries">
       <div class="entry"><div class="when">2023 to 2025</div><div class="what"><b>Advisor</b><span>Youth Center for Research</span></div></div>
       <div class="entry"><div class="when">2023 to 2024</div><div class="what"><b>Mentor</b><span>Indonesia Mengglobal PhD Bootcamp</span></div></div>
     </div>
-
-    <h3>Professional memberships</h3>
-    <p>American Educational Research Association (AERA), National Council of Teachers of Mathematics (NCTM), and TODOS: Mathematics for ALL.</p>
+      </div>
+      <div class="sub">
+        <h3>Professional memberships</h3>
+    <p class="service-body">American Educational Research Association (AERA), National Council of Teachers of Mathematics (NCTM), and TODOS: Mathematics for ALL.</p>
+      </div>
+    </div></div>
   </section>
 
-    <!-- ============ CONTACT ============ -->
+  <!-- ============ CONTACT ============ -->
   <section class="page" id="contact">
-    <h2>Contact</h2>
-    <p>I'd love to hear from you, whether it's about research, potential collaborations, or just to say hello. Feel free to reach out via the email listed alongside, or use the form below, and I'll get back to you as soon as I can.</p>
+    <div class="contact-view"><div class="container grid">
+      <div class="head">
+        <h2>Contact</h2>
+        <p>I’d love to hear from you, whether it’s about research, potential collaborations, or just to say hello. Feel free to reach out via the email listed alongside, or use the form below, and I’ll get back to you as soon as I can.</p>
+      </div>
 
-    <!-- Replace YOUR_FORM_ID with the ID from your Formspree account -->
-    <form class="cform" action="https://formspree.io/f/mdekdljb" method="POST">
-      <label for="cf-name">Name</label>
-      <input id="cf-name" type="text" name="name" required>
+      <!-- Replace YOUR_FORM_ID with the ID from your Formspree account -->
+      <form class="cform" action="https://formspree.io/f/mdekdljb" method="POST">
+        <label for="cf-name">Name</label>
+        <input id="cf-name" type="text" name="name" autocomplete="name" required>
 
-      <label for="cf-email">Email</label>
-      <input id="cf-email" type="email" name="email" required>
+        <label for="cf-email">Email</label>
+        <input id="cf-email" type="email" name="email" autocomplete="email" required>
 
-      <label for="cf-msg">Message</label>
-      <textarea id="cf-msg" name="message" required></textarea>
+        <label for="cf-msg">Message</label>
+        <textarea id="cf-msg" name="message" required></textarea>
 
-      <button type="submit">Send</button>
-    </form>
-
+        <button class="btn" type="submit">Send</button>
+      </form>
+    </div></div>
   </section>
 
-  </main>
-</div>
+</main>
 
-<footer>© 2026 Angga Hidayat</footer>
+<footer class="site-foot">
+  <div class="container grid">
+    <h2>Get in touch</h2>
+    <p class="invite">I welcome conversations about research collaboration, invited talks, and mentoring. Please reach me by email or through the profiles on this page.</p>
+    <dl class="contact">
+      <div>
+        <dt>Email</dt>
+        <dd><a href="mailto:angga.hidayat@fulbrightmail.org">angga.hidayat@fulbrightmail.org</a></dd>
+        <dd><a href="mailto:angga.hidayat@ontariotechu.ca">angga.hidayat@ontariotechu.ca</a></dd>
+      </div>
+      <div>
+        <dt>Office</dt>
+        <dd>Ontario Tech University<br>2000 Simcoe Street North<br>Oshawa, Ontario, Canada</dd>
+      </div>
+      <div>
+        <dt>Profiles</dt>
+        <dd>
+          <ul class="links">
+            <li><a href="https://scholar.google.com/citations?hl=en&amp;user=uDfHpEwAAAAJ" target="_blank">Google Scholar</a></li>
+            <li><a href="https://www.scopus.com/authid/detail.uri?authorId=59206909200" target="_blank">Scopus</a></li>
+            <li><a href="https://www.linkedin.com/in/angga-hidayat-1203/" target="_blank">LinkedIn</a></li>
+            <li><a href="https://www.instagram.com/angga1203_hidayat/" target="_blank">Instagram</a></li>
+            <li><a href="https://www.youtube.com/@AnggaHidayat" target="_blank">YouTube</a></li>
+            <li><a href="https://www.threads.com/@angga1203_hidayat" target="_blank">Threads</a></li>
+          </ul>
+        </dd>
+      </div>
+    </dl>
+    <p class="colophon">© 2026 Angga Hidayat</p>
+  </div>
+</footer>
 
 <script>
   // Shows one section at a time, like separate pages
@@ -619,5 +844,7 @@ Here is something interesting we found from the data (16,627 students from 161 c
   window.addEventListener('hashchange', show);
   show();
 </script>
+<script>window.hallmarkSlots = (m) => { for (const [k, v] of Object.entries(m)) { const s = document.querySelector(`[data-slot="${k}"]`); if (!s) continue; const im = new Image(); im.src = typeof v === 'string' ? v : v.src; im.alt = (typeof v === 'object' && v.alt) || s.dataset.alt || ''; s.querySelectorAll(':scope > img').forEach((o) => o.remove()); s.prepend(im); } };
+document.querySelectorAll('[data-slot] img').forEach((i) => { if (i.complete && !i.naturalWidth) i.remove(); else i.addEventListener('error', () => i.remove(), { once: true }); });</script>
 </body>
 </html>
