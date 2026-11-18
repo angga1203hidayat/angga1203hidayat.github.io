@@ -9,16 +9,17 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,400;1,400&family=Hanken+Grotesk:wght@400;500&display=swap" rel="stylesheet">
 <style>
-/* Hallmark · theme: custom · idea: "a path from Indonesia to Canada told in indigo, the blue of batik dye, with photographs at full width in their own colour" · vibe: "indigo, quiet, scholarly, photographic, warm-handed" · redesign: full (revision 2, by request: blue-led, colour photographs, photographs as backgrounds) · genre: editorial · job: hire, contact details close every view
+/* Hallmark · theme: custom · idea: "a path from Indonesia to Canada told in indigo, the blue of batik dye, with photographs at full width in their own colour" · vibe: "indigo, quiet, scholarly, photographic, warm-handed" · redesign: full (revision 3, by request: no portrait in the hero, a library with no people behind it, photographs on every view header) · genre: editorial · job: hire, contact details close every view
  * paper: pale sky-white, deep indigo grounds for nav, hero, interludes and footer · accent: cobalt 258 on paper, sky 240 on indigo · faces: Libre Bodoni over Hanken Grotesk
- * hero: his name in white over a full-bleed reading room under an indigo scrim, his colour portrait framed beside it · nav: edge-aligned on indigo, wordmark and nine section links · footer: letter close on indigo with photo credits · imagery: photographs, his own 4 in natural colour plus 3 library (Wikimedia, credited) · signature: the name over the reading room beside his portrait
+ * hero: his name in white over a full-bleed, empty library atrium under an indigo scrim · nav: edge-aligned on indigo, wordmark and nine section links · footer: letter close on indigo with photo credits · imagery: photographs, his own 5 in natural colour plus 5 library (Wikimedia, credited); every view opens on a photograph but Contact and the posts · signature: the name over the five-tier library atrium
  * axes: light/high-contrast-serif/cool · posture: committed · contrast: pass · fold: pass · v2.0.0 */
-/* Hallmark · pre-emit critique: P4 H4 E4 S4 R4 V4 · weakest: R, three record views share one banner pattern; each banner carries its own photograph or a plain indigo field so they read apart */
+/* Hallmark · pre-emit critique: P4 H4 E4 S4 R4 V4 · weakest: R, seven views share one banner pattern; each carries a different photograph, so they read apart */
 /* Hallmark · dismissed 76 · the three library photographs load from upload.wikimedia.org, which the build sandbox blocks; the URLs follow the library's own thumb pattern and load on the live site */
 /* Hallmark · dismissed F4 · the hero and footer sit on indigo, so their primary is the same button inverted, not a second recipe */
 /* Hallmark · colour: blue is the user's own pick, his favourite, so the category-hue rule yields to it */
 /* Hallmark · dismissed 77 · home holds seven sections nested in its view, so the top-level count reads two */
 /* Hallmark · dismissed render · Google Fonts and Wikimedia are blocked in the build sandbox; the shots use Libre Bodoni and Hanken Grotesk installed locally and show the indigo ground where a library photo would load */
+/* Hallmark · dropped "photo.jpg" · by request, the hero is the library alone; the headshot file stays in the repo */
 /* Hallmark · dropped "Home" · the h1 with his name now heads the home view, so a heading that repeated the nav went */
 /* Hallmark · dropped the sidebar icon set and AH monogram · profile links are plain text in the footer, one treatment */
 /* Hallmark · reworded "Read more" to name each post, removed the arrows from "Back to all posts", and "41–50%" to "41 to 50%" · 19 and 63 name them */
@@ -131,10 +132,10 @@ main { min-height: 60dvh; }
 .sub + .sub { margin-top: var(--space-3xl); }
 
 /* hero: Stage */
-.hero { min-height: calc(100dvh - var(--nav-h)); display: grid; align-items: center; padding-block: var(--space-2xl); }
-.hero > .bg { object-position: 50% 40%; }
+.hero { min-height: calc(100dvh - var(--nav-h)); display: grid; align-items: end; padding-block: var(--space-3xl); }
+.hero > .bg { object-position: 50% 45%; }
 .hero .grid { align-items: center; }
-.hero__text { grid-column: 1 / 8; display: grid; gap: var(--space-lg); }
+.hero__text { grid-column: 1 / 9; display: grid; gap: var(--space-lg); }
 .hero__text h1 { max-width: 14ch; font-size: clamp(3rem, 6vw + 1rem, 6.5rem); }
 .hero__text .role { font-size: var(--text-lead); line-height: 1.45; color: var(--color-on-deep-muted); }
 .hero__text .actions { margin-top: var(--space-sm); }
@@ -335,7 +336,7 @@ main { min-height: 60dvh; }
   <section class="page" id="home">
 
     <section class="hero photo-bg">
-      <img class="bg" onerror="this.remove()" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Suzzallo_Reading_Room_University_of_Washington_restoration_Seattle_Washington_2026.jpg/1920px-Suzzallo_Reading_Room_University_of_Washington_restoration_Seattle_Washington_2026.jpg" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Suzzallo_Reading_Room_University_of_Washington_restoration_Seattle_Washington_2026.jpg/960px-Suzzallo_Reading_Room_University_of_Washington_restoration_Seattle_Washington_2026.jpg 960w, https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Suzzallo_Reading_Room_University_of_Washington_restoration_Seattle_Washington_2026.jpg/1280px-Suzzallo_Reading_Room_University_of_Washington_restoration_Seattle_Washington_2026.jpg 1280w, https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Suzzallo_Reading_Room_University_of_Washington_restoration_Seattle_Washington_2026.jpg/1920px-Suzzallo_Reading_Room_University_of_Washington_restoration_Seattle_Washington_2026.jpg 1920w" sizes="100vw" alt="" width="1920" height="1440" fetchpriority="high">
+      <img class="bg" onerror="this.remove()" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/George-peabody-library.jpg/1920px-George-peabody-library.jpg" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/George-peabody-library.jpg/960px-George-peabody-library.jpg 960w, https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/George-peabody-library.jpg/1280px-George-peabody-library.jpg 1280w, https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/George-peabody-library.jpg/1920px-George-peabody-library.jpg 1920w" sizes="100vw" alt="" width="1920" height="1440" fetchpriority="high">
       <div class="container grid">
         <div class="hero__text">
           <h1>Angga Hidayat, Ph.D.</h1>
@@ -346,10 +347,6 @@ main { min-height: 60dvh; }
             <a class="btn btn--quiet" href="#contact">Contact</a>
           </div>
         </div>
-        <!-- Save your headshot as photo.jpg next to this file -->
-        <figure class="portrait" data-slot="portrait" data-alt="Angga Hidayat">
-          <img src="photo.jpg" alt="Angga Hidayat" width="1119" height="1248" fetchpriority="high" onerror="this.remove()">
-        </figure>
       </div>
     </section>
 
@@ -420,7 +417,7 @@ main { min-height: 60dvh; }
 
   <!-- ============ BLOG (list of posts) ============ -->
   <section class="page" id="blog">
-    <div class="view-head"><div class="container grid">
+    <div class="view-head photo-bg"><img class="bg" onerror="this.remove()" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Reading_glasses.jpg/1280px-Reading_glasses.jpg" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Reading_glasses.jpg/960px-Reading_glasses.jpg 960w, https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Reading_glasses.jpg/1280px-Reading_glasses.jpg 1280w" sizes="100vw" alt="" width="1280" height="963" loading="lazy"><div class="container grid">
       <h2>Blog</h2>
       <p class="lead">Notes on research, teaching, and academic life.</p>
     </div></div>
@@ -649,7 +646,7 @@ main { min-height: 60dvh; }
 
   <!-- ============ FUNDING ============ -->
   <section class="page" id="funding">
-    <div class="view-head"><div class="container grid">
+    <div class="view-head photo-bg"><img class="bg" onerror="this.remove()" src="capitol.jpg" alt="Angga Hidayat in front of the United States Capitol" width="1932" height="2576" style="object-position: 50% 74%" loading="lazy"><div class="container grid">
       <h2>Funding &amp; awards</h2>
     </div></div>
     <div class="view-body"><div class="container">
@@ -707,7 +704,7 @@ main { min-height: 60dvh; }
 
   <!-- ============ EXPERIENCE ============ -->
   <section class="page" id="experience">
-    <div class="view-head"><div class="container grid">
+    <div class="view-head photo-bg"><img class="bg" onerror="this.remove()" src="aera-2025.jpg" alt="Angga Hidayat at the AERA 2025 Annual Meeting in Denver" width="1932" height="2576" style="object-position: 50% 48%" loading="lazy"><div class="container grid">
       <h2>Experience</h2>
     </div></div>
     <div class="view-body"><div class="container">
@@ -745,7 +742,7 @@ main { min-height: 60dvh; }
 
   <!-- ============ SERVICE ============ -->
   <section class="page" id="service">
-    <div class="view-head"><div class="container grid">
+    <div class="view-head photo-bg"><img class="bg" onerror="this.remove()" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Bookshelf_Prunksaal_OeNB_Vienna_AT_matl00786ch.jpg/1920px-Bookshelf_Prunksaal_OeNB_Vienna_AT_matl00786ch.jpg" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Bookshelf_Prunksaal_OeNB_Vienna_AT_matl00786ch.jpg/960px-Bookshelf_Prunksaal_OeNB_Vienna_AT_matl00786ch.jpg 960w, https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Bookshelf_Prunksaal_OeNB_Vienna_AT_matl00786ch.jpg/1280px-Bookshelf_Prunksaal_OeNB_Vienna_AT_matl00786ch.jpg 1280w, https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Bookshelf_Prunksaal_OeNB_Vienna_AT_matl00786ch.jpg/1920px-Bookshelf_Prunksaal_OeNB_Vienna_AT_matl00786ch.jpg 1920w" sizes="100vw" alt="" width="1920" height="1280" loading="lazy"><div class="container grid">
       <h2>Service &amp; community</h2>
     </div></div>
     <div class="view-body"><div class="container">
@@ -843,7 +840,7 @@ main { min-height: 60dvh; }
         </dd>
       </div>
     </dl>
-    <p class="colophon"><span>© 2026 Angga Hidayat</span><span>Library photographs: <a href="https://commons.wikimedia.org/wiki/File:Suzzallo_Reading_Room_University_of_Washington_restoration_Seattle_Washington_2026.jpg" target="_blank">Guywelch2000</a> (CC BY 4.0), <a href="https://commons.wikimedia.org/wiki/File:Cumulus_clouds_as_seen_from_an_airplane.JPG" target="_blank">Jakec</a> (CC BY-SA 3.0), <a href="https://commons.wikimedia.org/wiki/File:13-11-02-olb-by-RalfR-03.jpg" target="_blank">Ralf Roletschek</a> (CC BY 3.0), via Wikimedia Commons.</span></p>
+    <p class="colophon"><span>© 2026 Angga Hidayat</span><span>Library photographs via Wikimedia Commons: <a href="https://commons.wikimedia.org/wiki/File:George-peabody-library.jpg" target="_blank">Matthew Petroff</a> (CC BY-SA 3.0), <a href="https://commons.wikimedia.org/wiki/File:Cumulus_clouds_as_seen_from_an_airplane.JPG" target="_blank">Jakec</a> (CC BY-SA 3.0), <a href="https://commons.wikimedia.org/wiki/File:13-11-02-olb-by-RalfR-03.jpg" target="_blank">Ralf Roletschek</a> (CC BY 3.0), <a href="https://commons.wikimedia.org/wiki/File:Reading_glasses.jpg" target="_blank">Dori</a> (public domain), <a href="https://commons.wikimedia.org/wiki/File:Bookshelf_Prunksaal_OeNB_Vienna_AT_matl00786ch.jpg" target="_blank">Matl</a> (CC BY-SA 3.0).</span></p>
   </div>
 </footer>
 
